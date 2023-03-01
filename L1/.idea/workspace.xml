@@ -1,0 +1,241 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="CMakePresetLoader"><![CDATA[{
+  "useNewFormat": true
+}]]></component>
+  <component name="CMakeReloadState">
+    <option name="reloaded" value="true" />
+  </component>
+  <component name="CMakeSettings">
+    <configurations>
+      <configuration PROFILE_NAME="Debug" ENABLED="true" CONFIG_NAME="Debug" />
+    </configurations>
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="79619e30-357e-4b53-8678-0cbc73f00572" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/../.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../.idea/Object-Oriented-Programming.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Section13/.codelite/Section13.session" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Section13/.codelite/Section13.tags" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Section13/.codelite/Section13.workspace.frank" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Section13/.codelite/compilation.db" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Section13/.codelite/refactoring.db" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Section13/AccessModifiers/AccessModifiers.mk" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Section13/AccessModifiers/AccessModifiers.project" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Section13/AccessModifiers/AccessModifiers.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Section13/AccessModifiers/main.cpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Section13/AccessingClassMembers/AccessingClassMembers.mk" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Section13/AccessingClassMembers/AccessingClassMembers.project" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Section13/AccessingClassMembers/AccessingClassMembers.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Section13/AccessingClassMembers/main.cpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Section13/Challenge/Challenge.mk" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Section13/Challenge/Challenge.project" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Section13/Challenge/Description.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Section13/Challenge/Movie.cpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Section13/Challenge/Movie.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Section13/Challenge/Movies.cpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Section13/Challenge/Movies.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Section13/Challenge/main.cpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Section13/ChallengeSolution/ChallengeSolution.mk" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Section13/ChallengeSolution/ChallengeSolution.project" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Section13/ChallengeSolution/ChallengeSolution.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Section13/ChallengeSolution/Description.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Section13/ChallengeSolution/Movie.cpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Section13/ChallengeSolution/Movie.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Section13/ChallengeSolution/Movies.cpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Section13/ChallengeSolution/Movies.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Section13/ChallengeSolution/main.cpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Section13/ConstInClasses/ConstInClasses.mk" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Section13/ConstInClasses/ConstInClasses.project" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Section13/ConstInClasses/ConstInClasses.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Section13/ConstInClasses/main.cpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Section13/ConstructorInitializationLists/ConstructorInitializationLists.mk" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Section13/ConstructorInitializationLists/ConstructorInitializationLists.project" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Section13/ConstructorInitializationLists/ConstructorInitializationLists.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Section13/ConstructorInitializationLists/main.cpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Section13/ConstructorsAndDestructors/ConstructorsAndDestructors.mk" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Section13/ConstructorsAndDestructors/ConstructorsAndDestructors.project" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Section13/ConstructorsAndDestructors/ConstructorsAndDestructors.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Section13/ConstructorsAndDestructors/main.cpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Section13/CopyConstructor/CopyConstructor.mk" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Section13/CopyConstructor/CopyConstructor.project" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Section13/CopyConstructor/CopyConstructor.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Section13/CopyConstructor/main.cpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Section13/DeclareClassAndObjects/DeclareClassAndObjects.mk" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Section13/DeclareClassAndObjects/DeclareClassAndObjects.project" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Section13/DeclareClassAndObjects/DeclareClassAndObjects.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Section13/DeclareClassAndObjects/main.cpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Section13/DeepCopy/DeepCopy.mk" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Section13/DeepCopy/DeepCopy.project" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Section13/DeepCopy/DeepCopy.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Section13/DeepCopy/main.cpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Section13/DefaultConstructor/DefaultConstructor.mk" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Section13/DefaultConstructor/DefaultConstructor.project" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Section13/DefaultConstructor/DefaultConstructor.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Section13/DefaultConstructor/main.cpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Section13/DefaultConstructorParameters/DefaultConstructorParameters.mk" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Section13/DefaultConstructorParameters/DefaultConstructorParameters.project" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Section13/DefaultConstructorParameters/DefaultConstructorParameters.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Section13/DefaultConstructorParameters/main.cpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Section13/DelegatingConstructors/DelegatingConstructors.mk" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Section13/DelegatingConstructors/DelegatingConstructors.project" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Section13/DelegatingConstructors/DelegatingConstructors.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Section13/DelegatingConstructors/main.cpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Section13/Friends/Friend_class.cpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Section13/Friends/Friend_class.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Section13/Friends/Friends.mk" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Section13/Friends/Friends.project" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Section13/Friends/Friends.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Section13/Friends/Other_class.cpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Section13/Friends/Other_class.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Section13/Friends/Player.cpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Section13/Friends/Player.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Section13/Friends/main.cpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Section13/ImplementingMethods/ImplementingMethods.project" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Section13/ImplementingMethods/ImplementingMethods1.mk" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Section13/ImplementingMethods/ImplementingMethods1.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Section13/ImplementingMethods/main.cpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Section13/ImplementingMethods2/Account.cpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Section13/ImplementingMethods2/Account.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Section13/ImplementingMethods2/ImplementingMethods2.mk" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Section13/ImplementingMethods2/ImplementingMethods2.project" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Section13/ImplementingMethods2/ImplementingMethods2.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Section13/ImplementingMethods2/main.cpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Section13/Makefile" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Section13/MoveConstructor/MoveConstructor.mk" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Section13/MoveConstructor/MoveConstructor.project" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Section13/MoveConstructor/MoveConstructor.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Section13/MoveConstructor/main.cpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Section13/Section13.workspace" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Section13/ShallowCopy/ShallowCopy.mk" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Section13/ShallowCopy/ShallowCopy.project" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Section13/ShallowCopy/ShallowCopy.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Section13/ShallowCopy/main.cpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Section13/StaticClassMembers/Player.cpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Section13/StaticClassMembers/Player.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Section13/StaticClassMembers/StaticClassMembers.mk" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Section13/StaticClassMembers/StaticClassMembers.project" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Section13/StaticClassMembers/StaticClassMembers.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Section13/StaticClassMembers/main.cpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Section14/.codelite/Section14.session" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Section14/.codelite/Section14.tags" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Section14/.codelite/Section14.workspace.frank" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Section14/.codelite/compilation.db" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Section14/.codelite/cppcheck.list" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Section14/.codelite/refactoring.db" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Section14/Challenge-Solution1/Challenge-Solution1.mk" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Section14/Challenge-Solution1/Challenge-Solution1.project" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Section14/Challenge-Solution1/Challenge-Solution1.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Section14/Challenge-Solution1/Mystring.cpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Section14/Challenge-Solution1/Mystring.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Section14/Challenge-Solution1/main.cpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Section14/Challenge-Solution2/Challenge-Solution2.mk" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Section14/Challenge-Solution2/Challenge-Solution2.project" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Section14/Challenge-Solution2/Challenge-Solution2.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Section14/Challenge-Solution2/Mystring.cpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Section14/Challenge-Solution2/Mystring.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Section14/Challenge-Solution2/main.cpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Section14/Challenge/Challenge.mk" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Section14/Challenge/Challenge.project" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Section14/Challenge/Challenge.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Section14/Challenge/Description.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Section14/Challenge/Mystring.cpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Section14/Challenge/Mystring.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Section14/Challenge/main.cpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Section14/Makefile" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Section14/Mystring-copy-assignment/Mystring-copy-assignment.mk" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Section14/Mystring-copy-assignment/Mystring-copy-assignment.project" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Section14/Mystring-copy-assignment/Mystring-copy-assignment.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Section14/Mystring-copy-assignment/Mystring.cpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Section14/Mystring-copy-assignment/Mystring.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Section14/Mystring-copy-assignment/main.cpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Section14/Mystring-insertion-extraction/Mystring-insertion-extraction.mk" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Section14/Mystring-insertion-extraction/Mystring-insertion-extraction.project" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Section14/Mystring-insertion-extraction/Mystring-insertion-extraction.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Section14/Mystring-insertion-extraction/Mystring.cpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Section14/Mystring-insertion-extraction/Mystring.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Section14/Mystring-insertion-extraction/main.cpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Section14/Mystring-move-assignment/Mystring-move-assignment.mk" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Section14/Mystring-move-assignment/Mystring-move-assignment.project" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Section14/Mystring-move-assignment/Mystring-move-assignment.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Section14/Mystring-move-assignment/Mystring.cpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Section14/Mystring-move-assignment/Mystring.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Section14/Mystring-move-assignment/main.cpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Section14/Mystring-operator-functions/Mystring-operator-functions.mk" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Section14/Mystring-operator-functions/Mystring-operator-functions.project" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Section14/Mystring-operator-functions/Mystring-operator-functions.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Section14/Mystring-operator-functions/Mystring.cpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Section14/Mystring-operator-functions/Mystring.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Section14/Mystring-operator-functions/main.cpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Section14/Mystring-operators/Mystring-operator-methods.mk" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Section14/Mystring-operators/Mystring-operator-methods.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Section14/Mystring-operators/Mystring-operators.mk" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Section14/Mystring-operators/Mystring-operators.project" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Section14/Mystring-operators/Mystring-operators.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Section14/Mystring-operators/Mystring.cpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Section14/Mystring-operators/Mystring.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Section14/Mystring-operators/main.cpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Section14/Mystring-start/Mystring-start.mk" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Section14/Mystring-start/Mystring-start.project" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Section14/Mystring-start/Mystring-start.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Section14/Mystring-start/Mystring.cpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Section14/Mystring-start/Mystring.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Section14/Mystring-start/main.cpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Section14/Section14.workspace" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ClangdSettings">
+    <option name="formatViaClangd" value="false" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="MacroExpansionManager">
+    <option name="directoryName" value="1ggi515z" />
+  </component>
+  <component name="ProjectApplicationVersion">
+    <option name="ide" value="CLion" />
+    <option name="majorVersion" value="2022" />
+    <option name="minorVersion" value="3.2" />
+  </component>
+  <component name="ProjectId" id="2MQAYHBSq5HTyE7taOoUFyw8Xas" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.cidr.known.project.marker": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "cf.first.check.clang-format": "false",
+    "cidr.known.project.marker": "true",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="79619e30-357e-4b53-8678-0cbc73f00572" name="Changes" comment="" />
+      <created>1677689477290</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1677689477290</updated>
+      <workItem from="1677689478949" duration="8000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+</project>
