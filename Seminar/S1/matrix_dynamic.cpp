@@ -10,8 +10,7 @@ const int N = 3; // Define N as a constant
 const int P = 2; // Define P as a constant
 
 
-void multiply_matrices(int **first, int **second, int **result)
-{
+void multiply_matrices(int **first, int **second, int **result) {
     for (int i = 0; i < M; i++) {
         for (int j = 0; j < P; j++) {
             int sum = 0;
@@ -23,20 +22,19 @@ void multiply_matrices(int **first, int **second, int **result)
     }
 }
 
-int main()
-{
+int main() {
     // Define and initialize the matrices
     int first[M][N] = {{1, 2, 3},
                        {4, 5, 6}};
 
-    int second[N][P] = {{7, 8},
-                        {9, 10},
+    int second[N][P] = {{7,  8},
+                        {9,  10},
                         {11, 12}};
 
     int result[M][P];
 
     // Convert the matrices to dynamic arrays of pointers
-    int **first_ptr = new int*[M];
+    int **first_ptr = new int *[M];
     for (int i = 0; i < M; i++) {
         first_ptr[i] = new int[N];
         for (int j = 0; j < N; j++) {
@@ -44,7 +42,7 @@ int main()
         }
     }
 
-    int **second_ptr = new int*[N];
+    int **second_ptr = new int *[N];
     for (int i = 0; i < N; i++) {
         second_ptr[i] = new int[P];
         for (int j = 0; j < P; j++) {
@@ -52,7 +50,7 @@ int main()
         }
     }
 
-    int **result_ptr = new int*[M];
+    int **result_ptr = new int *[M];
     for (int i = 0; i < M; i++) {
         result_ptr[i] = new int[P];
     }
