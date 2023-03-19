@@ -21,17 +21,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="228e510b-c76c-440e-b465-3f9051cd6432" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/1_money.cpp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/1_money.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/1_money_test.cpp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/clion-Debug-log.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/cmake-build-debug/Testing/Temporary/LastTest.log" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/short_tests.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../matrix_pointers" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Seminar/S1/matrix_dynamic.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/../../Seminar/S1/matrix_dynamic.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Seminar/S1/matrix_normal.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/../../Seminar/S1/matrix_normal.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../main" beforeDir="false" afterPath="$PROJECT_DIR$/../../main" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/Testing/Temporary/LastTest.log" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/Testing/Temporary/LastTest.log" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -81,11 +72,6 @@
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
       </method>
     </configuration>
-    <configuration default="true" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true">
-      <method v="2">
-        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="1_money_test.cpp" type="CppFileRunConfiguration" factoryName="CppFileRunConfiguration" temporary="true" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="L2" TARGET_NAME="1_money_test.cpp" CONFIG_NAME="1_money_test.cpp">
       <option name="sourceFile" value="1_money_test.cpp" />
       <method v="2">
@@ -113,7 +99,8 @@
       <workItem from="1678891812065" duration="23000" />
       <workItem from="1678978621727" duration="1571000" />
       <workItem from="1679065441419" duration="3576000" />
-      <workItem from="1679070349180" duration="9918000" />
+      <workItem from="1679070349180" duration="10773000" />
+      <workItem from="1679130870879" duration="55000" />
     </task>
     <servers />
   </component>

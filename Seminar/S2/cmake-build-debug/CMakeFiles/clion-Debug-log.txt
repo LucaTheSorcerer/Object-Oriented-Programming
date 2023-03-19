@@ -1,0 +1,1 @@
+CMakeLists.txt not found in /Users/lulu/UBB/Semestrul_II/Object-Oriented-Programming/Seminar/S2 Select CMakeLists.txt
