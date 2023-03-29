@@ -15,10 +15,10 @@ private:
 
 public:
     Bankaccount();
-    Bankaccount(double account);
+    explicit Bankaccount(double account);
     void deposit(double amount);
     void withdraw(double amount);
-    double account_balance() const;
+    [[nodiscard]] double account_balance() const;
     void printTransactions() const;
     void saveTransactionsToFile(const std::string& filename) const;
     void loadTransactionsFromFile(const std::string& filename);

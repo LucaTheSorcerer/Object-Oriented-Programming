@@ -45,6 +45,30 @@ Money Money::add(const Money &other) const {
     return {sum, this->currency};
 }
 
+Money Money::add_on_object(double value) const {
+    double sum = this->amount + value;
+    return {sum, this->currency};
+}
+
+void Money::add_to_object(double value) {
+    this->amount += value;
+}
+
+
+//update the value and return a pointer to it
+Money* Money::add_to_object_pointer(double value) {
+    this->amount += value;
+    return this;
+}
+
+//return a refernce to the same object
+Money& Money::add_to_object_ref(double value) {
+    this->amount += value;
+    return *this;
+}
+
+
+
 /**
 * function substract
 * @param other represents another object instanced passed as an argument
@@ -119,7 +143,7 @@ int Money::compare(const Money &other) const {
  * @details searches in the map implemented above the specified currency and its value for the conversion rate
  * @param new_currency the new currency given
  * @return the new_value and the new_currency in the form of a new instance of the class
- * @throw invalid_argument if in the map the conversion rate between two given curencies is not defined
+ * @throw invalid_argument if in the map the conversion rate between two given currencies is not defined
  * @complexity: Worst case O(n)
  * @complexity: Best case θ(1)
  */

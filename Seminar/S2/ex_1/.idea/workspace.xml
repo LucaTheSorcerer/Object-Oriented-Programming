@@ -3,9 +3,9 @@
   <component name="AutoImportSettings">
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
-  <component name="CMakePresetLoader"><![CDATA[{
-  "useNewFormat": true
-}]]></component>
+  <component name="CMakePresetLoader">{
+  &quot;useNewFormat&quot;: true
+}</component>
   <component name="CMakeReloadState">
     <option name="reloaded" value="true" />
   </component>
@@ -21,24 +21,25 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6965ce17-c7f2-4311-a19a-73a621b31fd6" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/../.idea/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../.idea/S2.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../ex1/exercise1.cpp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../ex1/exercises.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../ex1/input.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../ex1/output.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../ex_2/.idea/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../ex_2/app.cpp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../ex_2/bank.cpp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../ex_2/bank.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../ex_2/cmake-build-debug/CMakeFiles/clion-Debug-log.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../ex_2/cmake-build-debug/Testing/Temporary/LastTest.log" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../ex_2/tests.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../../Laborator/L2/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../Laborator/L2/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../Laborator/L2/1_money.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/../../../Laborator/L2/1_money.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../Laborator/L2/1_money.h" beforeDir="false" afterPath="$PROJECT_DIR$/../../../Laborator/L2/1_money.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../Laborator/L2/cmake-build-debug/.ninja_deps" beforeDir="false" afterPath="$PROJECT_DIR$/../../../Laborator/L2/cmake-build-debug/.ninja_deps" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../Laborator/L2/cmake-build-debug/.ninja_log" beforeDir="false" afterPath="$PROJECT_DIR$/../../../Laborator/L2/cmake-build-debug/.ninja_log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../Laborator/L2/cmake-build-debug/CMakeFiles/L2.dir/1_money.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/../../../Laborator/L2/cmake-build-debug/CMakeFiles/L2.dir/1_money.cpp.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../Laborator/L2/cmake-build-debug/CMakeFiles/L2.dir/1_money_test.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/../../../Laborator/L2/cmake-build-debug/CMakeFiles/L2.dir/1_money_test.cpp.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../Laborator/L2/cmake-build-debug/L2" beforeDir="false" afterPath="$PROJECT_DIR$/../../../Laborator/L2/cmake-build-debug/L2" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../../Laborator/L2/cmake-build-debug/Testing/Temporary/LastTest.log" beforeDir="false" afterPath="$PROJECT_DIR$/../../../Laborator/L2/cmake-build-debug/Testing/Temporary/LastTest.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../Laborator/L2/short_tests.h" beforeDir="false" afterPath="$PROJECT_DIR$/../../../Laborator/L2/short_tests.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/Testing/Temporary/LastTest.log" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/Testing/Temporary/LastTest.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/exercise1.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/exercise1.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/input.txt" beforeDir="false" afterPath="$PROJECT_DIR$/input.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/output.txt" beforeDir="false" afterPath="$PROJECT_DIR$/output.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ex_2/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../ex_2/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ex_2/cmake-build-debug/Testing/Temporary/LastTest.log" beforeDir="false" afterPath="$PROJECT_DIR$/../ex_2/cmake-build-debug/Testing/Temporary/LastTest.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ex_2/transactions.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../ex_2/transactions.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ex_5/cmake-build-debug/Testing/Temporary/LastTest.log" beforeDir="false" afterPath="$PROJECT_DIR$/../ex_5/cmake-build-debug/Testing/Temporary/LastTest.log" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -51,6 +52,9 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="CMakeBuildProfile:Debug" />
   <component name="MacroExpansionManager">
     <option name="directoryName" value="lriell67" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
   </component>
   <component name="ProjectApplicationVersion">
     <option name="ide" value="CLion" />
@@ -70,13 +74,19 @@
     "WebServerToolWindowFactoryState": "false",
     "cf.first.check.clang-format": "false",
     "cidr.known.project.marker": "true",
+    "last_opened_file_path": "/Users/lulu/UBB/Semestrul_II/Object-Oriented-Programming/Seminar/S2/ex_1",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
-  <component name="RunManager">
-    <configuration default="true" type="CLionExternalRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true">
+  <component name="RunManager" selected="C/C++ File.exercise1.cpp">
+    <configuration default="true" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true">
       <method v="2">
-        <option name="CLION.EXTERNAL.BUILD" enabled="true" />
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
       </method>
     </configuration>
     <configuration name="ex_1" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="ex_1" TARGET_NAME="ex_1" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="ex_1" RUN_TARGET_NAME="ex_1">
@@ -84,6 +94,17 @@
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
       </method>
     </configuration>
+    <configuration name="exercise1.cpp" type="CppFileRunConfiguration" factoryName="CppFileRunConfiguration" temporary="true" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="ex_1" TARGET_NAME="exercise1.cpp" CONFIG_NAME="exercise1.cpp">
+      <option name="sourceFile" value="exercise1.cpp" />
+      <method v="2">
+        <option name="com.jetbrains.cidr.cpp.runfile.CppFileBuildBeforeRunTaskProvider$BasicBuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="C/C++ File.exercise1.cpp" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -94,6 +115,7 @@
       <option name="presentableId" value="Default" />
       <updated>1679240891541</updated>
       <workItem from="1679240892591" duration="10000" />
+      <workItem from="1679551932524" duration="2676000" />
     </task>
     <servers />
   </component>

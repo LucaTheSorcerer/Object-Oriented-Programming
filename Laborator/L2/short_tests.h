@@ -60,7 +60,14 @@ void testAll() {
     assert(std::abs(amount6.get_value() - 243) < 0.01); // use a tolerance threshold
     assert(amount6.get_currency() == "EUR");
 
+    Money m7(10.00, "USD");
+    m7.add_to_object_ref(5.00);
+    assert(m7.get_value() == 15.00);
 
+    // Test adding negative value to Money object
+    Money m8(20.0, "EUR");
+    m8.add_to_object_pointer(10.0);
+    assert(m8.get_value() == 30.0);
 
 // Invalid conversion
     try {

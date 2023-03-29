@@ -22,7 +22,29 @@
   <component name="ChangeListManager">
     <list default="true" id="228e510b-c76c-440e-b465-3f9051cd6432" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/1_money.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/1_money.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/1_money.h" beforeDir="false" afterPath="$PROJECT_DIR$/1_money.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/.ninja_deps" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/.ninja_deps" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/.ninja_log" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/.ninja_log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/L2.dir/1_money.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/L2.dir/1_money.cpp.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/L2.dir/1_money_test.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/L2.dir/1_money_test.cpp.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/L2" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/L2" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/Testing/Temporary/LastTest.log" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/Testing/Temporary/LastTest.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/short_tests.h" beforeDir="false" afterPath="$PROJECT_DIR$/short_tests.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Seminar/S2/ex_1/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../Seminar/S2/ex_1/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Seminar/S2/ex_1/cmake-build-debug/Testing/Temporary/LastTest.log" beforeDir="false" afterPath="$PROJECT_DIR$/../../Seminar/S2/ex_1/cmake-build-debug/Testing/Temporary/LastTest.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Seminar/S2/ex_1/exercise1.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/../../Seminar/S2/ex_1/exercise1.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Seminar/S2/ex_1/input.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../../Seminar/S2/ex_1/input.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Seminar/S2/ex_1/output.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../../Seminar/S2/ex_1/output.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Seminar/S2/ex_2/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../Seminar/S2/ex_2/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Seminar/S2/ex_2/bank.h" beforeDir="false" afterPath="$PROJECT_DIR$/../../Seminar/S2/ex_2/bank.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Seminar/S2/ex_2/cmake-build-debug/Testing/Temporary/LastTest.log" beforeDir="false" afterPath="$PROJECT_DIR$/../../Seminar/S2/ex_2/cmake-build-debug/Testing/Temporary/LastTest.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Seminar/S2/ex_2/transactions.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../../Seminar/S2/ex_2/transactions.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Seminar/S2/ex_5/cmake-build-debug/.ninja_deps" beforeDir="false" afterPath="$PROJECT_DIR$/../../Seminar/S2/ex_5/cmake-build-debug/.ninja_deps" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Seminar/S2/ex_5/cmake-build-debug/.ninja_log" beforeDir="false" afterPath="$PROJECT_DIR$/../../Seminar/S2/ex_5/cmake-build-debug/.ninja_log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Seminar/S2/ex_5/cmake-build-debug/CMakeFiles/ex_5.dir/main.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/../../Seminar/S2/ex_5/cmake-build-debug/CMakeFiles/ex_5.dir/main.cpp.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Seminar/S2/ex_5/cmake-build-debug/Testing/Temporary/LastTest.log" beforeDir="false" afterPath="$PROJECT_DIR$/../../Seminar/S2/ex_5/cmake-build-debug/Testing/Temporary/LastTest.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Seminar/S2/ex_5/cmake-build-debug/ex_5" beforeDir="false" afterPath="$PROJECT_DIR$/../../Seminar/S2/ex_5/cmake-build-debug/ex_5" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -101,6 +123,13 @@
       <workItem from="1679065441419" duration="3576000" />
       <workItem from="1679070349180" duration="10773000" />
       <workItem from="1679130870879" duration="55000" />
+      <workItem from="1679501782113" duration="1160000" />
+      <workItem from="1679503410805" duration="1024000" />
+      <workItem from="1679504556196" duration="749000" />
+      <workItem from="1679551158258" duration="34000" />
+      <workItem from="1680104781004" duration="6000" />
+      <workItem from="1680105634712" duration="694000" />
+      <workItem from="1680116152913" duration="408000" />
     </task>
     <servers />
   </component>

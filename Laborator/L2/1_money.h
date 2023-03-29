@@ -81,4 +81,15 @@ public:
     bool operator>(const Money &other) const;
 
     bool operator>=(const Money &other) const;
+
+    Money add_on_object() const;
+
+    Money add_on_object(double value) const;
+
+    void add_to_object(double value);
+
+    Money *add_to_object_pointer(double value);
+
+    Money &add_to_object_ref(double value);
+
 };

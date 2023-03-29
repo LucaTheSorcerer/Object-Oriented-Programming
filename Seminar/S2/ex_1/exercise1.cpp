@@ -13,13 +13,13 @@ int main(int argc, char* argv[]) {
     }
 
     std::ifstream input(argv[1]);
-    if (!input) {
+    if (!input.is_open()) {
         std::cerr << "Error: cannot open input file '" << argv[1] << "'" << std::endl;
         return 1;
     }
 
     std::ofstream output(argv[2]);
-    if (!output) {
+    if (!output.is_open()) {
         std::cerr << "Error: cannot open output file '" << argv[2] << "'" << std::endl;
         return 1;
     }
