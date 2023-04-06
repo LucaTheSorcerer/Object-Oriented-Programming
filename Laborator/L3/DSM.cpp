@@ -191,7 +191,7 @@ bool DSM<T>::hasLink(const string &fromElement, const string &toElement) {
         }
     }
 
-    return matrix[getIndexOfElement(fromElement)][getIndexOfElement(toElement)] != nullptr;
+    return matrix[getIndexOfElement(fromElement)][getIndexOfElement(toElement)] != 0;
 }
 
 template<typename T>
@@ -219,7 +219,7 @@ void DSM<T>::deleteLink(const string &fromElement, const string &toElement) {
         }
     }
 
-    matrix[getIndexOfElement(fromElement)][getIndexOfElement(toElement)] = nullptr;
+    matrix[getIndexOfElement(fromElement)][getIndexOfElement(toElement)] = 0;
 }
 
 template<typename T>
@@ -288,37 +288,54 @@ int DSM<T>::getIndexOfElement(const string &element) {
 
 template<typename T>
 void DSM<T>::autoResize() {
+    //This function resizes the matrix upwards or downwards depending on the size of the matrix
+    //The function also resizes the elementNames array upwards or downwards depending on the size of the array
+    if(elementCount == capacity) {
+        resizeElements(capacity * 2);
+        resizeMatrix(capacity * 2);
+    }
+    else if(elementCount == capacity / 4)
+    {
+        resizeElements(capacity / 2);
+        resizeMatrix(capacity / 2);
+    }
 
 }
 
 template<typename T>
 void DSM<T>::resizeMatrix(int newCapacity) {
     //Check if the new capacity is less than the current capacity
-    if (newCapacity < capacity)
+    if (newCapacity < elementCount)
         throw std::invalid_argument("The new capacity is smaller than the current capacity!");
 
     //This function resizes the matrix
     auto **temp = new T *[newCapacity];
-    for (int i = 0; i < elementCount; i++) {
+    for (int i = 0; i < newCapacity; i++) {
         temp[i] = new T[newCapacity];
-        for (int j = 0; j < elementCount; j++) {
-            temp[i][j] = matrix[i][j];
+        for (int j = 0; j < newCapacity; j++) {
+            if(i < elementCount && j < elementCount) {
+                temp[i][j] = matrix[i][j];
+            }
+            else {
+                temp[i][j] = 0;
+            }
         }
     }
     //Delete the old matrix
-    for (int i = 0; i < capacity; i++) {
+    for (int i = 0; i < elementCount; i++) {
         delete[] matrix[i];
     }
     delete[] matrix;
     //Set the new matrix to the old matrix
     matrix = temp;
+    capacity = newCapacity;
 
 }
 
 template<typename T>
 void DSM<T>::resizeElements(int newCapacity) {
     //Check if the new capacity is less than the current capacity
-    if (newCapacity < capacity)
+    if (newCapacity < elementCount)
         throw std::invalid_argument("The new capacit is smaller than the current capacity!");
 
     //This function resizes the elementNames array
@@ -330,6 +347,7 @@ void DSM<T>::resizeElements(int newCapacity) {
     delete[] elementNames;
     //Set the new array to the old array
     elementNames = temp;
+    capacity = newCapacity;
 
 }
 

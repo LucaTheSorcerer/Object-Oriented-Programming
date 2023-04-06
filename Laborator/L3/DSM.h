@@ -1,6 +1,29 @@
-//
-// Created by Luca Tudor on 05.04.2023.
-//
+/**
+ _____________________________________________________________________________________________________
+/ @Author: Luca Tudor, group 713, Faculty of Computer Science                                         \
+| **************************************************************************************************** |
+| Dependency Structured Matrix Implementation                                                          |
+| **************************************************************************************************** |
+| Methods:                                                                                             |
+|     - getIndexOfElement                                                                              |
+|     - setElementName                                                                                 |
+|     - addLink                                                                                        |
+|     - deleteLink                                                                                     |
+|      - hasLink                                                                                       |
+|      - linkWeight                                                                                    |
+|      - hasElement                                                                                    |
+|      - countToLinks                                                                                  |
+|      - countFromLinks                                                                                |
+\      - countAllLinks                                                                                 /
+ ------------------------------------------------------------------------------------------------------
+  \
+   \   \_\_    _/_/
+    \      \__/
+           (oo)\_______
+           (__)\       )\/\
+               ||----w |
+               ||     ||
+*/
 
 #pragma once
 #include <string>

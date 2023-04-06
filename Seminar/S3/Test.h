@@ -2,7 +2,13 @@
 // Created by Luca Tudor on 06.04.2023.
 //
 
-#ifndef S3_TEST_H
-#define S3_TEST_H
+#pragma once
 
-#endif //S3_TEST_H
+class Test {
+public:
+    Test();
+    //Destructor
+    ~Test();
+
+    void check();
+};
