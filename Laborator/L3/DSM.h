@@ -9,12 +9,12 @@
 |     - setElementName                                                                                 |
 |     - addLink                                                                                        |
 |     - deleteLink                                                                                     |
-|      - hasLink                                                                                       |
-|      - linkWeight                                                                                    |
-|      - hasElement                                                                                    |
-|      - countToLinks                                                                                  |
-|      - countFromLinks                                                                                |
-\      - countAllLinks                                                                                 /
+|     - hasLink                                                                                        |
+|     - linkWeight                                                                                     |
+|     - hasElement                                                                                     |
+|     - countToLinks                                                                                   |
+|     - countFromLinks                                                                                 |
+\     - countAllLinks                                                                                  /
  ------------------------------------------------------------------------------------------------------
   \
    \   \_\_    _/_/

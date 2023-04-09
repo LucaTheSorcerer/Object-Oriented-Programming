@@ -36,6 +36,7 @@ void testConstructors() {
 
 void testGetName() {
     //Test the getName function
+    cout << "Testing the getName function..." << endl;
     string elementNames[11] = {"Display", "Battery", "Processor", "Memory", "Camera", "Speakers",
                                "Microphone", "SIM Card", "Antenna", "Charging Port", "Buttons"};
 
@@ -51,10 +52,14 @@ void testGetName() {
     assert(DSM1.getName(8) == "Antenna");
     assert(DSM1.getName(9) == "Charging Port");
     assert(DSM1.getName(10) == "Buttons");
+
+    cout << "All tests passed!" << endl;
 }
 
 void testSetElementName() {
     //Test the setElementName function
+    cout << "Testing the setElementName function..." << endl;
+
     string elementNames[11] = {"Display", "Battery", "Processor", "Memory", "Camera", "Speakers",
                                "Microphone", "SIM Card", "Antenna", "Charging Port", "Buttons"};
 
@@ -82,10 +87,14 @@ void testSetElementName() {
     assert(DSM1.getName(8) == "Antenna1");
     assert(DSM1.getName(9) == "Charging Port1");
     assert(DSM1.getName(10) == "Buttons1");
+
+    cout << "All tests passed!" << endl;
 }
 
 void testAddLink() {
     //Test the addLink function
+    cout << "Testing the addLink function..." << endl;
+
     string elementNames[11] = {"Display", "Battery", "Processor", "Memory", "Camera", "Speakers",
                                "Microphone", "SIM Card", "Antenna", "Charging Port", "Buttons"};
 
@@ -111,10 +120,14 @@ void testAddLink() {
     assert(DSM1.linkWeight("Display", "Antenna") == 8);
     assert(DSM1.linkWeight("Display", "Charging Port") == 9);
     assert(DSM1.linkWeight("Display", "Buttons") == 10);
+
+    cout << "All tests passed!" << endl;
 }
 
 void testDeleteLink() {
     //Test the DeleteLink function
+    cout << "Testing the DeleteLink function..." << endl;
+
     string elementNames[11] = {"Display", "Battery", "Processor", "Memory", "Camera", "Speakers",
                                "Microphone", "SIM Card", "Antenna", "Charging Port", "Buttons"};
     DSM<int> DSM1(elementNames, 11);
@@ -150,10 +163,14 @@ void testDeleteLink() {
     assert(DSM1.linkWeight("Display", "Antenna") == 0);
     assert(DSM1.linkWeight("Display", "Charging Port") == 0);
     assert(DSM1.linkWeight("Display", "Buttons") == 0);
+
+    cout << "All tests passed!" << endl;
 }
 
 void testResizeElements() {
     //Test the resizeElements function
+    cout << "Testing the resizeElements function..." << endl;
+
     DSM<int> DSM1(11);
     DSM1.setElementName(0, "Display");
     DSM1.setElementName(1, "Battery");
@@ -198,10 +215,13 @@ void testResizeElements() {
 //        assert(string(e.what()) == "The new size is the same as the current size");
 //    }
 
+    cout << "All tests passed!" << endl;
 }
 
 void testHasLink() {
     //This function tests the function hasLink()
+    cout << "Testing the hasLink function..." << endl;
+
     string elementNames[11] = {"Display", "Battery", "Processor", "Memory", "Camera", "Speakers",
                                "Microphone", "SIM Card", "Antenna", "Charging Port", "Buttons"};
     DSM<int> DSM1(elementNames, 11);
@@ -227,17 +247,98 @@ void testHasLink() {
     assert(DSM1.hasLink("Display", "Charging Port") == true);
     assert(DSM1.hasLink("Display", "Buttons") == true);
     assert(DSM1.hasLink("Display", "Display") == false);
-    assert(DSM1.hasLink("Display", "Display") == false);
-    assert(DSM1.hasLink("Display", "Display") == false);
-    assert(DSM1.hasLink("Display", "Display") == false);
-    assert(DSM1.hasLink("Display", "Display") == false);
-    assert(DSM1.hasLink("Display", "Display") == false);
-    assert(DSM1.hasLink("Display", "Display") == false);
-    assert(DSM1.hasLink("Display", "Display") == false);
-    assert(DSM1.hasLink("Display", "Display") == false);
-    assert(DSM1.hasLink("Display", "Display") == false);
-    assert(DSM1.hasLink("Display", "Display") == false);
-    assert(DSM1.hasLink("Display", "Display") == false);
+
+
+    cout << "All tests passed!" << endl;
+}
+
+void testCountAllLinks() {
+    //This function tests the function countAllLinks()
+    cout << "Testing the countAllLinks function..." << endl;
+
+    string elementNames[11] = {"Display", "Battery", "Processor", "Memory", "Camera", "Speakers",
+                               "Microphone", "SIM Card", "Antenna", "Charging Port", "Buttons"};
+    DSM<int> DSM1(elementNames, 11);
+    DSM1.addLink("Display", "Battery", 1);
+    DSM1.addLink("Display", "Processor", 2);
+    DSM1.addLink("Display", "Memory", 3);
+    DSM1.addLink("Display", "Camera", 4);
+    DSM1.addLink("Display", "Speakers", 5);
+    DSM1.addLink("Display", "Microphone", 6);
+    DSM1.addLink("Display", "SIM Card", 7);
+    DSM1.addLink("Display", "Antenna", 8);
+    DSM1.addLink("Display", "Charging Port", 9);
+    DSM1.addLink("Display", "Buttons", 10);
+
+    assert(DSM1.countAllLinks() == 10);
+
+    cout << "All tests passed!" << endl;
+}
+
+void testCountFromLinks() {
+    //This function tests the function countFromLinks()
+    cout << "Testing the countFromLinks function..." << endl;
+
+    string elementNames[11] = {"Display", "Battery", "Processor", "Memory", "Camera", "Speakers",
+                               "Microphone", "SIM Card", "Antenna", "Charging Port", "Buttons"};
+    DSM<int> DSM1(elementNames, 11);
+    DSM1.addLink("Display", "Battery", 1);
+    DSM1.addLink("Display", "Processor", 2);
+    DSM1.addLink("Display", "Memory", 3);
+    DSM1.addLink("Display", "Camera", 4);
+    DSM1.addLink("Display", "Speakers", 5);
+    DSM1.addLink("Display", "Microphone", 6);
+    DSM1.addLink("Display", "SIM Card", 7);
+    DSM1.addLink("Display", "Antenna", 8);
+    DSM1.addLink("Display", "Charging Port", 9);
+    DSM1.addLink("Display", "Buttons", 10);
+
+    assert(DSM1.countFromLinks("Display") == 10);
+
+    cout << "All tests passed!" << endl;
+}
+
+void testToLinks() {
+    //This function tests the function countToLinks()
+    cout << "Testing the countToLinks function..." << endl;
+
+    string elementNames[11] = {"Display", "Battery", "Processor", "Memory", "Camera", "Speakers",
+                               "Microphone", "SIM Card", "Antenna", "Charging Port", "Buttons"};
+    DSM<int> DSM1(elementNames, 11);
+    DSM1.addLink("Display", "Battery", 1);
+    DSM1.addLink("Display", "Processor", 2);
+    DSM1.addLink("Display", "Memory", 3);
+    DSM1.addLink("Display", "Camera", 4);
+    DSM1.addLink("Display", "Speakers", 5);
+
+    assert(DSM1.countToLinks("Display") == 0);
+
+    cout << "All tests passed!" << endl;
+}
+
+void testHasElement() {
+    //This function tests the function hasElement()
+    cout << "Testing the hasElement function..." << endl;
+    string elementNames[11] = {"Display", "Battery", "Processor", "Memory", "Camera", "Speakers",
+                               "Microphone", "SIM Card", "Antenna", "Charging Port", "Buttons"};
+    DSM<int> DSM1(elementNames, 11);
+    assert(DSM1.hasElement("Display") == true);
+    assert(DSM1.hasElement("Battery") == true);
+    assert(DSM1.hasElement("Processor") == true);
+    assert(DSM1.hasElement("Memory") == true);
+    assert(DSM1.hasElement("Camera") == true);
+    assert(DSM1.hasElement("Speakers") == true);
+    assert(DSM1.hasElement("Microphone") == true);
+    assert(DSM1.hasElement("SIM Card") == true);
+    assert(DSM1.hasElement("Antenna") == true);
+    assert(DSM1.hasElement("Charging Port") == true);
+    assert(DSM1.hasElement("Buttons") == true);
+    assert(DSM1.hasElement("Apple") == false);
+    assert(DSM1.hasElement("Banana") == false);
+    assert(DSM1.hasElement("Orange") == false);
+
+
+    cout << "All tests passed!" << endl;
 }
 
 int main() {
@@ -249,5 +350,10 @@ int main() {
     testDeleteLink();
     testResizeElements();
     testHasLink();
+    testCountAllLinks();
+    testCountFromLinks();
+    testToLinks();
+    testHasElement();
+    cout << "Test complete!" << endl;
     return 0;
 }
