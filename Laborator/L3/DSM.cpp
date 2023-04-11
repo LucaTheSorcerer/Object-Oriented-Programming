@@ -517,3 +517,9 @@ DSM<T>::~DSM() {
     delete[] matrix;
     delete[] elementNames;
 }
+
+template class DSM<int>;
+template class DSM<double>;
+template class DSM<float>;
+template class DSM<char>;
+template class DSM<bool>;

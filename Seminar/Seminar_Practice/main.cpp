@@ -97,5 +97,10 @@ int main() {
     cout << c.array[0] << " " << c.array[1] << " " << c.array[2] << " " << c.array[3] << " " << c.array[4] << endl;
     cout << "Finish pass struct by pointer" << endl;
 
+    double weights[] = {1.2, 2.3, 3.4, 4.5, 5.6};
+    double *p = weights;
+    double w2 = *(p + 2);
+    cout << w2 << endl;
+
     return 0;
 }

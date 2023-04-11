@@ -2,7 +2,6 @@
 // Created by Luca Tudor on 05.04.2023.
 //
 #include "DSM.h"
-#include "DSM.cpp"
 #include <iostream>
 #include <string>
 #include <cassert>

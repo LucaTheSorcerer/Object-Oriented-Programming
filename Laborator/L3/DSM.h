@@ -28,6 +28,8 @@
 #pragma once
 #include <string>
 using namespace std;
+//Declare template types
+
 
 template <typename T>
 class DSM {
