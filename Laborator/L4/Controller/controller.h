@@ -8,16 +8,14 @@
 #include <vector>
 #include "../Entity/Fruit.h"
 #include "../Repository/fruit_repository.h"
-#include "/Users/lulu/UBB/Semestrul_II/Object-Oriented-Programming/Laborator/L4/Repository/FileRepository/fruit_file_repository.h"
 
 using namespace std;
 
 class Controller {
 private:
-    FruitFileRepository& repository;
-
+    FruitRepository& repository;
 public:
-    explicit Controller(FruitFileRepository& m_repository);
+    explicit Controller(FruitRepository& m_repository);
     void addFruit(const string& name, const string& origin, const string& expiry_date, int quantity, double price);
     void updateFruit(const string& name, const string& origin, const string& expiry_date, int quantity, double price);
     void removeFruit(const string& name, const string& origin);

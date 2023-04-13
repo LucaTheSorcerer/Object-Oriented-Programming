@@ -2,7 +2,19 @@
 // Created by Luca Tudor on 13.04.2023.
 //
 
-#ifndef L4_FRUITEXCEPTION_H
-#define L4_FRUITEXCEPTION_H
+#pragma once
 
-#endif //L4_FRUITEXCEPTION_H
+#include <string>
+#include <vector>
+#include <exception>
+
+using namespace std;
+
+class FruitException : public exception {
+private:
+    string message;
+public:
+    explicit FruitException(const string& message);
+    [[nodiscard]] const char* what() const noexcept override;
+
+};

@@ -1,6 +1,8 @@
 //
 // Created by Luca Tudor on 13.04.2023.
 //
+#include <fstream>
+#include <sstream>
 #include "fruit_repository.h"
 
 FruitRepository::FruitRepository() {
@@ -19,6 +21,11 @@ FruitRepository::FruitRepository() {
 //    //this function adds or updates a fruit to the repository
 //
 //}
+
+FruitRepository::FruitRepository(const string &file_name) {
+    this->filename = file_name;
+    loadFruits(file_name);
+}
 
 void FruitRepository::addFruit(shared_ptr<Fruit> &fruit) {
     fruits.push_back(fruit);
@@ -62,7 +69,7 @@ list<shared_ptr<Fruit>> FruitRepository::getLowStockFruit(int threshold) const {
     return low_stock_fruits;
 }
 
-list<shared_ptr<Fruit>> FruitRepository::getExpiredFruit(const string& current_date) {
+list<shared_ptr<Fruit>> FruitRepository:: getExpiredFruit(const string& current_date) {
     //This function returns all fruits that have an expiry date before the current date
     list<shared_ptr<Fruit>> expired_fruits;
     for(const auto &fruit : fruits) {
@@ -183,4 +190,51 @@ void FruitRepository::removeFruit(const string &name, const string &origin) {
         }
     }
 }
+
+void FruitRepository::saveFruits(const string& filename) {
+    //This function saves the fruits from the repository to a file
+
+    //First we open the file
+
+    ofstream file(filename);
+    if(!file.is_open()) {
+        throw std::invalid_argument("The file could not be opened!");
+    }
+
+    //Then we write the fruits to the file
+
+    for(const auto &fruit : fruits) {
+        file << fruit->getName() << " " << fruit->getOrigin() << " " << fruit->getExpiryDate() << " " << fruit->getPrice() << " " << fruit->getQuantity() << endl;
+    }
+
+    file.close();
+
+
+}
+
+void FruitRepository::loadFruits(const string& filename) {
+    //This function loads the fruits from a file to the repository
+
+    //First we open the file
+
+    ifstream file(filename);
+    if(!file.is_open()) {
+        throw std::invalid_argument("The file could not be opened!");
+    }
+
+    //We read the fruits from the file line by line
+
+    string line;
+    while(getline(file, line)) {
+        stringstream ss(line);
+        string name, origin, expiry_date;
+        double price;
+        int quantity;
+        ss >> name >> origin >> expiry_date >> price >> quantity;
+        fruits.push_back(make_shared<Fruit>(name, origin, expiry_date, price, quantity));
+    }
+
+    file.close();
+}
+
 

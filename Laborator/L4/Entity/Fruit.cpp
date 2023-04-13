@@ -56,3 +56,7 @@ void Fruit::printFruit() {
     cout << "Quantity: " << quantity_ << endl;
     cout << "Price: " << price_ << endl;
 }
+
+string Fruit::toString() {
+    return name_ + " " + origin_ + " " + expiry_date_ + " " + to_string(quantity_) + " " + to_string(price_);
+}

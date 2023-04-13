@@ -29,4 +29,7 @@ public:
     void setPrice(double price);
     void printFruit();
 
+    //Function to transform to string
+    string toString();
+
 };

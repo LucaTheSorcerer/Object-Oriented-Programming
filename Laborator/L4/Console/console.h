@@ -13,7 +13,7 @@ using namespace std;
 class ConsoleUI {
     private:
     Controller& controller;
-    void printMenu();
+    static void printMenu();
     void addFruit();
     void updateFruit();
     void removeFruit();
@@ -27,11 +27,15 @@ class ConsoleUI {
     void getFruitByQuantity();
     void getFruitByPriceAndQuantity();
     void getFruitsSortedByExpiryDate();
-    void runCommand(int command);
-    void run();
 
 public:
-    ConsoleUI(Controller& controller);
+    explicit ConsoleUI(Controller& controller);
     void start();
+
+    char readInput();
+
+    void executeChoice(char choice);
+
+    void run();
 };
 

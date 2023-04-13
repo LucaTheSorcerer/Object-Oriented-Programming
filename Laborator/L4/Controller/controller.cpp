@@ -3,7 +3,7 @@
 //
 #include "controller.h"
 
-Controller::Controller(FruitFileRepository& repository) : repository(repository) {}
+Controller::Controller(FruitRepository& repository) : repository(repository) {}
 
 void Controller::addFruit(const string &name, const string &origin, const string &expiry_date, int quantity, double price) {
     std::shared_ptr<Fruit> fruit = std::make_shared<Fruit>(name, origin, expiry_date, quantity, price);
