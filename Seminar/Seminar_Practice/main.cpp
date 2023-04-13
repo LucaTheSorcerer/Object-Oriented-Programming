@@ -45,6 +45,48 @@ void procedureK(Composite *par) {
     par->array[2] = 90;
 }
 
+class Animal {
+private:
+    int age;
+    string name;
+
+public:
+    Animal(int age, string name) {
+        this->age = age;
+        this->name = name;
+    }
+
+    void setAge(int age) {
+        this -> age = age;
+    }
+
+    int getAge() {
+        return age;
+    }
+
+    void setName(string name) {
+        this -> name = name;
+    }
+
+    string getName() {
+        return name;
+    }
+
+    void print() {
+        cout << "Name: " << name << endl;
+        cout << "Age: " << age << endl;
+    }
+
+    void eat() {
+        cout << "Animal is eating" << endl;
+    }
+
+    //Destructor
+    ~Animal() {
+        cout << "Animal is destroyed" << endl;
+    }
+};
+
 
 int main() {
     int a = 1, b = 1;
@@ -102,5 +144,39 @@ int main() {
     double w2 = *(p + 2);
     cout << w2 << endl;
 
+    int* ptr;
+
+    int x;
+    ptr = &x;
+
+    x = 2;
+
+    cout << *ptr << endl;
+
+    int y{*ptr};
+    cout << y << endl;
+
+    int z = 2;
+    int &ref = z;
+    ref += 1;
+    cout << z << ' ' << ref << endl;
+
+    int *pointer = new int{2};
+    *pointer += 1;
+    cout << *pointer << endl;
+
+    Animal dog{2, "Dog"};
+    dog.print();
+    dog.eat();
+
+    auto *cat = new Animal{3, "Cat"};
+    cat->print();
+    cat->eat();
+    delete cat;
+
+    cout << static_cast<int>(2.6) << endl;
+
+
     return 0;
+
 }

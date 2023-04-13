@@ -51,13 +51,16 @@ DSM<T>::DSM(const DSM<T> &other) {
     matrix = new T *[capacity];
     for (int iterator = 0; iterator < capacity; iterator++) {
         matrix[iterator] = new T[capacity];
+    }
+    elementNames = new string[capacity];
 
-        for (int j = 0; j < capacity; j++) {
-            matrix[iterator][j] = other.matrix[iterator][j];
+
+    for (int i = 0; i < elementCount; i++) {
+        elementNames[i] = other.elementNames[i];
+        for (int j = 0; j < elementCount; j++) {
+            matrix[i][j] = other.matrix[i][j];
         }
     }
-
-    elementNames = new string[capacity];
 }
 
 /**
@@ -510,7 +513,7 @@ void DSM<T>::resizeElements(int newCapacity) {
  */
 template<typename T>
 DSM<T>::~DSM() {
-    for (int iterator = 0; iterator < capacity; iterator++) {
+    for (int iterator = 0; iterator < elementCount; iterator++) {
         delete[] matrix[iterator];
     }
 
@@ -518,8 +521,39 @@ DSM<T>::~DSM() {
     delete[] elementNames;
 }
 
+template<typename T>
+DSM<T>& DSM<T>::operator=(const DSM<T> &other) {
+    if (this == &other) {
+        return *this;
+    }
+
+    // free old resources
+    for (int i = 0; i < capacity; i++) {
+        delete[] matrix[i];
+    }
+    delete[] matrix;
+    delete[] elementNames;
+
+    // copy new resources
+    elementCount = other.elementCount;
+    capacity = other.capacity;
+    matrix = new T*[capacity];
+    for (int i = 0; i < capacity; i++) {
+        matrix[i] = new T[capacity];
+        for (int j = 0; j < capacity; j++) {
+            matrix[i][j] = other.matrix[i][j];
+        }
+    }
+    elementNames = new string[capacity];
+    for (int i = 0; i < capacity; i++) {
+        elementNames[i] = other.elementNames[i];
+    }
+
+    return *this;
+}
+
+
 template class DSM<int>;
-template class DSM<double>;
 template class DSM<float>;
-template class DSM<char>;
+template class DSM<double>;
 template class DSM<bool>;

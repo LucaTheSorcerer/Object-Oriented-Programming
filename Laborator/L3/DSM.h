@@ -82,6 +82,8 @@ public:
     int countFromLinks(const string &element);
 
     int countAllLinks();
+
+    DSM& operator=(const DSM& other);
 };
 
 
