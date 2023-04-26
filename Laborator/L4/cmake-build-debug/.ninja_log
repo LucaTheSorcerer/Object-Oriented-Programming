@@ -1,0 +1,9 @@
+# ninja log v5
+2	253	1682422273712270031	CMakeFiles/L4.dir/Controller/controller.cpp.o	fb9d8dbec5c82ba8
+0	61	1682536366378740715	build.ninja	65c93cec94d92bc8
+2	419	1682422273880242907	CMakeFiles/L4.dir/Repository/fruit_repository.cpp.o	b93b5fe45fc00741
+3	230	1682521747240264527	CMakeFiles/L4.dir/Exception/FruitException.cpp.o	1d223495ffc1cb5d
+1	300	1682422273760606998	CMakeFiles/L4.dir/Shop.cpp.o	2dbd9941dc063020
+1	284	1682422273743764060	CMakeFiles/L4.dir/Entity/Fruit.cpp.o	557379f217721e08
+1	294	1682521747303630620	CMakeFiles/L4.dir/Console/console.cpp.o	90c5a3bb5013388
+294	513	1682521747524267015	L4	1bbab80baaec76cc

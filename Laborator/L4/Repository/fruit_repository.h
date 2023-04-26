@@ -13,30 +13,38 @@ using namespace std;
 
 class FruitRepository {
 
-protected:
-    list<shared_ptr<Fruit>> fruits;
-
 private:
     string filename;
+
+    list<shared_ptr<Fruit>> fruits;
 
 public:
     FruitRepository();
     //constructor with a filename
-    explicit FruitRepository(const string& filename);
-    void addFruit(shared_ptr<Fruit>& FruitList);
-    void updateFruit(shared_ptr<Fruit>& fruit);
-    void removeFruit(const string& name, const string& origin);
-    list<shared_ptr<Fruit>> getAllFruits();
-    [[nodiscard]] list<shared_ptr<Fruit>> searchFruit(const string& search_string) const;
-    [[nodiscard]] list<shared_ptr<Fruit>> getLowStockFruit(int threshold) const;
-    [[nodiscard]] list<shared_ptr<Fruit>> getExpiredFruit(const string& current_date) ;
-    [[nodiscard]] list<shared_ptr<Fruit>> getFruitByOrigin(const string& origin) const;
-    [[nodiscard]] list<shared_ptr<Fruit>> getFruitByExpiryDate(const string& expiry_date) const;
-    [[nodiscard]] list<shared_ptr<Fruit>> getFruitByPrice(double price) const;
-    [[nodiscard]] list<shared_ptr<Fruit>> getFruitByQuantity(int quantity) const;
-    [[nodiscard]] list<shared_ptr<Fruit>> getFruitByPriceAndQuantity(double price, int quantity) const;
+
+    explicit FruitRepository(const string &filename);
+
+    void addFruit(const shared_ptr<Fruit> &fruit);
+
+    void removeFruit(const shared_ptr<Fruit> &fruit);
+
+    [[nodiscard]] list<shared_ptr<Fruit>> getFruitContainingString(const string &name) const;
+
+    [[nodiscard]] list<shared_ptr<Fruit>> getLowQuantityFruits(int threshold) const;
+
     [[nodiscard]] list<shared_ptr<Fruit>> getFruitsSortedByExpiryDate() const;
-    void saveFruits(const string& filename);
-    void loadFruits(const string& filename);
+
+    void saveFruits(const string &filename);
+
+    void loadFruits(const string &filename);
+
+    void updateFruit(shared_ptr<Fruit> &fruit);
+
+    //function that prints all fruits from the repository to the user
+
+    void printFruits() const;
+
+
 };
+
 

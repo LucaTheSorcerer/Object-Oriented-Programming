@@ -3,6 +3,7 @@
 //
 #include <fstream>
 #include <sstream>
+#include <iostream>
 #include "fruit_repository.h"
 
 FruitRepository::FruitRepository() {
@@ -27,9 +28,26 @@ FruitRepository::FruitRepository(const string &file_name) {
     loadFruits(file_name);
 }
 
-void FruitRepository::addFruit(shared_ptr<Fruit> &fruit) {
+void FruitRepository::addFruit(const shared_ptr<Fruit> &fruit) {
+    for (auto& f : fruits) {
+        if (f->getName() == fruit->getName() && f->getOrigin() == fruit->getOrigin()) {
+            f->setQuantity(f->getQuantity() + fruit->getQuantity());
+            return;
+        }
+    }
     fruits.push_back(fruit);
 }
+
+void FruitRepository::removeFruit(const shared_ptr<Fruit> &fruit) {
+    //This function removes a fruit from the repository
+    for (auto it = fruits.begin(); it != fruits.end(); ++it) {
+        if ((*it)->getName() == fruit->getName() && (*it)->getOrigin() == fruit->getOrigin()) {
+            fruits.erase(it);
+            return;
+        }
+    }
+}
+
 
 void FruitRepository::updateFruit(shared_ptr<Fruit> &fruit) {
     //This function updates a fruit from the repository
@@ -40,156 +58,42 @@ void FruitRepository::updateFruit(shared_ptr<Fruit> &fruit) {
     }
 }
 
-list<shared_ptr<Fruit>> FruitRepository::getAllFruits() {
-    //This function returns all the fruits from the repository
-    return fruits;
-}
 
-list<shared_ptr<Fruit>> FruitRepository::searchFruit(const string& search_string) const {
-    //This function searches for a fruit in the repository
-    list<shared_ptr<Fruit>> search_results;
-    for(const auto &fruit : fruits) {
-        if(fruit->getName() == search_string || fruit->getOrigin() == search_string) {
-            search_results.push_back(fruit);
+
+//list<shared_ptr<Fruit>> FruitRepository::getFruitContainingString(const string& search_string) const {
+//    //This function searches for a fruit in the repository
+//    list<shared_ptr<Fruit>> search_results;
+//    for(const auto &fruit : fruits) {
+//        if(fruit->getName() == search_string || fruit->getOrigin() == search_string) {
+//            search_results.push_back(fruit);
+//        }
+//    }
+//
+//    return search_results;
+//}
+
+list<shared_ptr<Fruit>> FruitRepository::getFruitContainingString(const string &name) const{
+    std::list<std::shared_ptr<Fruit>> result;
+    for (auto& f : fruits) {
+        if (f->getName().find(name) != std::string::npos) {
+            result.push_back(f);
         }
     }
-
-    return search_results;
+    result.sort([](const std::shared_ptr<Fruit>& f1, const std::shared_ptr<Fruit>& f2) { return f1->getName() < f2->getName(); });
+    return result;
 }
 
-list<shared_ptr<Fruit>> FruitRepository::getLowStockFruit(int threshold) const {
-    //This function returns all the fruits that have a quantity lower than the given threshhold
-    list<shared_ptr<Fruit>> low_stock_fruits;
-    for(const auto &fruit : fruits) {
-        if(fruit->getQuantity() < threshold) {
-            low_stock_fruits.push_back(fruit);
+std::list<std::shared_ptr<Fruit>> FruitRepository::getLowQuantityFruits(int threshold) const  {
+    std::list<std::shared_ptr<Fruit>> result;
+    for (auto& f : fruits) {
+        if (f->getQuantity() < threshold) {
+            result.push_back(f);
         }
     }
-
-    return low_stock_fruits;
+    result.sort([](std::shared_ptr<Fruit> f1, std::shared_ptr<Fruit> f2) { return f1->getName() < f2->getName(); });
+    return result;
 }
 
-list<shared_ptr<Fruit>> FruitRepository:: getExpiredFruit(const string& current_date) {
-    //This function returns all fruits that have an expiry date before the current date
-    list<shared_ptr<Fruit>> expired_fruits;
-    for(const auto &fruit : fruits) {
-        if(fruit->getExpiryDate() < current_date) {
-            expired_fruits.push_back(fruit);
-        }
-    }
-
-    return expired_fruits;
-}
-
-list<shared_ptr<Fruit>> FruitRepository::getFruitByOrigin(const string& origin) const {
-    //This function returns all the fruits from the same given origin
-    list<shared_ptr<Fruit>> fruits_by_origin;
-    for(auto const &fruit : fruits) {
-        if(fruit->getOrigin() == origin) {
-            fruits_by_origin.push_back(fruit);
-        }
-    }
-
-    return fruits_by_origin;
-}
-
-list<shared_ptr<Fruit>> FruitRepository::getFruitByExpiryDate(const string& expiry_date) const {
-    //This function returns all the fruits based on the given expiry date
-    list<shared_ptr<Fruit>> fruits_by_expiry_date;
-    for(auto const &fruit : fruits) {
-        if(fruit->getExpiryDate() == expiry_date) {
-            fruits_by_expiry_date.push_back(fruit);
-        }
-    }
-
-    return fruits_by_expiry_date;
-}
-
-list<shared_ptr<Fruit>> FruitRepository::getFruitByPrice(double price) const {
-    //This function returns all the fruits based on the given price
-
-    //First check if the given price is negative
-    if(price < 0) {
-        throw std::invalid_argument("The price cannot be negative!");
-    }
-
-    list<shared_ptr<Fruit>> fruits_by_price;
-    for(auto const &fruit : fruits) {
-        if(fruit->getPrice() == price) {
-            fruits_by_price.push_back(fruit);
-        }
-    }
-
-    return fruits_by_price;
-}
-
-list<shared_ptr<Fruit>> FruitRepository::getFruitByQuantity(int quantity) const {
-    //This function returns all the fruits based on the given quantity
-
-    //First check if the given quantity is negative
-    if(quantity < 0) {
-        throw std::invalid_argument("The quantity cannot be negative!");
-    }
-
-    list<shared_ptr<Fruit>> fruits_by_quantity;
-    for(auto const &fruit : fruits) {
-        fruits_by_quantity.push_back(fruit);
-    }
-
-    return fruits_by_quantity;
-}
-
-list<shared_ptr<Fruit>> FruitRepository::getFruitByPriceAndQuantity(double price, int quantity) const {
-    //This function returns all the fruits based on the given price and quantity
-
-    //First we check if the given price and quantity are negative
-
-    if(price < 0 && quantity < 0) {
-        throw std::invalid_argument("The price and quantity cannot be negative!");
-    }
-
-    if(price < 0) {
-        throw std::invalid_argument("The price cannot be negative!");
-    }
-
-    if(quantity < 0) {
-        throw std::invalid_argument("The quantity cannot be negative!");
-    }
-
-
-    list<shared_ptr<Fruit>> fruits_by_price_and_quantity;
-    for(auto const &fruit : fruits) {
-        if(fruit->getPrice() == price && fruit->getQuantity() == quantity) {
-            fruits_by_price_and_quantity.push_back(fruit);
-        }
-    }
-
-
-    return fruits_by_price_and_quantity;
-}
-
-list<shared_ptr<Fruit>> FruitRepository::getFruitsSortedByExpiryDate() const {
-    //This function returns all the fruits sorted by expiry date using the sort function
-
-    list<shared_ptr<Fruit>> sorted_fruits = fruits;
-    sorted_fruits.sort([](const shared_ptr<Fruit> &fruit1, const shared_ptr<Fruit> &fruit2) {
-        return fruit1->getExpiryDate() < fruit2->getExpiryDate();
-    });
-
-    return sorted_fruits;
-}
-
-
-
-void FruitRepository::removeFruit(const string &name, const string &origin) {
-    //This function removes a fruit from the repository
-    for(auto it = fruits.begin(); it != fruits.end(); it++) {
-        if((*it)->getName() == name && (*it)->getOrigin() == origin) {
-            fruits.erase(it);
-            break;
-        }
-    }
-}
 
 void FruitRepository::saveFruits(const string& filename) {
     //This function saves the fruits from the repository to a file
@@ -236,5 +140,32 @@ void FruitRepository::loadFruits(const string& filename) {
 
     file.close();
 }
+
+
+
+void FruitRepository::printFruits() const {
+    //This function prints the fruits from the repository to the user
+
+    for(const auto &fruit : fruits) {
+        cout << fruit->getName() << " " << fruit->getOrigin() << " " << fruit->getExpiryDate() << " " << fruit->getPrice() << " " << fruit->getQuantity() << endl;
+    }
+
+}
+
+list<shared_ptr<Fruit>> FruitRepository::getFruitsSortedByExpiryDate() const {
+    //This function sorts the fruits from the repository by expiry date
+
+    list<shared_ptr<Fruit>> sorted_fruits = fruits;
+    sorted_fruits.sort([](const shared_ptr<Fruit> &fruit1, const shared_ptr<Fruit> &fruit2) {
+        return fruit1->getExpiryDate() < fruit2->getExpiryDate();
+    });
+
+    return sorted_fruits;
+}
+
+
+
+
+
 
 
