@@ -4,31 +4,30 @@
 #include <fstream>
 #include <sstream>
 #include <iostream>
-#include "fruit_repository.h"
+#include "FruitRepository.h"
 
-FruitRepository::FruitRepository() {
-    //Generate some sample data for testing
-    shared_ptr<Fruit> fruit1 = make_shared<Fruit>("Apple", "Romania", "2023-04-13", 10, 2.5);
-    shared_ptr<Fruit> fruit2 = make_shared<Fruit>("Banana", "USA", "2023-04-13", 10, 5.5);
-    shared_ptr<Fruit> fruit3 = make_shared<Fruit>("Orange", "Spain", "2023-04-13", 10, 3.5);
-    shared_ptr<Fruit> fruit4 = make_shared<Fruit>("Pineapple", "Brazil", "2023-04-13", 10, 4.5);
-    shared_ptr<Fruit> fruit5 = make_shared<Fruit>("Strawberry", "France", "2023-04-13", 10, 6.5);
-    shared_ptr<Fruit> fruit6 = make_shared<Fruit>("Watermelon", "China", "2023-04-13", 10, 7.5);
-    shared_ptr<Fruit> fruit7 = make_shared<Fruit>("Peach", "Italy", "2023-04-13", 10, 8.5);
-    shared_ptr<Fruit> fruit8 = make_shared<Fruit>("Pear", "Germany", "2023-04-13", 10, 9.5);
+Repository::FruitRepository::FruitRepository(const string &file_) {
+    this->filename = file_;
+
+    std::ifstream file(file_);
+
+    if (!file.is_open()) {
+        throw std::runtime_error("File could not be opened!");
+    }
+
+    fruits = std::make_shared<list<Fruit>>();
+
+    string line;
+    std::getline(file, line);
+
+    while (std::getline(file, line)) {
+        Fruit fruit = convertFromString(line);
+        fruits->push_back(fruit);
+    }
 }
 
-//void FruitRepository::addOrUpdateFruit(shared_ptr<Fruit> &fruit) {
-//    //this function adds or updates a fruit to the repository
-//
-//}
 
-FruitRepository::FruitRepository(const string &file_name) {
-    this->filename = file_name;
-    loadFruits(file_name);
-}
-
-void FruitRepository::addFruit(const shared_ptr<Fruit> &fruit) {
+void Repository::FruitRepository::addFruit(const shared_ptr<Fruit> &fruit) {
     for (auto& f : fruits) {
         if (f->getName() == fruit->getName() && f->getOrigin() == fruit->getOrigin()) {
             f->setQuantity(f->getQuantity() + fruit->getQuantity());
@@ -38,7 +37,7 @@ void FruitRepository::addFruit(const shared_ptr<Fruit> &fruit) {
     fruits.push_back(fruit);
 }
 
-void FruitRepository::removeFruit(const shared_ptr<Fruit> &fruit) {
+void Repository::FruitRepository::removeFruit(const shared_ptr<Fruit> &fruit) {
     //This function removes a fruit from the repository
     for (auto it = fruits.begin(); it != fruits.end(); ++it) {
         if ((*it)->getName() == fruit->getName() && (*it)->getOrigin() == fruit->getOrigin()) {
@@ -49,7 +48,7 @@ void FruitRepository::removeFruit(const shared_ptr<Fruit> &fruit) {
 }
 
 
-void FruitRepository::updateFruit(shared_ptr<Fruit> &fruit) {
+void Repository::FruitRepository::updateFruit(shared_ptr<Fruit> &fruit) {
     //This function updates a fruit from the repository
     for(auto &i : fruits) {
         if(i->getName() == fruit->getName() && i->getOrigin() == fruit->getOrigin()) {
@@ -72,7 +71,7 @@ void FruitRepository::updateFruit(shared_ptr<Fruit> &fruit) {
 //    return search_results;
 //}
 
-list<shared_ptr<Fruit>> FruitRepository::getFruitContainingString(const string &name) const{
+list<shared_ptr<Fruit>> Repository::FruitRepository::getFruitContainingString(const string &name) const{
     std::list<std::shared_ptr<Fruit>> result;
     for (auto& f : fruits) {
         if (f->getName().find(name) != std::string::npos) {

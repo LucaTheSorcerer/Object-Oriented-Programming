@@ -133,24 +133,24 @@
 		},
 		{
 			"backtrace" : 1,
-			"path" : "Repository/fruit_repository.h",
+			"path" : "Repository/FruitRepository.h",
 			"sourceGroupIndex" : 1
 		},
 		{
 			"backtrace" : 1,
 			"compileGroupIndex" : 0,
-			"path" : "Repository/fruit_repository.cpp",
+			"path" : "Repository/FruitRepository.cpp",
 			"sourceGroupIndex" : 0
 		},
 		{
 			"backtrace" : 1,
 			"compileGroupIndex" : 0,
-			"path" : "Controller/controller.cpp",
+			"path" : "Controller/Controller.cpp",
 			"sourceGroupIndex" : 0
 		},
 		{
 			"backtrace" : 1,
-			"path" : "Controller/controller.h",
+			"path" : "Controller/Controller.h",
 			"sourceGroupIndex" : 1
 		},
 		{

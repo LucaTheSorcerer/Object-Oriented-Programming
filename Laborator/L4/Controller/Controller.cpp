@@ -1,7 +1,7 @@
 //
 // Created by Luca Tudor on 13.04.2023.
 //
-#include "controller.h"
+#include "Controller.h"
 
 Controller::Controller(FruitRepository& repository) : repository(repository) {}
 

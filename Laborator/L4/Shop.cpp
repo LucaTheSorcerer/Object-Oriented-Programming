@@ -1,7 +1,7 @@
 #include <iostream>
 #include "Console/Console.h"
-#include "Controller/controller.h"
-#include "Repository/fruit_repository.h"
+#include "Controller/Controller.h"
+#include "Repository/FruitRepository.h"
 #include "Entity/Fruit.h"
 #include <memory>
 #include <list>

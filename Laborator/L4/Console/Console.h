@@ -2,7 +2,7 @@
 // Created by Luca Tudor on 13.04.2023.
 //
 
-#include "../Controller/controller.h"
+#include "../Controller/Controller.h"
 #include <iostream>
 #include <string>
 #include <vector>

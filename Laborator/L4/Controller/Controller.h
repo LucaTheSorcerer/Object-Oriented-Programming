@@ -7,7 +7,7 @@
 #include <string>
 #include <vector>
 #include "../Entity/Fruit.h"
-#include "../Repository/fruit_repository.h"
+#include "../Repository/FruitRepository.h"
 
 using namespace std;
 
