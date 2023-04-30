@@ -45,12 +45,16 @@ namespace Repository {
 
         void removeFruit(const Fruit &fruit);
 
+        void updateFruit(Fruit &fruit);
+
+
         shared_ptr<list<Fruit>> getAllFruits() const;
 
         //function that writes the fruits to the file
         void writeFruitsToFile() const;
 
 
+        void deleteAllFruits();
     };
 }
 

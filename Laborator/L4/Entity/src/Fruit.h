@@ -4,21 +4,23 @@
 
 #pragma once
 #include <string>
+#include "../Date/Date/Date.h"
 using std::string;
 using std::stringstream;
+using Time::Date;
 
 namespace Entity {
     class Fruit {
     private:
         string name_;
         string origin_;
-        string expiry_date_;
+        Date expiry_date_;
         string producer_;
         int quantity_;
         double price_;
 
     public:
-        Fruit(string name, string origin, string producer, string expiry_date, int quantity, double price);
+        Fruit(string name, string origin="Romania", string producer="Gicu de la Craiova", const Date &expiry_date = Date(2024, 1, 1), int quantity=1, double price=1);
 
         //Copy constructor
         Fruit(const Fruit &other);
@@ -28,53 +30,36 @@ namespace Entity {
 
         //Getters
         [[nodiscard]] string getName() const;
-
         [[nodiscard]] int getQuantity() const;
-
         [[nodiscard]] const string &getOrigin() const;
-
-        [[nodiscard]] const string &getExpiryDate() const;
-
+        [[nodiscard]] Date getExpiryDate() const;
         [[nodiscard]] double getPrice() const;
-
         [[nodiscard]] string getProducer() const;
+        [[nodiscard]] std::string getFruitAsString() const;
 
         //Setters
         void setName(const string &name);
-
         void setOrigin(const string &origin);
-
-        void setExpiryDate(const string &expiryDate);
-
+        void setExpiryDate(const Date &expiryDate);
         void setQuantity(int quantity);
-
         void setPrice(double price);
-
         void setProducer(const string &newProducer);
-
         void printFruit();
 
         //Function to transform to string
-        string toString();
 
         //Overloaded operators
         Fruit &operator=(const Fruit &other);
-
         bool operator==(const Fruit &other) const;
-
         bool operator!=(const Fruit &other) const;
-
         bool operator<(const Fruit &other) const;
-
         bool operator>(const Fruit &other) const;
-
         bool operator<=(const Fruit &other) const;
-
         bool operator>=(const Fruit &other) const;
 
-        friend ostream &operator<<(ostream &os, const Fruit &fruit);
+        friend std::ostream &operator<<(std::ostream &os, const Fruit &fruit);
 
-        friend istream &operator>>(istream &is, Fruit &fruit);
+        friend std::istream &operator>>(std::istream &is, Fruit &fruit);
 
     };
 }
