@@ -3,7 +3,7 @@
 //
 
 #pragma once
-#include "../Entity/test/testEntity.h"
+
 
 
 void testAllComponents();

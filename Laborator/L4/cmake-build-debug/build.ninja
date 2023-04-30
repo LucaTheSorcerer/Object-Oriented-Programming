@@ -103,6 +103,12 @@ build CMakeFiles/L4.dir/Test/testAllComponents.cpp.o: CXX_COMPILER__L4_Debug /Us
   OBJECT_DIR = CMakeFiles/L4.dir
   OBJECT_FILE_DIR = CMakeFiles/L4.dir/Test
 
+build CMakeFiles/L4.dir/Date/test/testDate.cpp.o: CXX_COMPILER__L4_Debug /Users/lulu/UBB/Semestrul_II/Object-Oriented-Programming/Laborator/L4/Date/test/testDate.cpp || cmake_object_order_depends_target_L4
+  DEP_FILE = CMakeFiles/L4.dir/Date/test/testDate.cpp.o.d
+  FLAGS = -g -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.3.sdk -fcolor-diagnostics -std=gnu++20
+  OBJECT_DIR = CMakeFiles/L4.dir
+  OBJECT_FILE_DIR = CMakeFiles/L4.dir/Date/test
+
 
 # =============================================================================
 # Link build statements for EXECUTABLE target L4
@@ -111,7 +117,7 @@ build CMakeFiles/L4.dir/Test/testAllComponents.cpp.o: CXX_COMPILER__L4_Debug /Us
 #############################################
 # Link the executable L4
 
-build L4: CXX_EXECUTABLE_LINKER__L4_Debug CMakeFiles/L4.dir/Shop.cpp.o CMakeFiles/L4.dir/Entity/src/Fruit.cpp.o CMakeFiles/L4.dir/Repository/src/FruitRepository.cpp.o CMakeFiles/L4.dir/Controller/src/Controller.cpp.o CMakeFiles/L4.dir/Console/src/Console.cpp.o CMakeFiles/L4.dir/Exception/src/FruitException.cpp.o CMakeFiles/L4.dir/Date/src/Date/Date.cpp.o CMakeFiles/L4.dir/Entity/test/testEntity.cpp.o CMakeFiles/L4.dir/Test/testAllComponents.cpp.o
+build L4: CXX_EXECUTABLE_LINKER__L4_Debug CMakeFiles/L4.dir/Shop.cpp.o CMakeFiles/L4.dir/Entity/src/Fruit.cpp.o CMakeFiles/L4.dir/Repository/src/FruitRepository.cpp.o CMakeFiles/L4.dir/Controller/src/Controller.cpp.o CMakeFiles/L4.dir/Console/src/Console.cpp.o CMakeFiles/L4.dir/Exception/src/FruitException.cpp.o CMakeFiles/L4.dir/Date/src/Date/Date.cpp.o CMakeFiles/L4.dir/Entity/test/testEntity.cpp.o CMakeFiles/L4.dir/Test/testAllComponents.cpp.o CMakeFiles/L4.dir/Date/test/testDate.cpp.o
   FLAGS = -g -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.3.sdk
   OBJECT_DIR = CMakeFiles/L4.dir
   POST_BUILD = :

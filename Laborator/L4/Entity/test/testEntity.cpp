@@ -238,6 +238,7 @@ void testExtendedEntity() {
 }
 
 void testEntity() {
+    cout << "Testing Entity..." << endl;
     testDefaultConstructor();
     testCopyConstructor();
     testDefaultParameters();
