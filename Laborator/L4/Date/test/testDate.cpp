@@ -54,7 +54,7 @@ void extendedDateTest() {
     assert(date.getMonth() == 2);
     assert(date.getYear() == 2021);
 
-    //test safe quard and setters
+    //test safequards and setters
 
     try {
         date.setDay(0);
@@ -67,7 +67,7 @@ void extendedDateTest() {
     //test exceptions and invalid dates
 
     try {
-        Time::Date date(2020, 13, 1);
+        Time::Date date1(2020, 13, 1);
         assert(false);
     }
     catch (std::invalid_argument& e) {
