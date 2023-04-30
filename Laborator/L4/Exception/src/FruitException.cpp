@@ -8,6 +8,6 @@ FruitException::FruitException(const string &message) {
 }
 
 const char *FruitException::what() const noexcept {
-    return exception::what();
+    return this->message.c_str();
 }
 
