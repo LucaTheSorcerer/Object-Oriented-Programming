@@ -1,8 +1,8 @@
 #include <iostream>
-#include "Console/Console.h"
-#include "Controller/Controller.h"
-#include "Repository/FruitRepository.h"
-#include "Entity/Fruit.h"
+#include "Console/src/Console.h"
+#include "Controller/src/Controller.h"
+#include "Repository/src/FruitRepository.h"
+#include "Entity/src/Fruit.h"
 #include <memory>
 #include <list>
 

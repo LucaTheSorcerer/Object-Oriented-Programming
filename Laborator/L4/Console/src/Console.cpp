@@ -8,7 +8,7 @@
 #include <list>
 #include <sstream>
 
-#include "../Exception/FruitException.h"
+#include "../../Exception/src/FruitException.h"
 
 using std::cin, std::cout, std::endl;
 

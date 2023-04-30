@@ -3,4 +3,4 @@ project(L4)
 
 set(CMAKE_CXX_STANDARD 20)
 
-add_executable(L4 Shop.cpp Entity/Fruit.cpp Entity/Fruit.h Repository/FruitRepository.h Repository/FruitRepository.cpp Controller/Controller.cpp Controller/Controller.h Console/Console.h Console/Console.cpp Exception/FruitException.h Exception/FruitException.cpp Entity/Entity.h Console/UI.h)
+add_executable(L4 Shop.cpp Entity/src/Fruit.cpp Entity/src/Fruit.h Repository/src/FruitRepository.h Repository/src/FruitRepository.cpp Controller/src/Controller.cpp Controller/src/Controller.h Console/src/Console.h Console/src/Console.cpp Exception/src/FruitException.h Exception/src/FruitException.cpp Entity/src/Entity.h Console/src/UI.h Date/src/Date/Date.cpp Date/src/Date/Date.h Date/src/Time.h)

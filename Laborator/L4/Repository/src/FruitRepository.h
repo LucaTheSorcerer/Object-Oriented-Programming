@@ -8,7 +8,7 @@
 #include <list>
 #include <string>
 #include <utility>
-#include "../Entity/Fruit.h"
+#include "../../Entity/src/Fruit.h"
 
 using std::shared_ptr, std::list, std::string, Entity::Fruit;
 

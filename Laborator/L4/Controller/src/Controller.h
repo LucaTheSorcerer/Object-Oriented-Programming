@@ -6,8 +6,8 @@
 
 #include <string>
 #include <vector>
-#include "../Entity/Fruit.h"
-#include "../Repository/FruitRepository.h"
+#include "../../Entity/src/Fruit.h"
+#include "../../Repository/src/FruitRepository.h"
 
 using namespace std;
 

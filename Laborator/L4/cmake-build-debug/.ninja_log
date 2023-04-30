@@ -1,5 +1,5 @@
 # ninja log v5
-0	61	1682711371062616602	build.ninja	65c93cec94d92bc8
+0	61	1682865941024362858	build.ninja	65c93cec94d92bc8
 3	230	1682521747240264527	CMakeFiles/L4.dir/Exception/FruitException.cpp.o	1d223495ffc1cb5d
 1	300	1682422273760606998	CMakeFiles/L4.dir/Shop.cpp.o	2dbd9941dc063020
 1	284	1682422273743764060	CMakeFiles/L4.dir/Entity/Fruit.cpp.o	557379f217721e08
