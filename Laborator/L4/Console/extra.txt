@@ -4,7 +4,7 @@
 //    list<shared_ptr<Fruit>> fruits = this->controller.getAllFruits();
 //
 //    if (fruits.empty()) {
-//        cout << "There are no fruits in the repository!" << endl;
+//        cout << "There are no fruits in the repositoryFruit!" << endl;
 //        return;
 //    }
 //
@@ -119,7 +119,7 @@
 //    list<shared_ptr<Fruit>> fruits = this->controller.getFruitByQuantity();
 //
 //    if (fruits.empty()) {
-//        cout << "There are no fruits in the repository!" << endl;
+//        cout << "There are no fruits in the repositoryFruit!" << endl;
 //        return;
 //    }
 //
@@ -139,7 +139,7 @@
 //    list<shared_ptr<Fruit>> fruits = this->controller.getFruitByPrice(10.0);
 //
 //    if (fruits.empty()) {
-//        cout << "There are no fruits in the repository!" << endl;
+//        cout << "There are no fruits in the repositoryFruit!" << endl;
 //        return;
 //    }
 //
@@ -156,7 +156,7 @@
 //    list<shared_ptr<Fruit>> fruits = this->controller.getFruitByPriceAndQuantity(10.0, 100);
 //
 //    if (fruits.empty()) {
-//        cout << "There are no fruits in the repository!" << endl;
+//        cout << "There are no fruits in the repositoryFruit!" << endl;
 //        return;
 //    }
 //
@@ -173,7 +173,7 @@
 //    list<shared_ptr<Fruit>> fruits = this->controller.getFruitsSortedByExpiryDate();
 //
 //    if (fruits.empty()) {
-//        cout << "There are no fruits in the repository!" << endl;
+//        cout << "There are no fruits in the repositoryFruit!" << endl;
 //        return;
 //    }
 //

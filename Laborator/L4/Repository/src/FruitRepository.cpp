@@ -1,99 +1,89 @@
 //
 // Created by Luca Tudor on 13.04.2023.
 //
-//#include <fstream>
-//#include <sstream>
-//#include <iostream>
-//#include "FruitRepository.h"
-//
-//Repository::FruitRepository::FruitRepository(const string &file_) {
-//    this->filename = file_;
-//
-//    std::ifstream file(file_);
-//
-//    if (!file.is_open()) {
-//        throw std::runtime_error("File could not be opened!");
-//    }
-//
-//    fruits = std::make_shared<list<Fruit>>();
-//
-//    string line;
-//    std::getline(file, line);
-//
-//    while (std::getline(file, line)) {
-//        Fruit fruit = convertFromString(line);
-//        fruits->push_back(fruit);
-//    }
-//
-//    file.close();
-//}
-//
-//
-//void Repository::FruitRepository::addFruit(const Fruit &fruit) {
-//    //This function adds a fruit to the repositor
-//    fruits->push_back(fruit);
-//}
-//
-//void Repository::FruitRepository::removeFruit(const Fruit &fruit) {
-//    //This function removes a fruit from the repository
-//    auto iterator = std::find(fruits->begin(), fruits->end(), fruit);
-//    if(iterator != fruits->end()) {
-//        fruits->erase(iterator);
-//    }
-//}
-//
-//
-//void Repository::FruitRepository::updateFruit(Fruit &fruit) {
-//    //This function updates a fruit from the repository
-//    auto iterator = std::find(fruits->begin(), fruits->end(), fruit);
-//    if(iterator != fruits->end()) {
-//        *iterator = fruit;
-//    }
-//}
-//
-//shared_ptr<list<Fruit>> Repository::FruitRepository::getAllFruits() const {
-//    //This function returns all the fruits from the repository
-//    return fruits;
-//}
-//
-//void Repository::FruitRepository::deleteAllFruits() {
-////This function deletes all the fruits from the data base file
-//    fruits->clear();
-//    writeFruitsToFile();
-//}
-//
-//
-//void Repository::FruitRepository::writeFruitsToFile() const {
-//    std::ofstream file(filename, std::ios::trunc);
-//
-//    string dataBase{};
-//
-//    for(auto &fruit : *fruits) {
-//        dataBase += fruit.toString() + "\n";
-//    }
-//
-//}
-//
-//Entity::Fruit Repository::FruitRepository::convertFromString(const std::string &fruit) {
-//    std::stringstream ss(fruit);
-//
-//    string name, origin, expiry_date, producer;
-//
-//    int quantity;
-//    double price;
-//    char delimiter;
-//
-//    std::getline(ss, name, ',');
-//    std::getline(ss, origin, ',');
-//    std::getline(ss, producer, ',');
-//    std::getline(ss, expiry_date, ',');
-//    ss >> quantity >> delimiter >> price;
-//
-//    std::
-//
-//}
+
+#include "FruitRepository.h"
+#include "../../Exception/src/FruitException.h"
 
 
+Repository::FruitRepository::FruitRepository(string filename_) : filename(std::move(filename_)) {
+     std::ifstream file(filename);
 
+     //check is file is not opened correctly
+    if (!file.is_open()) {
+        throw FruitException("File could not be opened!");
+    }
 
+    fruits = std::make_shared<list<Fruit>>();
+    //read from file
+    string line;
+    while (getline(file, line)) {
+        Fruit fruit = convertFromString(line);
+        fruits->push_back(fruit);
+    }
+
+    file.close();
+}
+
+void Repository::FruitRepository::addFruit(const Fruit &fruit) {
+    fruits->push_back(fruit);
+}
+
+void Repository::FruitRepository::removeFruit(const Fruit &fruit) {
+    auto iterator = std::find(fruits->begin(), fruits->end(), fruit);
+    if (iterator != fruits->end()) {
+        fruits->erase(iterator);
+    }
+}
+
+shared_ptr<list<Fruit>> Repository::FruitRepository::getAllFruits() const {
+    return fruits;
+}
+
+void Repository::FruitRepository::writeFruitsToFile() const {
+
+    ofstream file(filename, std::ios::trunc);
+
+    string fruit_string{};
+    for(auto iterator = fruits->begin(); iterator != fruits->end(); ++iterator){
+        fruit_string += (iterator->getFruitAsString());
+        if(iterator != --fruits->end()){
+            fruit_string += "\n";
+        }
+    }
+
+    file << fruit_string;
+    file.close();
+}
+
+void Repository::FruitRepository::deleteAllFruits() {
+    fruits->clear();
+}
+
+string Repository::FruitRepository::convertToString(const Fruit &fruit) {
+    return fruit.getFruitAsString();
+}
+
+Fruit Repository::FruitRepository::convertFromString(const string &fruit) {
+
+    std::stringstream stream(fruit);
+    string name, origin, producer, expiry_date;
+    int quantity;
+    double price;
+    char delimiter;
+
+    getline(stream, name, ',');
+    getline(stream, origin, ',');
+    getline(stream, producer, ',');
+    getline(stream, expiry_date, ',');
+    stream >> quantity >> delimiter >> price;
+
+    //Expiration date string to a Date object
+    std::istringstream date_stream(expiry_date);
+    int year, month, day;
+    date_stream >> year >> delimiter >> month >> delimiter >> day;
+    Time::Date date(year, month, day);
+
+    return Entity::Fruit(name, origin, producer, date, quantity, price);
+}
 

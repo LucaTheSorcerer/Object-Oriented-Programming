@@ -111,7 +111,7 @@ list<shared_ptr<Fruit>> FruitRepository::getFruitsSortedByExpiryDate() const {
 
 
 void FruitRepository::removeFruit(const string &name, const string &origin) {
-    //This function removes a fruit from the repository
+    //This function removes a fruit from the repositoryFruit
     for(auto it = fruits.begin(); it != fruits.end(); it++) {
         if((*it)->getName() == name && (*it)->getOrigin() == origin) {
             fruits.erase(it);

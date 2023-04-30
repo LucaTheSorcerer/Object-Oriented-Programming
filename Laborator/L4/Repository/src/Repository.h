@@ -8,6 +8,5 @@
 
 namespace Repository {
     class FruitRepository;
-    string dataBase = "Repository/Data/DataBase.txt";
-    string dataTest = "Repository/Data/DataTest.txt";
+
 }

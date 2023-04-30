@@ -6,35 +6,48 @@
 
 #include <string>
 #include <vector>
+#include <list>
+#include <memory>
+#include <utility>
+#include <algorithm>
+
 #include "../../Entity/src/Fruit.h"
 #include "../../Repository/src/FruitRepository.h"
+#include "../../Date/src/Date/Date.h"
 
 using namespace std;
 
-class Controller {
-private:
-    FruitRepository& repository;
-public:
-    explicit Controller(FruitRepository& m_repository);
-    void addFruit(const string& name, const string& origin, const string& expiry_date, int quantity, double price);
-    void removeFruit(const string& name, const string& origin);
-    list<shared_ptr<Fruit>> searchFruit(const string& search_string);
-    list<shared_ptr<Fruit>> getLowStockFruit(int threshold);
-    list<shared_ptr<Fruit>> getFruitSortedByExpiry();
+using Entity::Fruit, Repository::FruitRepository, Time::Date, std::list, std::shared_ptr, std::string, std::unique_ptr;
 
-    //Function that prints all the fruits
-    void printAllFruits();
+namespace ControllerFruit {
+    class Controller {
+    private:
+        FruitRepository repositoryFruit;
+        shared_ptr<list<Fruit>> fruits;
+    public:
+        //Constructor
+        explicit Controller(const string &filename = "Repository/Data/DataBase.txt");
 
-//    void updateFruit(const string& name, const string& origin, const string& expiry_date, int quantity, double price);
-//    list<shared_ptr<Fruit>> getAllFruits();
-//    list<shared_ptr<Fruit>> getFruitContainingString(const string& search_string);
-//    list<shared_ptr<Fruit>> getLowStockFruit(int threshold);
-//    list<shared_ptr<Fruit>> getExpiredFruit(const string& current_date);
-//    list<shared_ptr<Fruit>> getFruitByOrigin(const string& origin);
-//    list<shared_ptr<Fruit>> getFruitByExpiryDate(const string& expiry_date);
-//    list<shared_ptr<Fruit>> getFruitByPrice(double price);
-//    list<shared_ptr<Fruit>> getFruitByQuantity(int quantity);
-//    list<shared_ptr<Fruit>> getFruitByPriceAndQuantity(double price, int quantity);
-//    list<shared_ptr<Fruit>> getFruitsSortedByExpiryDate();
+        //Coopy constructor
 
-};
+        Controller(const Controller &controller) = default;
+
+        //Assignment operator
+
+        Controller &operator=(const Controller &controller) = default;
+
+        //Destructor
+
+        ~Controller() = default;
+
+
+        void addFruit(const string &name, const string &origin, const string &producer, const Time::Date &expiry_date,
+                      int quantity, double price);
+
+        void removeFruit(const string &name, const string &origin);
+
+        unique_ptr<list<Fruit>> getAllFruits();
+
+        unique_ptr<list<Fruit>> findFruitsContainingString(const string &search_string);
+    };
+}
