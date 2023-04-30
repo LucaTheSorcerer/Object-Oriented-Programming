@@ -18,7 +18,7 @@ namespace Time {
 
         //Default constructor
 
-        explicit Date(int year = 0, int month = 0, int day = 0);
+        explicit Date(int year_ = 0, int month_ = 0, int day_ = 0);
 
         // Copy constructor
         Date(const Date& date) = default;

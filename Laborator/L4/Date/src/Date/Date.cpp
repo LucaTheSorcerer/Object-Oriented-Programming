@@ -4,29 +4,29 @@
 #include <string>
 #include "Date.h"
 
-Time::Date::Date(int day, int month, int year) {
+Time::Date::Date(int year_, int month_, int day_) {
 
-    if(year <= 0 || month <= 0 || day <= 0)
-        throw std::invalid_argument("Invalid date");
+    if(year_ <= 0 || month_ <= 0 || day_ <= 0)
+        throw std::invalid_argument("The time must be positive");
 
-    if(month > 12)
-        throw std::invalid_argument("Invalid date");
+    if(month_ > 12)
+        throw std::invalid_argument("There are only 12 months in a year");
 
     int daysInMonth = 31;
 
-    if(month == 2) {
-        daysInMonth = (year % 4 == 0 && year % 100 != 0) || year % 400 == 0 ? 29 : 28;
+    if(month_ == 2) {
+        daysInMonth = (year_ % 4 == 0 && year_ % 100 != 0) || year_ % 400 == 0 ? 29 : 28;
     }
-    else if(month == 4 || month == 6 || month == 9 || month == 11) {
+    else if(month_ == 4 || month_ == 6 || month_ == 9 || month_ == 11) {
         daysInMonth = 30;
     }
 
-    if(day > daysInMonth)
-        throw std::invalid_argument("Invalid date");
+    if(day_ > daysInMonth)
+        throw std::invalid_argument("Invalid day");
 
-    this->day = day;
-    this->month = month;
-    this->year = year;
+    this->year = year_;
+    this->month = month_;
+    this->day = day_;
 }
 
 int Time::Date::getDay() const {
@@ -42,8 +42,7 @@ int Time::Date::getYear() const {
 }
 
 std::string Time::Date::getDateAsString() const {
-    return std::to_string(year) + "-" + std::to_string(month) + "-" + std::to_string(day);
-}
+    return std::to_string(year) + '-' + std::to_string(month) + '-' + std::to_string(day);}
 
 void Time::Date::setDay(int newDay) {
 
@@ -63,7 +62,7 @@ void Time::Date::setMonth(int newMonth) {
     if(newMonth >= 1 && newMonth <= 12)
         this->month = newMonth;
     else
-        throw std::invalid_argument("Invalid date");
+        throw std::invalid_argument("A month must be between 1 and 12");
 }
 
 void Time::Date::setYear(int newYear) {
@@ -71,7 +70,7 @@ void Time::Date::setYear(int newYear) {
     if(newYear >= 0)
         this->year = newYear;
     else
-        throw std::invalid_argument("Invalid date");
+        throw std::invalid_argument("The year must be positive");
 }
 
 

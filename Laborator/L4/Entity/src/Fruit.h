@@ -4,7 +4,7 @@
 
 #pragma once
 #include <string>
-#include "../Date/Date/Date.h"
+#include "/Users/lulu/UBB/Semestrul_II/Object-Oriented-Programming/Laborator/L4/Date/src/Date/Date.h"
 using std::string;
 using std::stringstream;
 using Time::Date;
@@ -20,10 +20,10 @@ namespace Entity {
         double price_;
 
     public:
-        Fruit(string name, string origin="Romania", string producer="Gicu de la Craiova", const Date &expiry_date = Date(2024, 1, 1), int quantity=1, double price=1);
+        explicit Fruit(string name, string origin="Romania", string producer="Gicu de la Craiova", const Date &expiry_date = Date(2024, 1, 1), int quantity=1, double price=1);
 
         //Copy constructor
-        Fruit(const Fruit &other);
+        Fruit(const Fruit &other) = default;
 
         //Destructor
         ~Fruit() = default;

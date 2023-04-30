@@ -78,34 +78,41 @@ std::string Entity::Fruit::getFruitAsString() const {
     oss << std::fixed << std::setprecision(2) << price_;
     std::string formatPrice = oss.str();
 
-    return name_ + ',' + origin_ + ',' + producer_ + ',' + expiry_date_.getDateAsString() + ',' + to_string(quantity_) + ',' + formatPrice;
+    return name_ + ',' + origin_ + ',' + producer_ + ',' + expiry_date_.getDateAsString() + ',' + std::to_string(quantity_) + ',' + formatPrice;
 }
 
+void Fruit::printFruit() {
+    cout << "Name: " + name_ << endl;
+    cout << "Origin: " + origin_ << endl;
+    cout << "Producer: " + producer_ << endl;
+    cout << "Expiry date: " + expiry_date_.getDateAsString() << endl;
+    cout << "Quantity: " + to_string(quantity_) << endl;
+    cout << "Price: " + to_string(price_) << endl;
+}
 
-
-bool Fruit::operator==(const Fruit &other) const {
+bool Entity::Fruit::operator==(const Fruit &other) const {
     return (producer_ == other.producer_);
 }
 
-bool Fruit::operator!=(const Fruit &other) const {
+bool Entity::Fruit::operator!=(const Fruit& other) const {
     return !(*this == other);
 }
 
 Fruit &Fruit::operator=(const Fruit &other) = default;
 
-bool Fruit::operator<(const Fruit &other) const {
+bool Entity::Fruit::operator<(const Fruit &other) const {
     return (expiry_date_ < other.expiry_date_);
 }
 
-bool Fruit::operator>(const Fruit &other) const {
+bool Entity::Fruit::operator>(const Fruit &other) const {
     return (expiry_date_ > other.expiry_date_);
 }
 
-bool Fruit::operator<=(const Fruit &other) const {
+bool Entity::Fruit::operator<=(const Fruit &other) const {
     return (*this < other) || (*this == other);
 }
 
-bool Fruit::operator>=(const Fruit &other) const {
+bool Entity::Fruit::operator>=(const Fruit &other) const {
     return (*this > other) || (*this == other);
 }
 

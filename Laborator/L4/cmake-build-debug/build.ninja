@@ -55,41 +55,53 @@ build CMakeFiles/L4.dir/Shop.cpp.o: CXX_COMPILER__L4_Debug /Users/lulu/UBB/Semes
   OBJECT_DIR = CMakeFiles/L4.dir
   OBJECT_FILE_DIR = CMakeFiles/L4.dir
 
-build CMakeFiles/L4.dir/Entity/Fruit.cpp.o: CXX_COMPILER__L4_Debug /Users/lulu/UBB/Semestrul_II/Object-Oriented-Programming/Laborator/L4/Entity/Fruit.cpp || cmake_object_order_depends_target_L4
-  DEP_FILE = CMakeFiles/L4.dir/Entity/Fruit.cpp.o.d
+build CMakeFiles/L4.dir/Entity/src/Fruit.cpp.o: CXX_COMPILER__L4_Debug /Users/lulu/UBB/Semestrul_II/Object-Oriented-Programming/Laborator/L4/Entity/src/Fruit.cpp || cmake_object_order_depends_target_L4
+  DEP_FILE = CMakeFiles/L4.dir/Entity/src/Fruit.cpp.o.d
   FLAGS = -g -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.3.sdk -fcolor-diagnostics -std=gnu++20
   OBJECT_DIR = CMakeFiles/L4.dir
-  OBJECT_FILE_DIR = CMakeFiles/L4.dir/Entity
+  OBJECT_FILE_DIR = CMakeFiles/L4.dir/Entity/src
 
-build CMakeFiles/L4.dir/Repository/FruitRepository.cpp.o: CXX_COMPILER__L4_Debug /Users/lulu/UBB/Semestrul_II/Object-Oriented-Programming/Laborator/L4/Repository/FruitRepository.cpp || cmake_object_order_depends_target_L4
-  DEP_FILE = CMakeFiles/L4.dir/Repository/FruitRepository.cpp.o.d
+build CMakeFiles/L4.dir/Repository/src/FruitRepository.cpp.o: CXX_COMPILER__L4_Debug /Users/lulu/UBB/Semestrul_II/Object-Oriented-Programming/Laborator/L4/Repository/src/FruitRepository.cpp || cmake_object_order_depends_target_L4
+  DEP_FILE = CMakeFiles/L4.dir/Repository/src/FruitRepository.cpp.o.d
   FLAGS = -g -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.3.sdk -fcolor-diagnostics -std=gnu++20
   OBJECT_DIR = CMakeFiles/L4.dir
-  OBJECT_FILE_DIR = CMakeFiles/L4.dir/Repository
+  OBJECT_FILE_DIR = CMakeFiles/L4.dir/Repository/src
 
-build CMakeFiles/L4.dir/Controller/Controller.cpp.o: CXX_COMPILER__L4_Debug /Users/lulu/UBB/Semestrul_II/Object-Oriented-Programming/Laborator/L4/Controller/Controller.cpp || cmake_object_order_depends_target_L4
-  DEP_FILE = CMakeFiles/L4.dir/Controller/Controller.cpp.o.d
+build CMakeFiles/L4.dir/Controller/src/Controller.cpp.o: CXX_COMPILER__L4_Debug /Users/lulu/UBB/Semestrul_II/Object-Oriented-Programming/Laborator/L4/Controller/src/Controller.cpp || cmake_object_order_depends_target_L4
+  DEP_FILE = CMakeFiles/L4.dir/Controller/src/Controller.cpp.o.d
   FLAGS = -g -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.3.sdk -fcolor-diagnostics -std=gnu++20
   OBJECT_DIR = CMakeFiles/L4.dir
-  OBJECT_FILE_DIR = CMakeFiles/L4.dir/Controller
+  OBJECT_FILE_DIR = CMakeFiles/L4.dir/Controller/src
 
-build CMakeFiles/L4.dir/Console/Console.cpp.o: CXX_COMPILER__L4_Debug /Users/lulu/UBB/Semestrul_II/Object-Oriented-Programming/Laborator/L4/Console/Console.cpp || cmake_object_order_depends_target_L4
-  DEP_FILE = CMakeFiles/L4.dir/Console/Console.cpp.o.d
+build CMakeFiles/L4.dir/Console/src/Console.cpp.o: CXX_COMPILER__L4_Debug /Users/lulu/UBB/Semestrul_II/Object-Oriented-Programming/Laborator/L4/Console/src/Console.cpp || cmake_object_order_depends_target_L4
+  DEP_FILE = CMakeFiles/L4.dir/Console/src/Console.cpp.o.d
   FLAGS = -g -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.3.sdk -fcolor-diagnostics -std=gnu++20
   OBJECT_DIR = CMakeFiles/L4.dir
-  OBJECT_FILE_DIR = CMakeFiles/L4.dir/Console
+  OBJECT_FILE_DIR = CMakeFiles/L4.dir/Console/src
 
-build CMakeFiles/L4.dir/Exception/FruitException.cpp.o: CXX_COMPILER__L4_Debug /Users/lulu/UBB/Semestrul_II/Object-Oriented-Programming/Laborator/L4/Exception/FruitException.cpp || cmake_object_order_depends_target_L4
-  DEP_FILE = CMakeFiles/L4.dir/Exception/FruitException.cpp.o.d
+build CMakeFiles/L4.dir/Exception/src/FruitException.cpp.o: CXX_COMPILER__L4_Debug /Users/lulu/UBB/Semestrul_II/Object-Oriented-Programming/Laborator/L4/Exception/src/FruitException.cpp || cmake_object_order_depends_target_L4
+  DEP_FILE = CMakeFiles/L4.dir/Exception/src/FruitException.cpp.o.d
   FLAGS = -g -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.3.sdk -fcolor-diagnostics -std=gnu++20
   OBJECT_DIR = CMakeFiles/L4.dir
-  OBJECT_FILE_DIR = CMakeFiles/L4.dir/Exception
+  OBJECT_FILE_DIR = CMakeFiles/L4.dir/Exception/src
 
 build CMakeFiles/L4.dir/Date/src/Date/Date.cpp.o: CXX_COMPILER__L4_Debug /Users/lulu/UBB/Semestrul_II/Object-Oriented-Programming/Laborator/L4/Date/src/Date/Date.cpp || cmake_object_order_depends_target_L4
   DEP_FILE = CMakeFiles/L4.dir/Date/src/Date/Date.cpp.o.d
   FLAGS = -g -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.3.sdk -fcolor-diagnostics -std=gnu++20
   OBJECT_DIR = CMakeFiles/L4.dir
   OBJECT_FILE_DIR = CMakeFiles/L4.dir/Date/src/Date
+
+build CMakeFiles/L4.dir/Entity/test/testEntity.cpp.o: CXX_COMPILER__L4_Debug /Users/lulu/UBB/Semestrul_II/Object-Oriented-Programming/Laborator/L4/Entity/test/testEntity.cpp || cmake_object_order_depends_target_L4
+  DEP_FILE = CMakeFiles/L4.dir/Entity/test/testEntity.cpp.o.d
+  FLAGS = -g -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.3.sdk -fcolor-diagnostics -std=gnu++20
+  OBJECT_DIR = CMakeFiles/L4.dir
+  OBJECT_FILE_DIR = CMakeFiles/L4.dir/Entity/test
+
+build CMakeFiles/L4.dir/Test/testAllComponents.cpp.o: CXX_COMPILER__L4_Debug /Users/lulu/UBB/Semestrul_II/Object-Oriented-Programming/Laborator/L4/Test/testAllComponents.cpp || cmake_object_order_depends_target_L4
+  DEP_FILE = CMakeFiles/L4.dir/Test/testAllComponents.cpp.o.d
+  FLAGS = -g -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.3.sdk -fcolor-diagnostics -std=gnu++20
+  OBJECT_DIR = CMakeFiles/L4.dir
+  OBJECT_FILE_DIR = CMakeFiles/L4.dir/Test
 
 
 # =============================================================================
@@ -99,7 +111,7 @@ build CMakeFiles/L4.dir/Date/src/Date/Date.cpp.o: CXX_COMPILER__L4_Debug /Users/
 #############################################
 # Link the executable L4
 
-build L4: CXX_EXECUTABLE_LINKER__L4_Debug CMakeFiles/L4.dir/Shop.cpp.o CMakeFiles/L4.dir/Entity/Fruit.cpp.o CMakeFiles/L4.dir/Repository/FruitRepository.cpp.o CMakeFiles/L4.dir/Controller/Controller.cpp.o CMakeFiles/L4.dir/Console/Console.cpp.o CMakeFiles/L4.dir/Exception/FruitException.cpp.o CMakeFiles/L4.dir/Date/src/Date/Date.cpp.o
+build L4: CXX_EXECUTABLE_LINKER__L4_Debug CMakeFiles/L4.dir/Shop.cpp.o CMakeFiles/L4.dir/Entity/src/Fruit.cpp.o CMakeFiles/L4.dir/Repository/src/FruitRepository.cpp.o CMakeFiles/L4.dir/Controller/src/Controller.cpp.o CMakeFiles/L4.dir/Console/src/Console.cpp.o CMakeFiles/L4.dir/Exception/src/FruitException.cpp.o CMakeFiles/L4.dir/Date/src/Date/Date.cpp.o CMakeFiles/L4.dir/Entity/test/testEntity.cpp.o CMakeFiles/L4.dir/Test/testAllComponents.cpp.o
   FLAGS = -g -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.3.sdk
   OBJECT_DIR = CMakeFiles/L4.dir
   POST_BUILD = :
