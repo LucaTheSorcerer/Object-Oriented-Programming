@@ -11,7 +11,7 @@
 #include <utility>
 #include <algorithm>
 
-#include "../../Entity/src/Fruit.h"
+#include "../../Entity/src/Entity.h"
 #include "../../Repository/src/FruitRepository.h"
 #include "../../Date/src/Date/Date.h"
 
@@ -23,7 +23,7 @@ namespace ControllerFruit {
     class Controller {
     private:
         FruitRepository repositoryFruit;
-        shared_ptr<list<Fruit>> fruits;
+        shared_ptr<vector<Fruit>> fruits;
     public:
         //Constructor
         explicit Controller(const string &filename = "Repository/Data/DataBase.txt");
@@ -46,8 +46,8 @@ namespace ControllerFruit {
 
         void removeFruit(const string &name, const string &origin);
 
-        unique_ptr<list<Fruit>> getAllFruits();
+        unique_ptr<vector<Fruit>> getAllFruits();
 
-        unique_ptr<list<Fruit>> findFruitsContainingString(const string &search_string);
+        unique_ptr<vector<Fruit>> findFruitsContainingString(const string &search_string);
     };
 }

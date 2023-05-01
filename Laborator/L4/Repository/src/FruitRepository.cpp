@@ -14,7 +14,7 @@ Repository::FruitRepository::FruitRepository(string filename_) : filename(std::m
         throw FruitException("File could not be opened!");
     }
 
-    fruits = std::make_shared<list<Fruit>>();
+    fruits = std::make_shared<vector<Fruit>>();
     //read from file
     string line;
     while (getline(file, line)) {
@@ -36,31 +36,32 @@ void Repository::FruitRepository::removeFruit(const Fruit &fruit) {
     }
 }
 
-shared_ptr<list<Fruit>> Repository::FruitRepository::getAllFruits() const {
+shared_ptr<vector<Fruit>> Repository::FruitRepository::getAllFruits(){
     return fruits;
 }
 
 void Repository::FruitRepository::writeFruitsToFile() const {
 
-    ofstream file(filename, std::ios::trunc);
+    std::ofstream file(filename, std::ios::trunc);
 
-    string fruit_string{};
-    for(auto iterator = fruits->begin(); iterator != fruits->end(); ++iterator){
-        fruit_string += (iterator->getFruitAsString());
-        if(iterator != --fruits->end()){
-            fruit_string += "\n";
+    string fileData{};
+    for (auto it = fruits->begin(); it != fruits->end(); ++it) {
+        fileData += (it->getFruitAsString());
+        if (it != fruits->end() - 1) {
+            fileData += '\n';
         }
     }
 
-    file << fruit_string;
+    file << fileData;
+
     file.close();
 }
 
 void Repository::FruitRepository::deleteAllFruits() {
-    fruits->clear();
+    fruits = std::make_unique<vector<Fruit>>();
 }
 
-string Repository::FruitRepository::convertToString(const Fruit &fruit) {
+string Repository::FruitRepository::convertToString(Fruit &fruit) {
     return fruit.getFruitAsString();
 }
 
@@ -82,8 +83,8 @@ Fruit Repository::FruitRepository::convertFromString(const string &fruit) {
     std::istringstream date_stream(expiry_date);
     int year, month, day;
     date_stream >> year >> delimiter >> month >> delimiter >> day;
-    Time::Date date(year, month, day);
+    Time::Date expiration_date(year, month, day);
 
-    return Entity::Fruit(name, origin, producer, date, quantity, price);
+    return Entity::Fruit(name, origin, producer, expiration_date, quantity, price);
 }
 

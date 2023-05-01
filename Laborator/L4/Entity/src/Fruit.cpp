@@ -13,61 +13,61 @@ using std::cout;
 using std::endl;
 using std::to_string;
 
-Fruit::Fruit(string name, string origin, string producer, const Date& expiry_date, int quantity, double price) : name_(std::move(name)),
-                                                                                               origin_(std::move(origin)),
-                                                                                               producer_(std::move(producer)),
-                                                                                               expiry_date_(expiry_date),
-                                                                                               quantity_(quantity),
-                                                                                               price_(price) {}
+Fruit::Fruit(string name_, string origin_, string producer_, const Date& expiry_date_, int quantity_, double price_) : name(std::move(name_)),
+                                                                                                                       origin(std::move(origin_)),
+                                                                                                                       producer(std::move(producer_)),
+                                                                                                                       expiry_date(expiry_date_),
+                                                                                                                       quantity(quantity_),
+                                                                                                                       price(price_) {}
 
 string Fruit::getName() const {
-    return name_;
+    return name;
 }
 
 const string &Fruit::getOrigin() const {
-    return origin_;
+    return origin;
 }
 
 Date Fruit::getExpiryDate() const {
-    return expiry_date_;
+    return expiry_date;
 }
 
 int Fruit::getQuantity() const {
-    return quantity_;
+    return quantity;
 }
 
 double Fruit::getPrice() const {
-    return price_;
+    return price;
 }
 
 string Fruit::getProducer() const {
-    return producer_;
+    return producer;
 }
 
 
-void Fruit::setName(const string &name) {
-    name_ = name;
+void Fruit::setName(const string &newName) {
+    name = newName;
 }
 
-void Fruit::setOrigin(const string &origin) {
-    origin_ = origin;
+void Fruit::setOrigin(const string &newOrigin) {
+    origin = newOrigin;
 }
 
-void Fruit::setExpiryDate(const Date &expiryDate) {
-    expiry_date_ = expiryDate;
+void Fruit::setExpiryDate(const Date &newExpiryDate) {
+    expiry_date = newExpiryDate;
 }
 
-void Fruit::setQuantity(int quantity) {
-    quantity_ = quantity;
+void Fruit::setQuantity(int newQuantity) {
+    quantity = newQuantity;
 }
 
 
-void Fruit::setPrice(double price) {
-    price_ = price;
+void Fruit::setPrice(double newPrice) {
+    price = newPrice;
 }
 
 void Fruit::setProducer(const string &newProducer) {
-    producer_ = newProducer;
+    producer = newProducer;
 }
 
 
@@ -75,23 +75,23 @@ void Fruit::setProducer(const string &newProducer) {
 std::string Entity::Fruit::getFruitAsString() const {
 
     std::ostringstream oss;
-    oss << std::fixed << std::setprecision(2) << price_;
+    oss << std::fixed << std::setprecision(2) << price;
     std::string formatPrice = oss.str();
 
-    return name_ + ',' + origin_ + ',' + producer_ + ',' + expiry_date_.getDateAsString() + ',' + std::to_string(quantity_) + ',' + formatPrice;
+    return name + ',' + origin + ',' + producer + ',' + expiry_date.getDateAsString() + ',' + std::to_string(quantity) + ',' + formatPrice;
 }
 
-void Fruit::printFruit() {
-    cout << "Name: " + name_ << endl;
-    cout << "Origin: " + origin_ << endl;
-    cout << "Producer: " + producer_ << endl;
-    cout << "Expiry date: " + expiry_date_.getDateAsString() << endl;
-    cout << "Quantity: " + to_string(quantity_) << endl;
-    cout << "Price: " + to_string(price_) << endl;
-}
+//void Fruit::printFruit() {
+//    cout << "Name: " + name << endl;
+//    cout << "Origin: " + origin << endl;
+//    cout << "Producer: " + producer << endl;
+//    cout << "Expiry date: " + expiry_date.getDateAsString() << endl;
+//    cout << "Quantity: " + to_string(quantity) << endl;
+//    cout << "Price: " + to_string(price) << endl;
+//}
 
 bool Entity::Fruit::operator==(const Fruit &other) const {
-    return (producer_ == other.producer_);
+    return (producer == other.producer);
 }
 
 bool Entity::Fruit::operator!=(const Fruit& other) const {
@@ -101,11 +101,11 @@ bool Entity::Fruit::operator!=(const Fruit& other) const {
 Fruit &Fruit::operator=(const Fruit &other) = default;
 
 bool Entity::Fruit::operator<(const Fruit &other) const {
-    return (expiry_date_ < other.expiry_date_);
+    return (expiry_date < other.expiry_date);
 }
 
 bool Entity::Fruit::operator>(const Fruit &other) const {
-    return (expiry_date_ > other.expiry_date_);
+    return (expiry_date > other.expiry_date);
 }
 
 bool Entity::Fruit::operator<=(const Fruit &other) const {
@@ -117,12 +117,11 @@ bool Entity::Fruit::operator>=(const Fruit &other) const {
 }
 
 std::ostream &Entity::operator<<(std::ostream &os, const Fruit &fruit) {
-    os << "Name: " + fruit.name_ << endl;
-    os << "Origin: " + fruit.origin_ << endl;
-    os << "Producer: " + fruit.producer_ << endl;
-    os << "Expiry date: " + fruit.expiry_date_.getDateAsString() << endl;
-    os << "Quantity: " + to_string(fruit.quantity_) << endl;
-    os << "Price: " + to_string(fruit.price_) << endl;
+    os << "Name: " + fruit.name + "\n";
+    os << "Origin: " + fruit.origin + "\n";
+    os << "Producer: " + fruit.producer + "\n";
+    os << "Expiration Date: " + fruit.expiry_date.getDateAsString() + "\n";
+    os << "Quantity: " + std::to_string(fruit.quantity) + "\n";
+    os << "Price: " + std::to_string(fruit.price) + "\n";
     return os;
-
 }

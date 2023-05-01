@@ -10,20 +10,18 @@
 #include <utility>
 #include <fstream>
 #include <sstream>
-#include "../../Entity/src/Fruit.h"
+#include "../../Entity/src/Entity.h"
 
-using std::shared_ptr, std::list, std::string, Entity::Fruit;
+using std::shared_ptr, std::string, Entity::Fruit, std::vector;
 
 
 namespace Repository {
     class FruitRepository {
 
     private:
-        string filename;
+        string filename{};
 
-        shared_ptr<list<Fruit>> fruits{};
-
-        //function that converts a fruit to a string
+        shared_ptr<vector<Fruit>> fruits{};
 
 
     public:
@@ -43,28 +41,12 @@ namespace Repository {
         ~FruitRepository() = default;
 
 
-        //function that adds a fruit to the list
         void addFruit(const Fruit &fruit);
-
-        //function that removes a fruit from the list
         void removeFruit(const Fruit &fruit);
-
-        //function that updates a fruit from the list
-        void updateFruit(Fruit &fruit);
-
-        //function that returns all fruits
-        shared_ptr<list<Fruit>> getAllFruits() const;
-
-        //function that writes the fruits to the file
-        void writeFruitsToFile() const;
-
-        //function that deletes all fruits
         void deleteAllFruits();
-
-        //function that converts a fruit to a string
-        static string convertToString(const Fruit &fruit);
-
-        //function that converts the data from the file to a string
+        [[nodiscard]] shared_ptr<vector<Fruit>> getAllFruits();
+        void writeFruitsToFile() const;
+        static string convertToString(Fruit &fruit);
         static Fruit convertFromString(const string &fruit);
 
     };

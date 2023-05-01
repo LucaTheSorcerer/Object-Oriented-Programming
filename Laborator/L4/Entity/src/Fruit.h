@@ -12,15 +12,15 @@ using Time::Date;
 namespace Entity {
     class Fruit {
     private:
-        string name_;
-        string origin_;
-        Date expiry_date_;
-        string producer_;
-        int quantity_;
-        double price_;
+        string name;
+        string origin;
+        Date expiry_date;
+        string producer;
+        int quantity;
+        double price;
 
     public:
-        explicit Fruit(string name, string origin="Romania", string producer="Gicu de la Craiova", const Date &expiry_date = Date(2024, 1, 1), int quantity=1, double price=1);
+        explicit Fruit(string name_, string origin_="Romania", string producer_="Gicu de la Craiova", const Date &expiry_date_ = Date(2024, 1, 1), int quantity_=1, double price_=1);
 
         //Copy constructor
         Fruit(const Fruit &other) = default;

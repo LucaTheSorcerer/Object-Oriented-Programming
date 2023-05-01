@@ -20,38 +20,37 @@ void ControllerFruit::Controller::removeFruit(const string &name, const string &
     for(const auto &fruit : *fruits){
         if(fruit == auxFruit){
             repositoryFruit.removeFruit(fruit);
-            break;
         }
     }
 }
 
-unique_ptr<list<Fruit>> ControllerFruit::Controller::getAllFruits() {
-    auto sortedFruits = std::make_unique<list<Fruit>>(*fruits);
-
-    sortedFruits->sort([](const Fruit &fruit1, const Fruit &fruit2) -> bool {
-        return fruit1.getExpiryDate() < fruit2.getExpiryDate();
-    });
-
+unique_ptr<::vector<Fruit>> ControllerFruit::Controller::getAllFruits() {
+    auto sortedFruits = std::make_unique<vector<Fruit>>(*fruits);
+    std::sort(sortedFruits->begin(), sortedFruits->end(),
+              [](const Fruit &a, const Fruit &b) -> bool {
+                  return a.getName() < b.getName();
+              }
+    );
     return sortedFruits;
 }
 
-unique_ptr<list<Fruit>> ControllerFruit::Controller::findFruitsContainingString(const string &search_string) {
+unique_ptr<vector<Fruit>> ControllerFruit::Controller::findFruitsContainingString(const string &search_string) {
 
-    auto foundFruits = std::make_unique<list<Fruit>>();
+    auto result = std::make_unique<vector<Fruit>>();
 
-    if(search_string.empty()){
+    if (search_string.empty())
         return getAllFruits();
+
+    for (const auto &it: *fruits) {
+        if (it.getName().find(search_string) != std::string::npos)
+            result->push_back(it);
     }
 
-    for(const auto &fruit : *fruits){
-        if(fruit.getName().find(search_string) != string::npos){
-            foundFruits->push_back(fruit);
-        }
-    }
+    std::sort(result->begin(), result->end(),
+              [](const Fruit &a, const Fruit &b) -> bool {
+                  return a.getName() < b.getName();
+              }
+    );
 
-    foundFruits->sort([](const Fruit &fruit1, const Fruit &fruit2) -> bool {
-        return fruit1.getName() < fruit2.getName();
-    });
-
-    return foundFruits;
+    return result;
 }

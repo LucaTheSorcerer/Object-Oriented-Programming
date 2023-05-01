@@ -4,6 +4,7 @@
 
 #include "testController.h"
 #include <cassert>
+#include <vector>
 #include <iostream>
 
 using std::cout, std::endl;
