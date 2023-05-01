@@ -5,6 +5,9 @@
 
 #include "../../Controller/src/Controller.h"
 
+#include <iostream>
+using std::cout;
+
 ControllerFruit::Controller::Controller(const string &filename): repositoryFruit(filename) {
     fruits = repositoryFruit.getAllFruits();
 }
@@ -54,3 +57,45 @@ unique_ptr<vector<Fruit>> ControllerFruit::Controller::findFruitsContainingStrin
 
     return result;
 }
+
+unique_ptr<vector<Fruit>> ControllerFruit::Controller::findFruitsWithLowStock(int threshold) {
+
+    //returns a list of fruits with a quantity lower than the threshold
+
+    auto result = std::make_unique<vector<Fruit>>();
+
+    for(const auto &fruit : *fruits){
+        if(fruit.getQuantity() < threshold){
+            result->push_back(fruit);
+        }
+    }
+
+    return result;
+}
+
+unique_ptr<vector<Fruit>> ControllerFruit::Controller::getFruitSortedByExpiry() {
+
+    //returns a list of fruits sorted by expiry date
+
+    auto result = std::make_unique<vector<Fruit>>(*fruits);
+
+    std::sort(result->begin(), result->end(),
+              [](const Fruit &a, const Fruit &b) -> bool {
+                  return a.getExpiryDate() < b.getExpiryDate();
+              }
+    );
+
+    return result;
+}
+
+void ControllerFruit::Controller::printAllFruits() {
+
+    //prints all fruits
+
+    for(const auto &fruit : *fruits){
+        cout << fruit << endl;
+    }
+
+}
+
+

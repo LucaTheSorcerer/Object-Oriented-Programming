@@ -49,5 +49,11 @@ namespace ControllerFruit {
         unique_ptr<vector<Fruit>> getAllFruits();
 
         unique_ptr<vector<Fruit>> findFruitsContainingString(const string &search_string);
+
+        unique_ptr<vector<Fruit>> findFruitsWithLowStock(int threshold);
+
+        unique_ptr<vector<Fruit>> getFruitSortedByExpiry();
+
+        void printAllFruits();
     };
 }

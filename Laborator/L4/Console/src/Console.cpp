@@ -12,7 +12,6 @@
 //
 //using std::cin, std::cout, std::endl;
 //
-//
 //void UI::ConsoleUI::run() {
 //    int choice;
 //    do {
@@ -21,8 +20,8 @@
 //        executeChoice(choice);
 //    }
 //    while (choice != 0);
-//
 //}
+//
 //
 //int UI::ConsoleUI::readInput() {
 //    int choice;
@@ -35,7 +34,7 @@
 //    //This function executes the choice of the user
 //    switch (choice) {
 //        case 0:
-//            cout << "The program is exiting!\n" << endl;
+//            cout << "The program is ®exiting!\n" << endl;
 //            break;
 //        case 1:
 //            UI::ConsoleUI::addFruit();
@@ -44,15 +43,18 @@
 //            UI::ConsoleUI::removeFruit();
 //            break;
 //        case 3:
-//            UI::ConsoleUI::searchFruitString();
+//            UI::ConsoleUI::updateFruit();
 //            break;
 //        case 4:
-//            UI::ConsoleUI::findFruitShortInQuantity();
+//            UI::ConsoleUI::searchFruitString();
 //            break;
 //        case 5:
-//            UI::ConsoleUI::findAllFruitsSortedByExpiration();
+//            UI::ConsoleUI::findFruitShortInQuantity();
 //            break;
 //        case 6:
+//            UI::ConsoleUI::findAllFruitsSortedByExpiration();
+//            break;
+//        case 7:
 //            UI::ConsoleUI::printAllFruits();
 //            break;
 //        default:
@@ -69,10 +71,11 @@
 //    cout << "Please choose one of the following options:" << endl;
 //    cout << "1. Add a fruit" << endl;
 //    cout << "2. Remove a fruit" << endl;
-//    cout << "3. Search for a fruit by name" << endl;
-//    cout << "4. Find the fruits with a quantity less than a given number" << endl;
-//    cout << "5. Find all the fruits sorted by their expiration date" << endl;
-//    cout << "6. Print all the fruits" << endl;
+//    cout << "3. Update a fruit" << endl;
+//    cout << "4. Search for a fruit by name" << endl;
+//    cout << "5. Find the fruits with a quantity less than a given number" << endl;
+//    cout << "6. Find all the fruits sorted by their expiration date" << endl;
+//    cout << "7. Print all the fruits" << endl;
 //    cout << "q. Exit" << endl;
 //    cout << "Enter your choice: ";
 //}
@@ -91,9 +94,6 @@
 //    cout << "Enter the producer of the product: ";
 //    cin >> producer;
 //
-//    cout << "Enter the expiry date of the fruit (yyyy-mm-dd): ";
-//    cin >> year >> month >> day;
-//
 //    cout << "Enter the quantity of the fruit: ";
 //    cin >> quantity;
 //    cin.ignore(numeric_limits<streamsize>::max(), '\n');
@@ -103,6 +103,12 @@
 //
 //    //Ignore the newline character
 //    cin.ignore(numeric_limits<streamsize>::max(), '\n');
+//
+//
+//    cout << "Enter the expiry date of the fruit (yyyy-mm-dd): ";
+//    cin >> year >> month >> day;
+//
+//
 //
 //    //Add the fruit
 //    //A while loop that checks if the expiry date is valid
@@ -115,13 +121,59 @@
 //    cout << "\n";
 //
 //    //Create the expiry date
-//    expiry_date = std::to_string(year) + "-" + std::to_string(month) + "-" + std::to_string(day);
-//    Fruit fruit(name, origin, expiry_date, producer, price, quantity);
+//    Date expiryDate(year, month, day);
+//    Fruit fruit(name, origin, producer, expiryDate, quantity, price);
+//
+//    try {
+////        this->controller.addFruit(fruit);
+//        cout << "Fruit added successfully!" << endl;
+//    } catch (FruitException& e) {
+//        cout << "Error: " << e.what() << endl;
+//    }
 //}
 //
+//void UI::ConsoleUI::updateFruit() {
+//    std::string name, origin, producer;
+//    int price, quantity, year, month, day;
 //
+//    std::cout << "Enter product name: ";
+//    std::cin >> name;
 //
-//void ConsoleUI::removeFruit() {
+//    std::cout << "Enter product origin: ";
+//    std::cin >> origin;
+//
+//    std::cout << "Enter product producer: ";
+//    std::cin >> producer;
+//
+//    std::cout << "Enter product price: ";
+//    std::cin >> price;
+//
+//    std::cout << "Enter product quantity: ";
+//    std::cin >> quantity;
+//
+//    std::cout << "Enter product expiration date (year month day): ";
+//    std::cin >> year >> month >> day;
+//
+//    while (year < 2023 || year > 2043 || month < 1 || month > 12 || day < 1 || day > Time::Date::getNumberOfDaysInMonth(month, year)) {
+//        std::cout << "Invalid date. Please enter a valid expiration date (year, month, day): ";
+//        std::cin >> year >> month >> day;
+//    }
+//
+//    std::cout << '\n';
+//
+//    Date expirationDate(year, month, day);
+//    Fruit new_fruit(name, origin, producer, expirationDate, quantity, price);
+//
+//    try {
+//
+//        std::cout << "Product added successfully." << std::endl;
+//    }
+//    catch (std::exception &e) {
+//        std::cout << "Error: " << e.what() << std::endl;
+//    }
+//}
+//
+//void UI::ConsoleUI::removeFruit() {
 //    string name;
 //    string origin;
 //
@@ -135,41 +187,41 @@
 //
 //    //Remove the fruit
 //    try {
-//        this->controller.removeFruit(name, origin);
+//        controller.removeFruit(name, origin);
 //        cout << "Fruit removed successfully!" << endl;
 //    } catch (FruitException& e) {
 //        cout << e.what() << endl;
 //    }
 //}
 //
-//void ConsoleUI::searchFruitString() {
+//void UI::ConsoleUI::searchFruitString() {
 //    //This function searches for a fruit by its given name
 //    string name;
 //    cout << "\nEnter the name of the fruit: ";
 //    getline(cin, name);
 //
-//    list<shared_ptr<Fruit>> fruits = this->controller.searchFruit(name);
+//    unique_ptr<vector<Entity::Fruit>> fruits = controller.findFruitsContainingString(name);
 //}
 //
-//void ConsoleUI::findFruitShortInQuantity() {
+//void UI::ConsoleUI::findFruitShortInQuantity() {
 //    //This function finds the fruits with a quantity less than a given number
 //    int quantity;
 //    cout << "\nEnter the quantity: ";
 //    cin >> quantity;
 //    cin.ignore(numeric_limits<streamsize>::max(), '\n');
 //
-//    list<shared_ptr<Fruit>> fruits = this->controller.getLowStockFruit(quantity);
+//    unique_ptr<vector<Fruit>> fruits = controller.findFruitsWithLowStock(quantity);
 //}
 //
-//void ConsoleUI::findAllFruitsSortedByExpiration() {
+//void UI::ConsoleUI::findAllFruitsSortedByExpiration() {
 //    //This function finds all the fruits sorted by their expiration date and gets a current date
-//    list<shared_ptr<Fruit>> fruits = this->controller.getFruitSortedByExpiry();
+//    unique_ptr<vector<Fruit>> fruits = controller.getFruitSortedByExpiry();
 //}
 //
 //
-//void ConsoleUI::printAllFruits() {
+//void UI::ConsoleUI::printAllFruits() {
 //    //This function prints all the fruits
-//    return this->controller.printAllFruits();
+//    return controller.printAllFruits();
 //}
 //
 //

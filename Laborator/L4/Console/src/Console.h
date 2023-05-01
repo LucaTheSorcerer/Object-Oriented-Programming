@@ -3,25 +3,29 @@
 //
 
 #include "../../Controller/src/Controller.h"
+#include "../../Entity/src/Entity.h"
+#include "../../Date/src/Date/Date.h"
 #include <iostream>
 #include <string>
 #include <vector>
 #include <sstream>
 
+
 using Entity::Fruit;
+using Time::Date;
 
 namespace UI {
-    class ConsoleUI {
+    class [[maybe_unused]] ConsoleUI {
     private:
-        Controller &controller;
+        ControllerFruit::Controller &controller;
 
-        static void printMenu();
+        static int readInput();
 
-        static void addFruit();
+        static void executeChoice(int choice);
 
-        static void removeFruit();
 
-        static void updateFruit();
+    public:
+        static void run();
 
         static void searchFruitString();
 
@@ -31,15 +35,13 @@ namespace UI {
 
         static void printAllFruits();
 
+        static void printMenu();
 
-    public:
-        explicit ConsoleUI(Controller &controller);
+        static void addFruit();
 
+        static void removeFruit();
 
-        static int readInput();
+        static void updateFruit();
 
-        void executeChoice(int choice);
-
-        void run();
     };
 }
