@@ -1,12 +1,7 @@
-//
-// Created by Luca Tudor on 28.04.2023.
-//
-
 #pragma once
 
 #include "FruitRepository.h"
 
-namespace Repository {
+namespace Repository{
     class FruitRepository;
-
 }

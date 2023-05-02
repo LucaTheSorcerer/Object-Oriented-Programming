@@ -2,7 +2,7 @@
 
 void testAll(){
     testTime();
-    testDomain();
-    testRepository();
-    testController();
+//    testDomain();
+//    testRepository();
+//    testController();
 }

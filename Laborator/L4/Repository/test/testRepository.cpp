@@ -40,7 +40,7 @@ void testConstructor() {
 
     {
         //Create a repository with no data
-        Repository::FruitRepository fruitRepository("../Repository/Data/DataTestEmpty.txt");
+        Repository::FruitRepository fruitRepository("../Repository/Data/DataTestEmpty");
         assert(fruitRepository.getAllFruits()->empty());
     }
 
@@ -63,7 +63,7 @@ void testAddAndDeleteFruits() {
 
     cout << "testAddAndDeleteFruits" << endl;
     // Create a new repository
-    Repository::FruitRepository fruitRepo("../Repository/Data/DataTestEmpty.txt");
+    Repository::FruitRepository fruitRepo("../Repository/Data/DataTestEmpty");
 
     // Create some sample fruits
     Entity::Fruit apple("Apple", "USA", "Apple Inc.",

@@ -11,16 +11,16 @@ using std::cout, std::endl;
 void testControllerConstructor() {
     //Test empty Data Base
     {
-        Controller fruitController("Data/DataTestEmpty.txt");
+        Controller fruitController("../Repository/Data/DataTestEmpty");
         assert(fruitController.getAllFruits()->empty());
     }
     //Test valid Data Base
-//    {
-//        Controller fruitController("../Repository/Data/DataTestValid.txt");
-//        assert(fruitController.getAllFruits()->size() == 2);
-//        assert(fruitController.getAllFruits()->front() == Fruit("Apple", "USA"));
-//        assert(fruitController.getAllFruits()->back() == Fruit("Banana", "Ecuador"));
-//    }
+    {
+        Controller fruitController("../Repository/Data/DataTestValid");
+        assert(fruitController.getAllFruits()->size() == 2);
+        assert(fruitController.getAllFruits()->front() == Fruit("Apple", "USA"));
+        assert(fruitController.getAllFruits()->back() == Fruit("Banana", "Ecuador"));
+    }
 }
 
 void testController() {

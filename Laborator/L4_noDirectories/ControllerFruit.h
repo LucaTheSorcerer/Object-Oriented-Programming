@@ -2,6 +2,6 @@
 
 #include "Controller.h"
 
-namespace Controller{
-    class ControllerFruit;
+namespace ControllerFruit{
+    class Controller;
 }

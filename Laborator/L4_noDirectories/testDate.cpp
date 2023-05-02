@@ -1,149 +1,122 @@
-//
-// Created by Luca Tudor on 30.04.2023.
-//
+#include "TestDate.h"
+#include "Date.h"
+#include <cassert>
+#include <string>
 
-#include <iostream>
-#include "testDate.h"
-#include "cassert"
+void testDateSimple() {
+    // Create a new Date object
+    Time::Date d(2023, 4, 18);
 
-using std::cout, std::endl;
+    // Test the getters
+    assert(d.getYear() == 2023);
+    assert(d.getMonth() == 4);
+    assert(d.getDay() == 18);
 
+    // Test the setters
+    d.setYear(2024);
+    assert(d.getYear() == 2024);
 
-void testShortDate() {
+    d.setMonth(5);
+    assert(d.getMonth() == 5);
 
-    cout << "Testing Short Date..." << endl;
-
-    Time::Date date(2020, 1, 1);
-
-    //test getters
-
-    assert(date.getDay() == 1);
-    assert(date.getMonth() == 1);
-    assert(date.getYear() == 2020);
-
-    //test setters
-
-    date.setDay(2);
-    date.setMonth(2);
-    date.setYear(2021);
-
-    assert(date.getDay() == 2);
-    assert(date.getMonth() == 2);
-    assert(date.getYear() == 2021);
+    d.setDay(6);
+    assert(d.getDay() == 6);
 }
 
-void extendedDateTest() {
+void testDateExtended(){
+    {
+        // Test constructors and getters
+        Time::Date date1(2023, 4, 26);
+        Time::Date date2(2024, 2, 29);
+        Time::Date date3(2025, 12, 31);
 
-    cout << "Testing Extended Date..." << endl;
+        assert(date1.getYear() == 2023);
+        assert(date1.getMonth() == 4);
+        assert(date1.getDay() == 26);
 
-    Time::Date date(2020, 1, 1);
+        assert(date2.getYear() == 2024);
+        assert(date2.getMonth() == 2);
+        assert(date2.getDay() == 29);
 
-    //test getters
+        assert(date3.getYear() == 2025);
+        assert(date3.getMonth() == 12);
+        assert(date3.getDay() == 31);
 
-    assert(date.getDay() == 1);
-    assert(date.getMonth() == 1);
-    assert(date.getYear() == 2020);
+        // Test setters and safeguards
+        date1.setYear(2022);
+        date1.setMonth(10);
+        date1.setDay(31);
 
-    //test setters
+        assert(date1.getYear() == 2022);
+        assert(date1.getMonth() == 10);
+        assert(date1.getDay() == 31);
 
-    date.setDay(2);
-    date.setMonth(2);
-    date.setYear(2021);
+        bool caughtException = false;
+        try {
+            date1.setYear(-2022);
+        } catch (std::invalid_argument &e) {
+            caughtException = true;
+        }
+        assert(caughtException);
 
-    assert(date.getDay() == 2);
-    assert(date.getMonth() == 2);
-    assert(date.getYear() == 2021);
+        caughtException = false;
+        try {
+            date1.setMonth(13);
+        } catch (std::invalid_argument &e) {
+            caughtException = true;
+        }
+        assert(caughtException);
 
-    //test safequards and setters
+        caughtException = false;
+        try {
+            date1.setDay(32);
+        } catch (std::invalid_argument &e) {
+            caughtException = true;
+        }
+        assert(caughtException);
 
-    try {
-        date.setDay(0);
-        assert(false);
-    }
-    catch (std::invalid_argument& e) {
-        assert(true);
-    }
+        // Test copy constructor and assignment operator
+        Time::Date date4 = date3;
+        assert(date4.getYear() == 2025);
+        assert(date4.getMonth() == 12);
+        assert(date4.getDay() == 31);
 
-    //test exceptions and invalid dates
+        date4 = date2;
+        assert(date4.getYear() == 2024);
+        assert(date4.getMonth() == 2);
+        assert(date4.getDay() == 29);
 
-    try {
-        Time::Date date1(2020, 13, 1);
-        assert(false);
-    }
-    catch (std::invalid_argument& e) {
-        assert(true);
-    }
-
-}
-
-void testCopyConstructorDate() {
-
-        cout << "Testing Copy Constructor for the Date..." << endl;
-
-        Time::Date date(2020, 1, 1);
-
-        Time::Date date2(date);
-
-        assert(date.getDay() == date2.getDay());
-        assert(date.getMonth() == date2.getMonth());
-        assert(date.getYear() == date2.getYear());
-
-}
-
-void testAssignmentOperator() {
-
-    cout << "Testing Assignment Operator for the Date..." << endl;
-
-    Time::Date date(2020, 1, 1);
-
-    Time::Date date2 = date;
-
-    assert(date.getDay() == date2.getDay());
-    assert(date.getMonth() == date2.getMonth());
-    assert(date.getYear() == date2.getYear());
-}
-
-
-void testConvertDateToString() {
-
-    cout << "Testing Convert Date to String..." << endl;
-
-    Time::Date date(2020, 1, 1);
-
-    assert(date.getDateAsString() == "2020-1-1");
-
-    Time::Date date2(1400, 10, 10);
-
-    assert(date2.getDateAsString() == "1400-10-10");
-
-    //Try catch with invalid option
-
-    try {
-        Time::Date date3(-40, 10, 10);
-        assert(false);
-    }
-    catch (std::invalid_argument& e) {
-        cout << "Error: " << e.what() << endl;
-        assert(true);
+        // Test comparison operators
+        assert(date1 < date2);
+        assert(date2 > date1);
+        assert(date1 <= date1);
+        assert(date1 >= date1);
+        assert(date1 != date2);
+        assert(date2 == date4);
     }
 
-    try {
-        Time::Date date4(-40, -10, -10);
-        assert(false);
-    }
-    catch (std::invalid_argument& e) {
-        cout << "Error: " << e.what() << endl;
-        assert(true);
+    // Test converting a date to a string
+    {
+        // Test case 1: Date with day, month, and year values of 1
+        Time::Date date1(1, 1, 1);
+        assert(date1.getDateAsFormattedString() == "1-1-1");
+
+        // Test case 2: Date with day, month, and year values of 31
+        Time::Date date2(2022, 12, 31);
+        assert(date2.getDateAsFormattedString() == "2022-12-31");
+
+        // Test case 3: Date with day value of 10, month value of 2, and year value of 2023
+        Time::Date date3(2023, 2, 10);
+        assert(date3.getDateAsFormattedString() == "2023-2-10");
+
+        // Test case 4: Date with day value of 29, month value of 2, and year value of 2024 (leap year)
+        Time::Date date4(2024, 2, 29);
+        assert(date4.getDateAsFormattedString() == "2024-2-29");
     }
 
 }
-void testDate()
-{
-    cout << "Testing Date..." << endl;
-    testShortDate();
-    extendedDateTest();
-    testCopyConstructorDate();
-    testAssignmentOperator();
-    testConvertDateToString();
-    cout << "Date tested successfully!" << endl;
+
+void testDate(){
+    testDateSimple();
+    testDateExtended();
 }

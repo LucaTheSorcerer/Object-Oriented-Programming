@@ -1,12 +1,12 @@
 #include "Controller.h"
 
 ///Constructor
-Controller::ControllerFruit::ControllerFruit(const string &fileName) : fruitRepository(fileName) {
+ControllerFruit::Controller::Controller(const std::string &fileName) : fruitRepository(fileName) {
     fruits = fruitRepository.getAll();
 }
 
 ///Add a fruit to the Data Base
-void Controller::ControllerFruit::addFruit(const string &name, const string &origin, const string &producer,
+void ControllerFruit::Controller::addFruit(const string &name, const string &origin, const string &producer,
                                            const Time::Date &expiryDate, int quantity, float price) {
     Fruit newFruit(name, origin, producer, expiryDate, quantity, price);
     bool exists = false;
@@ -40,7 +40,7 @@ void Controller::ControllerFruit::addFruit(const string &name, const string &ori
 
 ///Delete a fruit from the Data Base
 ///@throws runtime_error if the fruit is not found
-void Controller::ControllerFruit::deleteFruit(const string& name, const string& origin) {
+void ControllerFruit::Controller::deleteFruit(const string& name, const string& origin) {
     Fruit tempFruit(name, origin);
     bool found = false;
     for (auto &it : *fruits) {
@@ -56,7 +56,7 @@ void Controller::ControllerFruit::deleteFruit(const string& name, const string& 
 }
 
 ///Get all the fruits from the dataBase
-unique_ptr<vector<Fruit>> Controller::ControllerFruit::getAllFruits() {
+unique_ptr<vector<Fruit>> ControllerFruit::Controller::getAllFruits() {
     auto sortedFruits = std::make_unique<vector<Fruit>>(*fruits);
     std::sort(sortedFruits->begin(), sortedFruits->end(),
               [](const Fruit &a, const Fruit &b) -> bool {
@@ -67,7 +67,7 @@ unique_ptr<vector<Fruit>> Controller::ControllerFruit::getAllFruits() {
 }
 
 ///Get all the fruits sorted by their expiry date
-unique_ptr<vector<Fruit>> Controller::ControllerFruit::getFruitsByExpirationDate() {
+unique_ptr<vector<Fruit>> ControllerFruit::Controller::getFruitsByExpirationDate() {
     auto sortedFruits = std::make_unique<vector<Fruit>>(*fruits);
     std::sort(sortedFruits->begin(), sortedFruits->end(), [](const Fruit &a, const Fruit &b) {
         return a.getExpirationDate() < b.getExpirationDate();
@@ -76,7 +76,7 @@ unique_ptr<vector<Fruit>> Controller::ControllerFruit::getFruitsByExpirationDate
 }
 ///Get all the fruits that are in low quantity
 ///@throws runtime_error if the threshold is invalid
-unique_ptr<vector<Fruit>> Controller::ControllerFruit::getLowQuantityFruits(int quantityThreshold) {
+unique_ptr<vector<Fruit>> ControllerFruit::Controller::getLowQuantityFruits(int quantityThreshold) {
     if(quantityThreshold <= 0){
         throw std::runtime_error("Threshold must be positive");
     }
@@ -91,7 +91,7 @@ unique_ptr<vector<Fruit>> Controller::ControllerFruit::getLowQuantityFruits(int 
 }
 
 ///Find all the fruits that match a given string
-unique_ptr<vector<Fruit>> Controller::ControllerFruit::findFruits(const string &searchString) {
+unique_ptr<vector<Fruit>> ControllerFruit::Controller::findFruits(const string &searchString) {
     auto result = std::make_unique<vector<Fruit>>();
 
     if (searchString.empty())
@@ -113,6 +113,6 @@ unique_ptr<vector<Fruit>> Controller::ControllerFruit::findFruits(const string &
 }
 
 ///Save the data to the DataBase
-void Controller::ControllerFruit::saveData() {
+void ControllerFruit::Controller::saveData() {
     fruitRepository.writeToDataBase();
 }

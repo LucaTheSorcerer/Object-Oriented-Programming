@@ -1,23 +1,15 @@
-//
-// Created by Luca Tudor on 01.05.2023.
-//
-
-#include "testRepository.h"
+#include "TestRepository.h"
 #include <cassert>
-#include <iostream>
-#include <vector>
 #include <string>
 
-using std::cout, std::endl, std::string;
-
-void testConvertFromString() {
-
+void testFruitParsing() {
+    // Test convertFromString()
     std::string fruitString = "Apple,USA,Red Del,2023-05-01,10,1.50";
     Fruit fruit = Repository::FruitRepository::convertFromString(fruitString);
     assert(fruit.getName() == "Apple");
     assert(fruit.getOrigin() == "USA");
     assert(fruit.getProducer() == "Red Del");
-    assert(fruit.getExpiryDate().getDateAsString() == "2023-5-1");
+    assert(fruit.getExpirationDate().getDateAsFormattedString() == "2023-5-1");
     assert(fruit.getQuantity() == 10);
     assert(fruit.getPrice() == 1.5f);
 
@@ -28,56 +20,53 @@ void testConvertFromString() {
     assert(actualFruitString == expectedFruitString);
 }
 
-
 void testConstructor() {
     //Try creating an invalid fruit Repository
-//    try {
-//        Repository::FruitRepository fruitRepository("invalid");
-//        assert(false);
-//    } catch (const std::runtime_error &exception) {
-//        assert(true);
-//    }
+    try {
+        Repository::FruitRepository fruitRepository("invalid");
+        assert(false);
+    } catch (const std::runtime_error &exception) {
+        assert(true);
+    }
 
     {
         //Create a repository with no data
-        Repository::FruitRepository fruitRepository("../Repository/Data/DataTestEmpty.txt");
-        assert(fruitRepository.getAllFruits()->empty());
+        Repository::FruitRepository fruitRepository("../testDataBase1");
+        assert(fruitRepository.getAll()->empty());
     }
 
     {
         //Create a valid repository
-        Repository::FruitRepository fruitRepository("../Repository/Data/DataBaseTestRepo1.txt");
+        Repository::FruitRepository fruitRepository("../testDataBase2");
         Fruit expectedFruit1("Apple", "USA", "Apple Inc.",
                              Time::Date(2023, 5, 1), 10, 1.0);
         Fruit expectedFruit2("Banana", "Ecuador", "Fruit Co.",
                              Time::Date(2023, 4, 30), 5, 2.0);
 
 
-        assert(fruitRepository.getAllFruits()->size() == 2);
-        assert(fruitRepository.getAllFruits()->front() == expectedFruit1);
-        assert(fruitRepository.getAllFruits()->back() == expectedFruit2);
+        assert(fruitRepository.getAll()->size() == 2);
+        assert(fruitRepository.getAll()->front() == expectedFruit1);
+        assert(fruitRepository.getAll()->back() == expectedFruit2);
     }
 }
 
 void testAddAndDeleteFruits() {
-
-    cout << "testAddAndDeleteFruits" << endl;
     // Create a new repository
-    Repository::FruitRepository fruitRepo("../Repository/Data/DataTestEmpty.txt");
+    Repository::FruitRepository fruitRepo("../testDataBase1");
 
     // Create some sample fruits
-    Entity::Fruit apple("Apple", "USA", "Apple Inc.",
+    Domain::Fruit apple("Apple", "USA", "Apple Inc.",
                         Time::Date(2023, 5, 1), 10, 1);
-    Entity::Fruit banana("Banana", "Ecuador", "Fruit Co.",
+    Domain::Fruit banana("Banana", "Ecuador", "Fruit Co.",
                          Time::Date(2023, 4, 30), 5, 2);
-    Entity::Fruit kiwi("Kiwi", "New Zealand", "Kiwi Farms",
+    Domain::Fruit kiwi("Kiwi", "New Zealand", "Kiwi Farms",
                        Time::Date(2023, 5, 10), 15, 3);
 
     // Add the first fruit to the repository
     fruitRepo.addFruit(apple);
 
     // Check that the fruit was added
-    auto allFruits = fruitRepo.getAllFruits();
+    auto allFruits = fruitRepo.getAll();
     assert(allFruits->size() == 1);
     assert(allFruits->at(0) == apple);
 
@@ -85,78 +74,67 @@ void testAddAndDeleteFruits() {
     fruitRepo.addFruit(banana);
 
     // Check that both fruits were added
-    allFruits = fruitRepo.getAllFruits();
+    allFruits = fruitRepo.getAll();
     assert(allFruits->size() == 2);
     assert(allFruits->at(0) == apple);
     assert(allFruits->at(1) == banana);
 
     // Delete the first fruit from the repository
-    fruitRepo.removeFruit(apple);
+    fruitRepo.deleteFruit(apple);
 
     // Check that the fruit was deleted
-    allFruits = fruitRepo.getAllFruits();
+    allFruits = fruitRepo.getAll();
     assert(allFruits->size() == 1);
     assert(allFruits->at(0) == banana);
 
     // Delete the second fruit from the repository
-    fruitRepo.removeFruit(banana);
+    fruitRepo.deleteFruit(banana);
 
     // Check that the repository is empty
-    allFruits = fruitRepo.getAllFruits();
+    allFruits = fruitRepo.getAll();
     assert(allFruits->empty());
 
     // Add a new fruit and then delete it
     fruitRepo.addFruit(kiwi);
-    allFruits = fruitRepo.getAllFruits();
+    allFruits = fruitRepo.getAll();
     assert(allFruits->size() == 1);
     assert(allFruits->at(0) == kiwi);
 
-    fruitRepo.removeFruit(kiwi);
-    allFruits = fruitRepo.getAllFruits();
+    fruitRepo.deleteFruit(kiwi);
+    allFruits = fruitRepo.getAll();
     assert(allFruits->empty());
-
-    cout << "testAddAndDeleteFruits passed" << endl;
 }
 
-
 void testDeleteData() {
-
-    cout << "testDeleteData" << std::endl;
-    Repository::FruitRepository fruitRepository("../Repository/Data/DataBaseTestRepo2.txt");
-    fruitRepository.deleteAllFruits();
-    assert(fruitRepository.getAllFruits()->empty());
-    cout << "testDeleteData passed" << std::endl;
+    Repository::FruitRepository fruitRepository("../testDataBase2");
+    fruitRepository.deleteData();
+    assert(fruitRepository.getAll()->empty());
 }
 
 void testWriteToDataBase() {
+    Repository::FruitRepository repo("../testDataBase3");
+    repo.deleteData();
 
-    cout << "testWriteToDataBase" << std::endl;
-    Repository::FruitRepository repo("../Repository/Data/DataBaseTestRepo3.txt");
-    repo.deleteAllFruits();
-
-    repo.addFruit(Entity::Fruit("Apple", "Romania", "Ion",
+    repo.addFruit(Domain::Fruit("Apple", "USA", "Apple Inc.",
                                 Time::Date(2023, 5, 1), 10, 1));
-    repo.addFruit(Entity::Fruit("Orange", "Africa", "Jamal",
+    repo.addFruit(Domain::Fruit("Banana", "Ecuador", "Fruit Co.",
                                 Time::Date(2023, 4, 30), 5, 2));
-    repo.writeFruitsToFile();
+    repo.writeToDataBase();
 
-    std::ifstream file("../Repository/Data/DataBaseTestRepo3.txt");
+    std::ifstream file("../testDataBase3");
     std::stringstream buffer;
     buffer << file.rdbuf();
     std::string fileContents = buffer.str();
     file.close();
 
-    std::string expectedOutput = "Apple,Romania,Ion,2023-5-1,10,1.00\nOrange,Africa,Jamal,2023-4-30,5,2.00";
+    std::string expectedOutput = "Apple,USA,Apple Inc.,2023-5-1,10,1.00\nBanana,Ecuador,Fruit Co.,2023-4-30,5,2.00";
     assert(fileContents == expectedOutput);
-
-    cout << "testWriteToDataBase passed" << std::endl;
 }
 
 void testRepository() {
-    testConvertFromString();
+    testFruitParsing();
     testConstructor();
     testAddAndDeleteFruits();
     testDeleteData();
     testWriteToDataBase();
 }
-

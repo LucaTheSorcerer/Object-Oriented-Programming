@@ -1,54 +1,47 @@
-//
-// Created by Luca Tudor on 13.04.2023.
-//
-
 #pragma once
 
-#include <memory>
-#include <list>
 #include <string>
-#include <utility>
 #include <fstream>
 #include <sstream>
-#include "../../Entity/src/Entity.h"
+#include <memory>
+#include <vector>
+#include <utility>
+#include "Domain.h"
 
-using std::shared_ptr, std::string, Entity::Fruit, std::vector;
+using std::string, std::shared_ptr, std::vector, Domain::Fruit;
 
-
-namespace Repository {
-    class FruitRepository {
-
+namespace Repository{
+    class FruitRepository{
     private:
-        string filename{};
-
-        shared_ptr<vector<Fruit>> fruits{};
-
+        string fileName{};
+        shared_ptr<vector<Fruit>> data{};
 
     public:
+        ///Constructor
+        explicit FruitRepository(string _fileName = "Repository/Data/DataBase");
 
-        //Constructor with filename for database
-        explicit FruitRepository(string filename_ = "Repository/Data/DataBase.txt");
-
-        //Copy constructor
+        ///Copy constructor
         FruitRepository(const FruitRepository &fruitRepository) = default;
 
-        //Assignment operator
+        ///Assignment operator
+        FruitRepository &operator=(const FruitRepository &other) = default;
 
-        FruitRepository &operator=(const FruitRepository &fruitRepository) = default;
-
-
-        //Destructor
+        ///Destructor
         ~FruitRepository() = default;
 
-
+        ///Data interactions
         void addFruit(const Fruit &fruit);
-        void removeFruit(const Fruit &fruit);
-        void deleteAllFruits();
-        [[nodiscard]] shared_ptr<vector<Fruit>> getAllFruits();
-        void writeFruitsToFile() const;
-        static string convertToString(Fruit &fruit);
-        static Fruit convertFromString(const string &fruit);
+        void deleteFruit(const Fruit &fruit);
+        void deleteData();
+        shared_ptr<vector<Fruit>> getAll();
 
+        ///Update the DataBase
+        void writeToDataBase();
+
+        ///Convert the data to a string
+        static string convertToString(Fruit &fruit);
+
+        ///Convert a Fruit to a string
+        static Fruit convertFromString(const string &fruit);
     };
 }
-

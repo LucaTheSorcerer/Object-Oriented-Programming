@@ -1,18 +1,11 @@
-#include <iostream>
-#include "Console/src/UI.h"
-#include "Test/testAllComponents.h"
-#include <memory>
-#include <list>
+#include "TestAll.h"
+#include "UI.h"
 
 using namespace UI;
 
-
-//This is the main function that will be executed when the program starts and runs our fruit shop
 int main() {
-    //Running tests first
-    testAllComponents();
+    testAll();
 
-    ConsoleUI consoleUI{};
-    consoleUI.run();
-    return 0;
+    UserInterface userInterface;
+    userInterface.run();
 }

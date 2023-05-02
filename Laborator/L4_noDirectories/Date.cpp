@@ -1,120 +1,103 @@
-//
-// Created by Luca Tudor on 30.04.2023.
-//
 #include <string>
 #include "Date.h"
 
-Time::Date::Date(int year_, int month_, int day_) {
+///Default constructor
+///@throws invalid_argument If an invalid date is provided
+Time::Date::Date(int _year, int _month, int _day) {
+    if (_year <= 0 || _month <= 0 || _day <= 0)
+        throw std::invalid_argument("Time is represented as a positive integer");
 
-    if(year_ <= 0 || month_ <= 0 || day_ <= 0)
-        throw std::invalid_argument("The time must be positive");
-
-    if(month_ > 12)
+    if (_month > 12)
         throw std::invalid_argument("There are only 12 months in a year");
 
     int daysInMonth = 31;
-
-    if(month_ == 2) {
-        daysInMonth = (year_ % 4 == 0 && year_ % 100 != 0) || year_ % 400 == 0 ? 29 : 28;
-    }
-    else if(month_ == 4 || month_ == 6 || month_ == 9 || month_ == 11) {
+    if (_month == 2) // February
+        daysInMonth = (_year % 4 == 0 && _year % 100 != 0) || (_year % 400 == 0) ? 29 : 28;
+    else if (_month == 4 || _month == 6 || _month == 9 || _month == 11) // April, June, September, November
         daysInMonth = 30;
-    }
 
-    if(day_ > daysInMonth)
+    if (_day > daysInMonth)
         throw std::invalid_argument("Invalid day");
 
-    this->year = year_;
-    this->month = month_;
-    this->day = day_;
+    year = _year;
+    month = _month;
+    day = _day;
 }
 
-int Time::Date::getDay() const {
-    return day;
-}
-
-int Time::Date::getMonth() const {
-    return month;
-}
-
+///Year getter
 int Time::Date::getYear() const {
     return year;
 }
 
-std::string Time::Date::getDateAsString() const {
-    return std::to_string(year) + '-' + std::to_string(month) + '-' + std::to_string(day);}
-
-void Time::Date::setDay(int newDay) {
-
-    //set the day and check it is is withing the bounds of the day of a month
-
-    int daysInMonth = getNumberOfDaysInMonth(month, year);
-
-    if(newDay >= 1 && newDay <= daysInMonth)
-        this->day = newDay;
-    else
-        throw std::invalid_argument("The days must be between 1 and " + std::to_string(daysInMonth));
-
+///Month getter
+int Time::Date::getMonth() const {
+    return month;
 }
 
-void Time::Date::setMonth(int newMonth) {
-
-    if(newMonth >= 1 && newMonth <= 12)
-        this->month = newMonth;
-    else
-        throw std::invalid_argument("A month must be between 1 and 12");
+///Day getter
+int Time::Date::getDay() const {
+    return day;
 }
 
+///Convert the date to a string
+std::string Time::Date::getDateAsFormattedString() const {
+    return std::to_string(year) + '-' + std::to_string(month) + '-' + std::to_string(day);
+}
+
+///Year setter
+///@throws invalid_argument if an invalid year is provided
 void Time::Date::setYear(int newYear) {
-
-    if(newYear >= 0)
-        this->year = newYear;
+    if (newYear >= 0)
+        year = newYear;
     else
-        throw std::invalid_argument("The year must be positive");
+        throw std::invalid_argument("Year cannot be negative.");
 }
 
+///Month setter
+///@throws invalid_argument if an invalid month is provided
+void Time::Date::setMonth(int newMonth) {
+    if (newMonth >= 1 && newMonth <= 12)
+        month = newMonth;
+    else
+        throw std::invalid_argument("Month must be between 1 and 12.");
+}
 
-
+///Check if a year is a leap year
 bool isLeapYear(int year) {
-    return (year % 4 == 0 && year % 100 != 0) || year % 400 == 0;
+    if ((year % 4 == 0 && year % 100 != 0) || year % 400 == 0)
+        return true;
+    return false;
 }
 
-int Time::Date::getNumberOfDaysInMonth(int month, int year) {
-
+///Find how many days are in a month
+int Time::Date::daysInMonth(int year, int month) {
     const int daysInMonth[] = {31, 28 + isLeapYear(year), 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};
     return daysInMonth[month - 1];
 }
 
+///Day setter
+///@throws invalid_argument if the day is invalid
+void Time::Date::setDay(int newDay) {
+    int daysInMonth = Date::daysInMonth(year, month);
+    if (newDay >= 1 && newDay <= daysInMonth)
+        day = newDay;
+    else
+        throw std::invalid_argument("Day must be between 1 and " + std::to_string(daysInMonth));
+}
+
+///Overloaded assignment operator
 Time::Date &Time::Date::operator=(const Time::Date &other) {
-    if(this != &other) {
-        this->day = other.day;
-        this->month = other.month;
-        this->year = other.year;
+    if (this != &other) {
+        year = other.year;
+        month = other.month;
+        day = other.day;
     }
     return *this;
 }
 
-bool Time::Date::operator==(const Time::Date &other) const {
-    return (this->day == other.day && this->month == other.month && this->year == other.year);
-}
-
-bool Time::Date::operator!=(const Time::Date &other) const {
-    return !(*this == other);
-}
-
-bool Time::Date::operator<(const Time::Date &other) const {
-    if(this->year < other.year) {
-        return true;
-    }
-    else if(this->year == other.year && this->month < other.month) {
-        return true;
-    }
-    else if(this->year == other.year && this->month == other.month && this->day < other.day) {
-        return true;
-    }
-    else {
-        return false;
-    }
+///Overloaded comparison operators ///
+bool Time::Date::operator>=(const Time::Date &other) const {
+    return !(*this < other);
 }
 
 bool Time::Date::operator>(const Time::Date &other) const {
@@ -125,7 +108,22 @@ bool Time::Date::operator<=(const Time::Date &other) const {
     return (*this < other || *this == other);
 }
 
-bool Time::Date::operator>=(const Time::Date &other) const {
-    return !(*this < other);
+bool Time::Date::operator<(const Time::Date &other) const {
+    if (year < other.year) {
+        return true;
+    } else if (year == other.year && month < other.month) {
+        return true;
+    } else if (year == other.year && month == other.month && day < other.day) {
+        return true;
+    } else {
+        return false;
+    }
 }
 
+bool Time::Date::operator!=(const Time::Date &other) const {
+    return !(*this == other);
+}
+
+bool Time::Date::operator==(const Time::Date &other) const {
+    return (year == other.year && month == other.month && day == other.day);
+}

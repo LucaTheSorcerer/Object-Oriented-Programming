@@ -1,55 +1,34 @@
-//
-// Created by Luca Tudor on 13.04.2023.
-//
-
+#include <algorithm>
 #include "FruitRepository.h"
-#include "../../Exception/src/FruitException.h"
 
+///Constructor
+///@throws runtime_error if the file is not found
+Repository::FruitRepository::FruitRepository(string _fileName) : fileName(std::move(_fileName)) {
+    std::ifstream file(fileName);
 
-Repository::FruitRepository::FruitRepository(string filename_) : filename(std::move(filename_)) {
-     std::ifstream file(filename);
-
-     //check is file is not opened correctly
     if (!file.is_open()) {
-        throw runtime_error("Failed to open file : " + filename);
+        throw std::runtime_error("Failed to create database file: " + fileName);
     }
 
-    fruits = std::make_shared<vector<Fruit>>();
-    //read from file
+    data = std::make_shared<vector<Fruit>>();
+
     string line;
-    while (getline(file, line)) {
+    while (std::getline(file, line)) {
         Fruit fruit = convertFromString(line);
-        fruits->push_back(fruit);
+        data->push_back(fruit);
     }
 
     file.close();
 }
 
-void Repository::FruitRepository::addFruit(const Fruit &fruit) {
-    fruits->push_back(fruit);
-}
-
-void Repository::FruitRepository::removeFruit(const Fruit &fruit) {
-    auto iterator = std::find_if(fruits->begin(), fruits->end(), [&](const Fruit &f) {
-        return f == fruit;
-    });
-    if (iterator != fruits->end()) {
-        fruits->erase(iterator);
-    }
-}
-
-shared_ptr<vector<Fruit>> Repository::FruitRepository::getAllFruits(){
-    return fruits;
-}
-
-void Repository::FruitRepository::writeFruitsToFile() const {
-
-    std::ofstream file(filename, std::ios::trunc);
+///write to the database the modified data
+void Repository::FruitRepository::writeToDataBase() {
+    std::ofstream file(fileName, std::ios::trunc);
 
     string fileData{};
-    for (auto it = fruits->begin(); it != fruits->end(); ++it) {
-        fileData += (it->getFruitAsString());
-        if (it != fruits->end() - 1) {
+    for (auto it = data->begin(); it != data->end(); ++it) {
+        fileData += (it->getFruitAsFormattedString());
+        if (it != data->end() - 1) {
             fileData += '\n';
         }
     }
@@ -59,34 +38,55 @@ void Repository::FruitRepository::writeFruitsToFile() const {
     file.close();
 }
 
-void Repository::FruitRepository::deleteAllFruits() {
-    fruits = std::make_unique<vector<Fruit>>();
+///Add a fruit
+void Repository::FruitRepository::addFruit(const Fruit &fruit) {
+    data->push_back(fruit);
 }
 
-string Repository::FruitRepository::convertToString(Fruit &fruit) {
-    return fruit.getFruitAsString();
+///Delete a fruit
+void Repository::FruitRepository::deleteFruit(const Fruit &fruit) {
+    auto it = std::find_if(data->begin(), data->end(), [&](const Fruit& f){
+        return f.getName() == fruit.getName();
+    });
+    if (it != data->end()) {
+        data->erase(it);
+    }
 }
 
-Fruit Repository::FruitRepository::convertFromString(const string &fruit) {
+///Get all fruits from DataBase
+shared_ptr<vector<Fruit>> Repository::FruitRepository::getAll() {
+    return data;
+}
 
-    std::stringstream stream(fruit);
-    string name, origin, producer, expiry_date;
+///Delete all the data from the DataBase
+void Repository::FruitRepository::deleteData() {
+    data = std::make_unique<vector<Fruit>>();
+}
+
+///Convert a string into a fruit
+Domain::Fruit Repository::FruitRepository::convertFromString(const string &fruit) {
+    std::stringstream ss(fruit);
+    string name, origin, producer, expDateStr;
     int quantity;
-    double price;
-    char delimiter;
+    float price;
+    char delim;
 
-    getline(stream, name, ',');
-    getline(stream, origin, ',');
-    getline(stream, producer, ',');
-    getline(stream, expiry_date, ',');
-    stream >> quantity >> delimiter >> price;
+    std::getline(ss, name, ',');
+    std::getline(ss, origin, ',');
+    std::getline(ss, producer, ',');
+    std::getline(ss, expDateStr, ',');
+    ss >> quantity >> delim >> price;
 
-    //Expiration date string to a Date object
-    std::istringstream date_stream(expiry_date);
+    // Parse the expiration date string to a Date object
+    std::istringstream iss(expDateStr);
     int year, month, day;
-    date_stream >> year >> delimiter >> month >> delimiter >> day;
-    Time::Date expiration_date(year, month, day);
+    iss >> year >> delim >> month >> delim >> day;
+    Time::Date expirationDate(year, month, day);
 
-    return Entity::Fruit(name, origin, producer, expiration_date, quantity, price);
+    return Domain::Fruit(name, origin, producer, expirationDate, quantity, price);
 }
 
+///Convert a fruit into a string
+string Repository::FruitRepository::convertToString(Fruit &fruit) {
+    return fruit.getFruitAsFormattedString();
+}

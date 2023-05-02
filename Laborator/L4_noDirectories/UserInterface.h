@@ -2,16 +2,16 @@
 
 #include "Time.h"
 #include "Domain.h"
-#include "Controller.h"
+#include "ControllerFruit.h"
 
 using Time::Date;
 using Domain::Fruit;
-using Controller::FruitController;
+using ControllerFruit::Controller;
 
 namespace UI{
     class UserInterface{
     private:
-        FruitController controller{};
+        Controller controller{};
 
     public:
         ///Run the programme

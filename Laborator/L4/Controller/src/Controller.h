@@ -28,7 +28,7 @@ namespace ControllerFruit {
         //Constructor
         explicit Controller(const string &filename = "Repository/Data/DataBase.txt");
 
-        //Coopy constructor
+        //Copy constructor
 
         Controller(const Controller &controller) = default;
 

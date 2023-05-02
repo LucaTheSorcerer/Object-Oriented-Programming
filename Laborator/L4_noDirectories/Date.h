@@ -1,7 +1,3 @@
-//
-// Created by Luca Tudor on 30.04.2023.
-//
-
 #pragma once
 
 #include <stdexcept>
@@ -9,51 +5,41 @@
 namespace Time {
     class Date {
     private:
-        int day;
-        int month;
         int year;
+        int month;
+        int day;
 
     public:
-        // Constructors
+        ///Default Constructor
+        explicit Date(int _year = 0, int _month = 0, int _day = 0);
 
-        //Default constructor
+        ///Copy constructor
+        Date(const Date &other) = default;
 
-        explicit Date(int year_ = 0, int month_ = 0, int day_ = 0);
-
-        // Copy constructor
-        Date(const Date& date) = default;
-
-        //Destructor
-
+        ///Destructor
         ~Date() = default;
 
-        // Getters
-
-        [[nodiscard]] int getDay() const;
-        [[nodiscard]] int getMonth() const;
+        ///Getters
         [[nodiscard]] int getYear() const;
-        [[nodiscard]] std::string getDateAsString() const;
+        [[nodiscard]] int getMonth() const;
+        [[nodiscard]] int getDay() const;
+        [[nodiscard]] std::string getDateAsFormattedString() const;
 
-        // Setters
+        ///Setters
+        void setYear(int newYear);
+        void setMonth(int newMonth);
+        void setDay(int newDay);
 
-        void setDay(int day);
-        void setMonth(int month);
-        void setYear(int year);
+        ///Compute the number of days in a month
+        static int daysInMonth(int year, int month);
 
-        //Calculate number of days in a month
-
-        static int getNumberOfDaysInMonth(int month, int year);
-
-        // Overloaded operators
-
-        Date& operator=(const Date& other);
+        ///Overloaded operators
+        Date &operator=(const Date& other);
         bool operator==(const Date& other) const;
         bool operator!=(const Date& other) const;
         bool operator<(const Date& other) const;
-        bool operator>(const Date& other) const;
         bool operator<=(const Date& other) const;
+        bool operator>(const Date& other) const;
         bool operator>=(const Date& other) const;
-
     };
-
 }
