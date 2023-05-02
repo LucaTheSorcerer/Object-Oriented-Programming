@@ -12,6 +12,6 @@
 void testAllComponents() {
     testEntity();
     testDate();
-    //testController();
-    testRepository();
+    testController();
+    //testRepository();
 }

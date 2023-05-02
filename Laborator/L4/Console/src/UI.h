@@ -7,5 +7,5 @@
 #include "Console.h"
 
 namespace UI {
-    class [[maybe_unused]] ConsoleUI;
+    class  ConsoleUI;
 }

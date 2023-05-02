@@ -13,35 +13,47 @@
 
 using Entity::Fruit;
 using Time::Date;
+using ControllerFruit::Controller;
 
 namespace UI {
-    class [[maybe_unused]] ConsoleUI {
+    class ConsoleUI {
     private:
-        static ControllerFruit::Controller &controller;
+        Controller controller{};
 
-        static int readInput();
+         int readInput();
 
-        static void executeChoice(int choice);
+         void executeChoice(int choice);
+
+         void printMenu();
+
+         void searchFruitString();
+
+         void findFruitShortInQuantity();
+
+         void findAllFruitsSortedByExpiration();
+
+         void printAllFruits();
+
+
+         void addFruit();
+
+         void removeFruit();
+
+         void updateFruit();
 
 
     public:
-        static void run();
+        void run();
 
-        static void searchFruitString();
+        //Constructor
+        ConsoleUI() = default;
 
-        static void findFruitShortInQuantity();
+        //Copy constructor
 
-        static void findAllFruitsSortedByExpiration();
+        ConsoleUI(const ConsoleUI &consoleUI) = default;
 
-        static void printAllFruits();
-
-        static void printMenu();
-
-        static void addFruit();
-
-        static void removeFruit();
-
-        static void updateFruit();
+        //Destructor
+        ~ConsoleUI() = default;
 
     };
 }

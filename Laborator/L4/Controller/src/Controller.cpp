@@ -59,7 +59,7 @@ void ControllerFruit::Controller::removeFruit(const string &name, const string &
         throw std::runtime_error("Fruit not found");
 }
 
-unique_ptr<::vector<Fruit>> ControllerFruit::Controller::getAllFruits() {
+unique_ptr<vector<Fruit>> ControllerFruit::Controller::getAllFruits() {
     auto sortedFruits = std::make_unique<vector<Fruit>>(*fruits);
     std::sort(sortedFruits->begin(), sortedFruits->end(),
               [](const Fruit &a, const Fruit &b) -> bool {
@@ -68,6 +68,7 @@ unique_ptr<::vector<Fruit>> ControllerFruit::Controller::getAllFruits() {
     );
     return sortedFruits;
 }
+
 
 unique_ptr<vector<Fruit>> ControllerFruit::Controller::findFruitsContainingString(const string &search_string) {
 

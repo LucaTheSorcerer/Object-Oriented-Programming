@@ -11,7 +11,7 @@ Repository::FruitRepository::FruitRepository(string filename_) : filename(std::m
 
      //check is file is not opened correctly
     if (!file.is_open()) {
-        throw FruitException("File could not be opened!");
+        throw runtime_error("Failed to open file : " + filename);
     }
 
     fruits = std::make_shared<vector<Fruit>>();
