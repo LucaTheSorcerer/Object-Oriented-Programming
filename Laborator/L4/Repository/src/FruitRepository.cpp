@@ -30,7 +30,9 @@ void Repository::FruitRepository::addFruit(const Fruit &fruit) {
 }
 
 void Repository::FruitRepository::removeFruit(const Fruit &fruit) {
-    auto iterator = std::find(fruits->begin(), fruits->end(), fruit);
+    auto iterator = std::find_if(fruits->begin(), fruits->end(), [&](const Fruit &f) {
+        return f == fruit;
+    });
     if (iterator != fruits->end()) {
         fruits->erase(iterator);
     }
