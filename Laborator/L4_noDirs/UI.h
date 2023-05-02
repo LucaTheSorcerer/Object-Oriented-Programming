@@ -1,7 +1,7 @@
 #pragma once
 
-#include "UserInterface.h"
+#include "ConsoleUI.h"
 
 namespace UI{
-    class UserInterface;
+    class ConsoleUI;
 }

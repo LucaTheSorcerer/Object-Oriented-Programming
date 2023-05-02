@@ -6,6 +6,6 @@ using namespace UI;
 int main() {
     testAll();
 
-    UserInterface userInterface;
+    ConsoleUI userInterface;
     userInterface.run();
 }

@@ -7,7 +7,7 @@
 
 using std::string, Time::Date;
 
-namespace Domain {
+namespace Entity {
     class Fruit {
     private:
         string name;

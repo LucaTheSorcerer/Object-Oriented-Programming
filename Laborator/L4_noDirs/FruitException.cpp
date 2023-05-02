@@ -3,6 +3,8 @@
 //
 #include "FruitException.h"
 
+using namespace Exception;
+
 FruitException::FruitException(const string &message) {
     this->message = message;
 }

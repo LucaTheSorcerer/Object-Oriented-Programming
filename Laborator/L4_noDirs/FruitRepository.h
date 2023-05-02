@@ -6,9 +6,10 @@
 #include <memory>
 #include <vector>
 #include <utility>
-#include "Domain.h"
+#include "Entity.h"
+#include "FruitException.h"
 
-using std::string, std::shared_ptr, std::vector, Domain::Fruit;
+using std::string, std::shared_ptr, std::vector, Entity::Fruit;
 
 namespace Repository{
     class FruitRepository{

@@ -121,8 +121,8 @@ build CMakeFiles/L4_noDirs.dir/TestTime.cpp.o: CXX_COMPILER__L4_noDirs_Debug /Us
   OBJECT_DIR = CMakeFiles/L4_noDirs.dir
   OBJECT_FILE_DIR = CMakeFiles/L4_noDirs.dir
 
-build CMakeFiles/L4_noDirs.dir/UserInterface.cpp.o: CXX_COMPILER__L4_noDirs_Debug /Users/lulu/UBB/Semestrul_II/Object-Oriented-Programming/Laborator/L4_noDirs/UserInterface.cpp || cmake_object_order_depends_target_L4_noDirs
-  DEP_FILE = CMakeFiles/L4_noDirs.dir/UserInterface.cpp.o.d
+build CMakeFiles/L4_noDirs.dir/ConsoleUI.cpp.o: CXX_COMPILER__L4_noDirs_Debug /Users/lulu/UBB/Semestrul_II/Object-Oriented-Programming/Laborator/L4_noDirs/ConsoleUI.cpp || cmake_object_order_depends_target_L4_noDirs
+  DEP_FILE = CMakeFiles/L4_noDirs.dir/ConsoleUI.cpp.o.d
   FLAGS = -g -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.3.sdk -fcolor-diagnostics -std=gnu++2b
   OBJECT_DIR = CMakeFiles/L4_noDirs.dir
   OBJECT_FILE_DIR = CMakeFiles/L4_noDirs.dir
@@ -135,7 +135,7 @@ build CMakeFiles/L4_noDirs.dir/UserInterface.cpp.o: CXX_COMPILER__L4_noDirs_Debu
 #############################################
 # Link the executable L4_noDirs
 
-build L4_noDirs: CXX_EXECUTABLE_LINKER__L4_noDirs_Debug CMakeFiles/L4_noDirs.dir/Shop.cpp.o CMakeFiles/L4_noDirs.dir/Date.cpp.o CMakeFiles/L4_noDirs.dir/Fruit.cpp.o CMakeFiles/L4_noDirs.dir/FruitController.cpp.o CMakeFiles/L4_noDirs.dir/FruitException.cpp.o CMakeFiles/L4_noDirs.dir/FruitRepository.cpp.o CMakeFiles/L4_noDirs.dir/TestAll.cpp.o CMakeFiles/L4_noDirs.dir/TestController.cpp.o CMakeFiles/L4_noDirs.dir/TestDate.cpp.o CMakeFiles/L4_noDirs.dir/TestDomain.cpp.o CMakeFiles/L4_noDirs.dir/TestRepository.cpp.o CMakeFiles/L4_noDirs.dir/TestTime.cpp.o CMakeFiles/L4_noDirs.dir/UserInterface.cpp.o
+build L4_noDirs: CXX_EXECUTABLE_LINKER__L4_noDirs_Debug CMakeFiles/L4_noDirs.dir/Shop.cpp.o CMakeFiles/L4_noDirs.dir/Date.cpp.o CMakeFiles/L4_noDirs.dir/Fruit.cpp.o CMakeFiles/L4_noDirs.dir/FruitController.cpp.o CMakeFiles/L4_noDirs.dir/FruitException.cpp.o CMakeFiles/L4_noDirs.dir/FruitRepository.cpp.o CMakeFiles/L4_noDirs.dir/TestAll.cpp.o CMakeFiles/L4_noDirs.dir/TestController.cpp.o CMakeFiles/L4_noDirs.dir/TestDate.cpp.o CMakeFiles/L4_noDirs.dir/TestDomain.cpp.o CMakeFiles/L4_noDirs.dir/TestRepository.cpp.o CMakeFiles/L4_noDirs.dir/TestTime.cpp.o CMakeFiles/L4_noDirs.dir/ConsoleUI.cpp.o
   FLAGS = -g -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.3.sdk
   OBJECT_DIR = CMakeFiles/L4_noDirs.dir
   POST_BUILD = :

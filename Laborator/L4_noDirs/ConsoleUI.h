@@ -1,15 +1,15 @@
 #pragma once
 
 #include "Time.h"
-#include "Domain.h"
+#include "Entity.h"
 #include "Controller.h"
 
 using Time::Date;
-using Domain::Fruit;
+using Entity::Fruit;
 using Controller::FruitController;
 
 namespace UI{
-    class UserInterface{
+    class ConsoleUI{
     private:
         FruitController controller{};
 
@@ -18,13 +18,13 @@ namespace UI{
         void run();
 
         ///Constructor
-        UserInterface() = default;
+        ConsoleUI() = default;
 
         ///Copy constructor
-        UserInterface(const UserInterface &userInterface) = default;
+        ConsoleUI(const ConsoleUI &userInterface) = default;
 
         ///Destructor
-        ~UserInterface() = default;
+        ~ConsoleUI() = default;
 
     private:
         ///Display the UI menu

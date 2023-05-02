@@ -10,11 +10,14 @@
 
 using namespace std;
 
-class FruitException : public exception {
-private:
-    string message;
-public:
-    explicit FruitException(const string& message);
-    [[nodiscard]] const char* what() const noexcept override;
+namespace Exception {
+    class FruitException : public exception {
+    private:
+        string message;
+    public:
+        explicit FruitException(const string &message);
 
-};
+        [[nodiscard]] const char *what() const noexcept override;
+
+    };
+}

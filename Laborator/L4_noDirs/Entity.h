@@ -2,6 +2,6 @@
 
 #include "Fruit.h"
 
-namespace Domain{
+namespace Entity{
     class Fruit;
 }

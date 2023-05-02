@@ -1,10 +1,13 @@
-#include "UserInterface.h"
+#include "ConsoleUI.h"
 #include <iostream>
 
 using std::cin, std::cout;
 
-///Run the programme
-void UI::UserInterface::run() {
+/**
+ * @details Display the menu and run the program until the user chooses to exit.
+ *
+ */
+void UI::ConsoleUI::run() {
     int choice;
     do {
         displayMenu();
@@ -37,53 +40,58 @@ void UI::UserInterface::run() {
     } while (choice != 0);
 }
 
-///Display the menu
-void UI::UserInterface::displayMenu() {
+
+/**
+ * @details Display the menu of the fruit store management system.
+ */
+void UI::ConsoleUI::displayMenu() {
+    cout << "\n\n";
     cout << "\nFruit Store Management System\n\n"
-         << "1. Add a product\n"
-         << "2. Remove a product\n"
-         << "3. Display products containing a certain string\n"
-         << "4. Display products with low quantity\n"
-         << "5. Display products sorted by expiration date\n"
+         << "What would you like to do?\n\n"
+         << "1. Add a fruit\n"
+         << "2. Remove a fruit\n"
+         << "3. Search for fruit by name\n"
+         << "4. Find the fruits with a quantity less than a given number\n"
+         << "5. Find all the fruits sorted by their expiration date\n"
          << "0. Exit\n\n"
          << "Enter your choice: ";
 }
 
 ///Add a user given product to the Data Base
-void UI::UserInterface::addProduct() {
-    std::string input;
+void UI::ConsoleUI::addProduct() {
+    std::string userInput;
     std::string name, origin, producer;
     int quantity, year, month, day;
     float price;
 
-    std::cout << "Enter product name: ";
-    std::getline(std::cin, input);
-    std::stringstream(input) >> name;
+    std::cout << "Enter the name of the fruit: ";
+    std::getline(std::cin, userInput);
+    std::stringstream(userInput) >> name;
 
-    std::cout << "Enter product origin: ";
-    std::getline(std::cin, input);
-    std::stringstream(input) >> origin;
+    std::cout << "Enter the origin of the fruit: ";
+    std::getline(std::cin, userInput);
+    std::stringstream(userInput) >> origin;
 
-    std::cout << "Enter product producer: ";
-    std::getline(std::cin, input);
-    std::stringstream(input) >> producer;
+    std::cout << "Enter the producer of the fruit: ";
+    std::getline(std::cin, userInput);
+    std::stringstream(userInput) >> producer;
 
-    std::cout << "Enter product price: ";
-    std::getline(std::cin, input);
-    std::stringstream(input) >> price;
+    std::cout << "Enter the price of the fruit: ";
+    std::getline(std::cin, userInput);
+    std::stringstream(userInput) >> price;
 
-    std::cout << "Enter product quantity: ";
-    std::getline(std::cin, input);
-    std::stringstream(input) >> quantity;
+    std::cout << "Enter the quantity of the fruit: ";
+    std::getline(std::cin, userInput);
+    std::stringstream(userInput) >> quantity;
 
-    std::cout << "Enter product expiration date (year month day): ";
-    std::getline(std::cin, input);
-    std::stringstream(input) >> year >> month >> day;
+    std::cout << "Enter product expiration date (yyyy-mm-dd): ";
+    std::getline(std::cin, userInput);
+    std::stringstream(userInput) >> year >> month >> day;
 
     while (year < 2023 || year > 2043 || month < 1 || month > 12 || day < 1 || day > Date::daysInMonth(year, month)) {
         std::cout << "Invalid date. Please enter a valid expiration date (year month day): ";
-        std::getline(std::cin, input);
-        std::stringstream(input) >> year >> month >> day;
+        std::getline(std::cin, userInput);
+        std::stringstream(userInput) >> year >> month >> day;
     }
 
     std::cout << '\n';
@@ -91,43 +99,47 @@ void UI::UserInterface::addProduct() {
 
     try {
         controller.addFruit(name, origin, producer, expirationDate, quantity, price);
-        std::cout << "Product added successfully." << std::endl;
+        std::cout << "Fruit added successfully." << std::endl;
     }
     catch (std::exception &e) {
         std::cout << "Error: " << e.what() << std::endl;
     }
 }
 
-///Remove a user given product from the data Base
-void UI::UserInterface::removeProduct() {
+/**
+ * @details Remove a product from the Data Base
+ */
+void UI::ConsoleUI::removeProduct() {
     std::string name, origin;
 
-    std::cout << "Enter product name: ";
+    std::cout << "Enter the name of the fruit: ";
     std::getline(std::cin, name);
 
-    std::cout << "Enter product origin: ";
+    std::cout << "Enter the origin of the fruit: ";
     std::getline(std::cin, origin);
 
     try {
         controller.deleteFruit(name, origin);
-        std::cout << "Product removed successfully." << std::endl;
+        std::cout << "Fruit removed successfully." << std::endl;
     }
     catch (std::exception &e) {
         std::cout << "Error: " << e.what() << std::endl;
     }
 }
 
-///Get a string from the user
-///Use that string as a search query and display the result on the screen
-void UI::UserInterface::displayProductsByString() {
-    std::string query;
+/**
+ * @details Display all products that contain a given string in their name. The user gives the string. If no products
+ * are found, an error message is displayed. If products are found, they are displayed.
+ */
+void UI::ConsoleUI::displayProductsByString() {
+    std::string name;
 
-    std::cout << "Enter search query: ";
-    std::getline(std::cin, query);
+    std::cout << "Enter search name: ";
+    std::getline(std::cin, name);
 
     try {
-        auto fruits = controller.findFruits(query);
-        std::cout << "Products: " << std::endl;
+        auto fruits = controller.findFruits(name);
+        cout << "The fruits that contain the string " << name << " are: " << endl;
         for (const auto &fruit: *fruits) {
             std::cout << fruit.getName() << ", " << fruit.getOrigin() << ", " << fruit.getProducer() << ", "
                       << fruit.getExpirationDate().getDateAsFormattedString() << ", " << fruit.getQuantity() << ", "
@@ -139,8 +151,11 @@ void UI::UserInterface::displayProductsByString() {
     }
 }
 
-///Display all products that are under a quantity threshold
-void UI::UserInterface::displayLowQuantityProducts() {
+/**
+ * @details Display all products that have a quantity less than a given number. The user gives the number. If no
+ * products are found, an error message is displayed. If products are found, they are displayed.
+ */
+void UI::ConsoleUI::displayLowQuantityProducts() {
     int quantity;
 
     std::cout << "Enter quantity threshold: ";
@@ -148,7 +163,7 @@ void UI::UserInterface::displayLowQuantityProducts() {
 
     try {
         auto fruits = controller.getLowQuantityFruits(quantity);
-        std::cout << "Products in low supply: " << std::endl;
+        cout << "The fruits with a quantity less than " << quantity << " are: " << endl;
         for (const auto &fruit: *fruits) {
             std::cout << fruit.getName() << ", " << fruit.getOrigin() << ", " << fruit.getProducer() << ", "
                       << fruit.getExpirationDate().getDateAsFormattedString() << ", " << fruit.getQuantity() << ", "
@@ -161,9 +176,9 @@ void UI::UserInterface::displayLowQuantityProducts() {
 }
 
 ///Display all products sorted by their expiry Date
-void UI::UserInterface::displayProductsByExpirationDate() {
+void UI::ConsoleUI::displayProductsByExpirationDate() {
     auto fruits = controller.getFruitsByExpirationDate();
-    std::cout << "Products sorted by expiration date:" << std::endl;
+    cout << "The fruits sorted by their expiration date are: " << endl;
     for (const auto &fruit: *fruits) {
         std::cout << fruit.getName() << ", " << fruit.getOrigin() << ", " << fruit.getProducer() << ", "
                   << fruit.getExpirationDate().getDateAsFormattedString() << ", " << fruit.getQuantity() << ", "
