@@ -80,7 +80,8 @@ void UI::UserInterface::addProduct() {
     std::getline(std::cin, input);
     std::stringstream(input) >> year >> month >> day;
 
-    while (year < 2023 || year > 2043 || month < 1 || month > 12 || day < 1 || day > Date::daysInMonth(year, month)) {
+    while (year < 2023 || year > 2043 || month < 1 || month > 12 || day < 1 || day > Date::getNumberOfDaysInMonth(year,
+                                                                                                                  month)) {
         std::cout << "Invalid date. Please enter a valid expiration date (year month day): ";
         std::getline(std::cin, input);
         std::stringstream(input) >> year >> month >> day;
@@ -130,7 +131,7 @@ void UI::UserInterface::displayProductsByString() {
         std::cout << "Products: " << std::endl;
         for (const auto &fruit: *fruits) {
             std::cout << fruit.getName() << ", " << fruit.getOrigin() << ", " << fruit.getProducer() << ", "
-                      << fruit.getExpirationDate().getDateAsFormattedString() << ", " << fruit.getQuantity() << ", "
+                      << fruit.getExpirationDate().getDateAsString() << ", " << fruit.getQuantity() << ", "
                       << fruit.getPrice() << std::endl;
         }
     }
@@ -151,7 +152,7 @@ void UI::UserInterface::displayLowQuantityProducts() {
         std::cout << "Products in low supply: " << std::endl;
         for (const auto &fruit: *fruits) {
             std::cout << fruit.getName() << ", " << fruit.getOrigin() << ", " << fruit.getProducer() << ", "
-                      << fruit.getExpirationDate().getDateAsFormattedString() << ", " << fruit.getQuantity() << ", "
+                      << fruit.getExpirationDate().getDateAsString() << ", " << fruit.getQuantity() << ", "
                       << fruit.getPrice() << std::endl;
         }
     }
@@ -166,7 +167,7 @@ void UI::UserInterface::displayProductsByExpirationDate() {
     std::cout << "Products sorted by expiration date:" << std::endl;
     for (const auto &fruit: *fruits) {
         std::cout << fruit.getName() << ", " << fruit.getOrigin() << ", " << fruit.getProducer() << ", "
-                  << fruit.getExpirationDate().getDateAsFormattedString() << ", " << fruit.getQuantity() << ", "
+                  << fruit.getExpirationDate().getDateAsString() << ", " << fruit.getQuantity() << ", "
                   << fruit.getPrice() << std::endl;
     }
 }

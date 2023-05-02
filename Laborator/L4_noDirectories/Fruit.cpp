@@ -52,7 +52,7 @@ std::string Domain::Fruit::getFruitAsFormattedString() {
     stream << std::fixed << std::setprecision(2) << price;
     std::string formattedPrice = stream.str();
 
-    return name + ',' + origin + ',' + producer + ',' + expirationDate.getDateAsFormattedString() + ',' +
+    return name + ',' + origin + ',' + producer + ',' + expirationDate.getDateAsString() + ',' +
            std::to_string(quantity) + ',' + formattedPrice;
 }
 

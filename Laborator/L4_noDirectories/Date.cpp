@@ -40,7 +40,7 @@ int Time::Date::getDay() const {
 }
 
 ///Convert the date to a string
-std::string Time::Date::getDateAsFormattedString() const {
+std::string Time::Date::getDateAsString() const {
     return std::to_string(year) + '-' + std::to_string(month) + '-' + std::to_string(day);
 }
 
@@ -70,7 +70,7 @@ bool isLeapYear(int year) {
 }
 
 ///Find how many days are in a month
-int Time::Date::daysInMonth(int year, int month) {
+int Time::Date::getNumberOfDaysInMonth(int year, int month) {
     const int daysInMonth[] = {31, 28 + isLeapYear(year), 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};
     return daysInMonth[month - 1];
 }
@@ -78,7 +78,7 @@ int Time::Date::daysInMonth(int year, int month) {
 ///Day setter
 ///@throws invalid_argument if the day is invalid
 void Time::Date::setDay(int newDay) {
-    int daysInMonth = Date::daysInMonth(year, month);
+    int daysInMonth = Date::getNumberOfDaysInMonth(year, month);
     if (newDay >= 1 && newDay <= daysInMonth)
         day = newDay;
     else

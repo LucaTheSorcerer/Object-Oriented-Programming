@@ -9,7 +9,7 @@ void testFruitParsing() {
     assert(fruit.getName() == "Apple");
     assert(fruit.getOrigin() == "USA");
     assert(fruit.getProducer() == "Red Del");
-    assert(fruit.getExpirationDate().getDateAsFormattedString() == "2023-5-1");
+    assert(fruit.getExpirationDate().getDateAsString() == "2023-5-1");
     assert(fruit.getQuantity() == 10);
     assert(fruit.getPrice() == 1.5f);
 

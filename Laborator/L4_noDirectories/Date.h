@@ -23,7 +23,7 @@ namespace Time {
         [[nodiscard]] int getYear() const;
         [[nodiscard]] int getMonth() const;
         [[nodiscard]] int getDay() const;
-        [[nodiscard]] std::string getDateAsFormattedString() const;
+        [[nodiscard]] std::string getDateAsString() const;
 
         ///Setters
         void setYear(int newYear);
@@ -31,7 +31,7 @@ namespace Time {
         void setDay(int newDay);
 
         ///Compute the number of days in a month
-        static int daysInMonth(int year, int month);
+        static int getNumberOfDaysInMonth(int year, int month);
 
         ///Overloaded operators
         Date &operator=(const Date& other);
