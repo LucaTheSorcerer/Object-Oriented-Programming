@@ -1,0 +1,8 @@
+//
+// Created by Luca Tudor on 02.05.2023.
+//
+
+#ifndef L4_NODIRECTORIES_EXCEPTION_H
+#define L4_NODIRECTORIES_EXCEPTION_H
+
+#endif //L4_NODIRECTORIES_EXCEPTION_H
