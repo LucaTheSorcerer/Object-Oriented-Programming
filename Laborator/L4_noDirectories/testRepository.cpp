@@ -55,11 +55,11 @@ void testAddAndDeleteFruits() {
     Repository::FruitRepository fruitRepo("../testDataBase1");
 
     // Create some sample fruits
-    Domain::Fruit apple("Apple", "USA", "Apple Inc.",
+    Entity::Fruit apple("Apple", "USA", "Apple Inc.",
                         Time::Date(2023, 5, 1), 10, 1);
-    Domain::Fruit banana("Banana", "Ecuador", "Fruit Co.",
+    Entity::Fruit banana("Banana", "Ecuador", "Fruit Co.",
                          Time::Date(2023, 4, 30), 5, 2);
-    Domain::Fruit kiwi("Kiwi", "New Zealand", "Kiwi Farms",
+    Entity::Fruit kiwi("Kiwi", "New Zealand", "Kiwi Farms",
                        Time::Date(2023, 5, 10), 15, 3);
 
     // Add the first fruit to the repository
@@ -115,9 +115,9 @@ void testWriteToDataBase() {
     Repository::FruitRepository repo("../testDataBase3");
     repo.deleteData();
 
-    repo.addFruit(Domain::Fruit("Apple", "USA", "Apple Inc.",
+    repo.addFruit(Entity::Fruit("Apple", "USA", "Apple Inc.",
                                 Time::Date(2023, 5, 1), 10, 1));
-    repo.addFruit(Domain::Fruit("Banana", "Ecuador", "Fruit Co.",
+    repo.addFruit(Entity::Fruit("Banana", "Ecuador", "Fruit Co.",
                                 Time::Date(2023, 4, 30), 5, 2));
     repo.writeToDataBase();
 

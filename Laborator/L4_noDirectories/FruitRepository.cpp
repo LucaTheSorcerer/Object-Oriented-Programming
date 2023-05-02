@@ -27,7 +27,7 @@ void Repository::FruitRepository::writeToDataBase() {
 
     string fileData{};
     for (auto it = data->begin(); it != data->end(); ++it) {
-        fileData += (it->getFruitAsFormattedString());
+        fileData += (it->getFruitAsString());
         if (it != data->end() - 1) {
             fileData += '\n';
         }
@@ -64,7 +64,7 @@ void Repository::FruitRepository::deleteData() {
 }
 
 ///Convert a string into a fruit
-Domain::Fruit Repository::FruitRepository::convertFromString(const string &fruit) {
+Entity::Fruit Repository::FruitRepository::convertFromString(const string &fruit) {
     std::stringstream ss(fruit);
     string name, origin, producer, expDateStr;
     int quantity;
@@ -83,10 +83,10 @@ Domain::Fruit Repository::FruitRepository::convertFromString(const string &fruit
     iss >> year >> delim >> month >> delim >> day;
     Time::Date expirationDate(year, month, day);
 
-    return Domain::Fruit(name, origin, producer, expirationDate, quantity, price);
+    return Entity::Fruit(name, origin, producer, expirationDate, quantity, price);
 }
 
 ///Convert a fruit into a string
 string Repository::FruitRepository::convertToString(Fruit &fruit) {
-    return fruit.getFruitAsFormattedString();
+    return fruit.getFruitAsString();
 }

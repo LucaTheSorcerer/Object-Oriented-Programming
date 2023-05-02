@@ -5,9 +5,9 @@
 #include <sstream>
 #include <iomanip>
 
-using std::string, Time::Date;
+using std::string, Time::Date, std::stringstream;
 
-namespace Domain {
+namespace Entity {
     class Fruit {
     private:
         string name;
@@ -36,15 +36,16 @@ namespace Domain {
         [[nodiscard]] Date getExpirationDate() const;
         [[nodiscard]] int getQuantity() const;
         [[nodiscard]] float getPrice() const;
-        [[nodiscard]] std::string getFruitAsFormattedString();
+        [[nodiscard]] std::string getFruitAsString();
 
         ///Setters
         void setName(const string &newName);
         void setOrigin(const string &newOrigin);
-        void setProducer(const string &newProducer);
         void setExpirationDate(const Date &newExpirationDate);
         void setQuantity(int newQuantity);
         void setPrice(float newPrice);
+        void setProducer(const string &newProducer);
+
 
         ///Overloaded operators
         Fruit &operator=(const Fruit &other) = default;

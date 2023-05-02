@@ -1,6 +1,6 @@
 #pragma once
 
-#include "Domain.h"
+#include "Entity.h"
 #include "Repository.h"
 #include "Time.h"
 #include <memory>
@@ -8,7 +8,7 @@
 #include <string>
 #include <algorithm>
 
-using Domain::Fruit, Repository::FruitRepository, Time::Date, std::vector, std::shared_ptr, std::string, std::unique_ptr;
+using Entity::Fruit, Repository::FruitRepository, Time::Date, std::vector, std::shared_ptr, std::string, std::unique_ptr;
 
 namespace ControllerFruit {
     class Controller {

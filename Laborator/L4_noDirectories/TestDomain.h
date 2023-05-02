@@ -1,7 +1,7 @@
 #pragma once
 #include <cassert>
-#include "Domain.h"
+#include "Entity.h"
 
-using namespace Domain;
+using namespace Entity;
 
 void testDomain();

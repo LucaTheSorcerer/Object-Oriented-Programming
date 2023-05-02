@@ -2,7 +2,7 @@
 
 #include <utility>
 
-using Domain::Fruit;
+using Entity::Fruit;
 
 ///Default constructor
 ///@warning The strings given to this constructor are moved to another address in memory
@@ -46,7 +46,7 @@ int Fruit::getQuantity() const {
 }
 
 ///Get the fruit as string
-std::string Domain::Fruit::getFruitAsFormattedString() {
+std::string Entity::Fruit::getFruitAsString() {
     //Format the price to 2 decimal points
     std::ostringstream stream;
     stream << std::fixed << std::setprecision(2) << price;
@@ -87,23 +87,23 @@ void Fruit::setPrice(float newPrice) {
 }
 
 ///Overloaded comparison operators ///
-bool Domain::Fruit::operator==(const Fruit& other) const {
+bool Entity::Fruit::operator==(const Fruit& other) const {
     return (name == other.name) && (origin == other.origin);
 }
 
-bool Domain::Fruit::operator!=(const Fruit& other) const {
+bool Entity::Fruit::operator!=(const Fruit& other) const {
     return !(*this == other);
 }
 
-bool Domain::Fruit::operator<(const Fruit& other) const {
+bool Entity::Fruit::operator<(const Fruit& other) const {
     return expirationDate < other.expirationDate;
 }
 
-bool Domain::Fruit::operator>(const Fruit& other) const {
+bool Entity::Fruit::operator>(const Fruit& other) const {
     return expirationDate > other.expirationDate;
 }
 
-bool Domain::Fruit::operator<=(const Fruit& other) const {
+bool Entity::Fruit::operator<=(const Fruit& other) const {
     return (*this < other) || (*this == other);
 }
 

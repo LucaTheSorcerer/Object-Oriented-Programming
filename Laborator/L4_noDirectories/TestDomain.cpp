@@ -146,26 +146,26 @@ void testFruitExtended() {
             assert(fruit1 >= fruit1);
         }
 
-        //Test the getFruitAsFormattedString function
+        //Test the getFruitAsString function
         {
             // Test 1: Fruit with all valid fields
-            Domain::Fruit fruit1("Apple", "USA", "XYZ Farms", Time::Date(2023, 5, 1), 10, 1.50);
-            std::string fruitStr1 = fruit1.getFruitAsFormattedString();
+            Entity::Fruit fruit1("Apple", "USA", "XYZ Farms", Time::Date(2023, 5, 1), 10, 1.50);
+            std::string fruitStr1 = fruit1.getFruitAsString();
             assert(fruitStr1 == "Apple,USA,XYZ Farms,2023-5-1,10,1.50");
 
             // Test 2: Fruit with empty name field
-            Domain::Fruit fruit2("", "USA", "XYZ Farms", Time::Date(2023, 5, 1), 10, 1.50);
-            std::string fruitStr2 = fruit2.getFruitAsFormattedString();
+            Entity::Fruit fruit2("", "USA", "XYZ Farms", Time::Date(2023, 5, 1), 10, 1.50);
+            std::string fruitStr2 = fruit2.getFruitAsString();
             assert(fruitStr2 == ",USA,XYZ Farms,2023-5-1,10,1.50");
 
             // Test 3: Fruit with empty origin field
-            Domain::Fruit fruit3("Apple", "", "XYZ Farms", Time::Date(2023, 5, 1), 10, 1.50);
-            std::string fruitStr3 = fruit3.getFruitAsFormattedString();
+            Entity::Fruit fruit3("Apple", "", "XYZ Farms", Time::Date(2023, 5, 1), 10, 1.50);
+            std::string fruitStr3 = fruit3.getFruitAsString();
             assert(fruitStr3 == "Apple,,XYZ Farms,2023-5-1,10,1.50");
 
             // Test 4: Fruit with empty producer field
-            Domain::Fruit fruit4("Apple", "USA", "", Time::Date(2023, 5, 1), 10, 1.50);
-            std::string fruitStr4 = fruit4.getFruitAsFormattedString();
+            Entity::Fruit fruit4("Apple", "USA", "", Time::Date(2023, 5, 1), 10, 1.50);
+            std::string fruitStr4 = fruit4.getFruitAsString();
             assert(fruitStr4 == "Apple,USA,,2023-5-1,10,1.50");
         }
     }

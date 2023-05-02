@@ -59,3 +59,11 @@
 309	339	1683054554609150209	L4	e760912435967b37
 2	350	1683054585039553376	CMakeFiles/L4.dir/Controller/test/testController.cpp.o	ff6b10dd53c451d6
 350	385	1683054585075963180	L4	e760912435967b37
+3	301	1683056014511050601	CMakeFiles/L4.dir/Entity/test/testEntity.cpp.o	a2b00a9376564c48
+2	369	1683056014581617830	CMakeFiles/L4.dir/Shop.cpp.o	2dbd9941dc063020
+4	391	1683056014604425531	CMakeFiles/L4.dir/Test/testAllComponents.cpp.o	4ccf1801f86b5ada
+3	435	1683056014647837636	CMakeFiles/L4.dir/Repository/src/FruitRepository.cpp.o	e4ae4daf52c07fbd
+4	441	1683056014654581188	CMakeFiles/L4.dir/Controller/test/testController.cpp.o	ff6b10dd53c451d6
+3	464	1683056014677620389	CMakeFiles/L4.dir/Console/src/Console.cpp.o	f3c87ea464d70c0e
+301	681	1683056014894750877	CMakeFiles/L4.dir/Repository/test/testRepository.cpp.o	f376adbfe73ab177
+2	271	1683056027148491865	CMakeFiles/L4.dir/Entity/src/Fruit.cpp.o	78e09b5d90629b8e

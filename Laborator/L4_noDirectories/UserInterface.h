@@ -1,11 +1,11 @@
 #pragma once
 
 #include "Time.h"
-#include "Domain.h"
+#include "Entity.h"
 #include "ControllerFruit.h"
 
 using Time::Date;
-using Domain::Fruit;
+using Entity::Fruit;
 using ControllerFruit::Controller;
 
 namespace UI{

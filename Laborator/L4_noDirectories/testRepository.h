@@ -1,6 +1,6 @@
 #pragma once
 
 #include "Repository.h"
-#include "Domain.h"
+#include "Entity.h"
 
 void testRepository();
