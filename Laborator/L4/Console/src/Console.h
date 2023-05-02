@@ -17,7 +17,7 @@ using Time::Date;
 namespace UI {
     class [[maybe_unused]] ConsoleUI {
     private:
-        ControllerFruit::Controller &controller;
+        static ControllerFruit::Controller &controller;
 
         static int readInput();
 

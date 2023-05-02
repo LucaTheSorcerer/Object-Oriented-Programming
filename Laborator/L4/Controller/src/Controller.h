@@ -55,5 +55,7 @@ namespace ControllerFruit {
         unique_ptr<vector<Fruit>> getFruitSortedByExpiry();
 
         void printAllFruits();
+
+        void saveData();
     };
 }
