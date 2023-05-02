@@ -55,8 +55,8 @@ build CMakeFiles/L4_noDirectories.dir/Shop.cpp.o: CXX_COMPILER__L4_noDirectories
   OBJECT_DIR = CMakeFiles/L4_noDirectories.dir
   OBJECT_FILE_DIR = CMakeFiles/L4_noDirectories.dir
 
-build CMakeFiles/L4_noDirectories.dir/Controller.cpp.o: CXX_COMPILER__L4_noDirectories_Debug /Users/lulu/UBB/Semestrul_II/Object-Oriented-Programming/Laborator/L4_noDirectories/Controller.cpp || cmake_object_order_depends_target_L4_noDirectories
-  DEP_FILE = CMakeFiles/L4_noDirectories.dir/Controller.cpp.o.d
+build CMakeFiles/L4_noDirectories.dir/Date.cpp.o: CXX_COMPILER__L4_noDirectories_Debug /Users/lulu/UBB/Semestrul_II/Object-Oriented-Programming/Laborator/L4_noDirectories/Date.cpp || cmake_object_order_depends_target_L4_noDirectories
+  DEP_FILE = CMakeFiles/L4_noDirectories.dir/Date.cpp.o.d
   FLAGS = -g -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.3.sdk -fcolor-diagnostics -std=gnu++2b
   OBJECT_DIR = CMakeFiles/L4_noDirectories.dir
   OBJECT_FILE_DIR = CMakeFiles/L4_noDirectories.dir
@@ -67,8 +67,8 @@ build CMakeFiles/L4_noDirectories.dir/Fruit.cpp.o: CXX_COMPILER__L4_noDirectorie
   OBJECT_DIR = CMakeFiles/L4_noDirectories.dir
   OBJECT_FILE_DIR = CMakeFiles/L4_noDirectories.dir
 
-build CMakeFiles/L4_noDirectories.dir/Date.cpp.o: CXX_COMPILER__L4_noDirectories_Debug /Users/lulu/UBB/Semestrul_II/Object-Oriented-Programming/Laborator/L4_noDirectories/Date.cpp || cmake_object_order_depends_target_L4_noDirectories
-  DEP_FILE = CMakeFiles/L4_noDirectories.dir/Date.cpp.o.d
+build CMakeFiles/L4_noDirectories.dir/FruitController.cpp.o: CXX_COMPILER__L4_noDirectories_Debug /Users/lulu/UBB/Semestrul_II/Object-Oriented-Programming/Laborator/L4_noDirectories/FruitController.cpp || cmake_object_order_depends_target_L4_noDirectories
+  DEP_FILE = CMakeFiles/L4_noDirectories.dir/FruitController.cpp.o.d
   FLAGS = -g -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.3.sdk -fcolor-diagnostics -std=gnu++2b
   OBJECT_DIR = CMakeFiles/L4_noDirectories.dir
   OBJECT_FILE_DIR = CMakeFiles/L4_noDirectories.dir
@@ -115,14 +115,14 @@ build CMakeFiles/L4_noDirectories.dir/TestRepository.cpp.o: CXX_COMPILER__L4_noD
   OBJECT_DIR = CMakeFiles/L4_noDirectories.dir
   OBJECT_FILE_DIR = CMakeFiles/L4_noDirectories.dir
 
-build CMakeFiles/L4_noDirectories.dir/TestTime.cpp.o: CXX_COMPILER__L4_noDirectories_Debug /Users/lulu/UBB/Semestrul_II/Object-Oriented-Programming/Laborator/L4_noDirectories/TestTime.cpp || cmake_object_order_depends_target_L4_noDirectories
-  DEP_FILE = CMakeFiles/L4_noDirectories.dir/TestTime.cpp.o.d
+build CMakeFiles/L4_noDirectories.dir/UserInterface.cpp.o: CXX_COMPILER__L4_noDirectories_Debug /Users/lulu/UBB/Semestrul_II/Object-Oriented-Programming/Laborator/L4_noDirectories/UserInterface.cpp || cmake_object_order_depends_target_L4_noDirectories
+  DEP_FILE = CMakeFiles/L4_noDirectories.dir/UserInterface.cpp.o.d
   FLAGS = -g -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.3.sdk -fcolor-diagnostics -std=gnu++2b
   OBJECT_DIR = CMakeFiles/L4_noDirectories.dir
   OBJECT_FILE_DIR = CMakeFiles/L4_noDirectories.dir
 
-build CMakeFiles/L4_noDirectories.dir/UserInterface.cpp.o: CXX_COMPILER__L4_noDirectories_Debug /Users/lulu/UBB/Semestrul_II/Object-Oriented-Programming/Laborator/L4_noDirectories/UserInterface.cpp || cmake_object_order_depends_target_L4_noDirectories
-  DEP_FILE = CMakeFiles/L4_noDirectories.dir/UserInterface.cpp.o.d
+build CMakeFiles/L4_noDirectories.dir/TestTime.cpp.o: CXX_COMPILER__L4_noDirectories_Debug /Users/lulu/UBB/Semestrul_II/Object-Oriented-Programming/Laborator/L4_noDirectories/TestTime.cpp || cmake_object_order_depends_target_L4_noDirectories
+  DEP_FILE = CMakeFiles/L4_noDirectories.dir/TestTime.cpp.o.d
   FLAGS = -g -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.3.sdk -fcolor-diagnostics -std=gnu++2b
   OBJECT_DIR = CMakeFiles/L4_noDirectories.dir
   OBJECT_FILE_DIR = CMakeFiles/L4_noDirectories.dir
@@ -135,7 +135,7 @@ build CMakeFiles/L4_noDirectories.dir/UserInterface.cpp.o: CXX_COMPILER__L4_noDi
 #############################################
 # Link the executable L4_noDirectories
 
-build L4_noDirectories: CXX_EXECUTABLE_LINKER__L4_noDirectories_Debug CMakeFiles/L4_noDirectories.dir/Shop.cpp.o CMakeFiles/L4_noDirectories.dir/Controller.cpp.o CMakeFiles/L4_noDirectories.dir/Fruit.cpp.o CMakeFiles/L4_noDirectories.dir/Date.cpp.o CMakeFiles/L4_noDirectories.dir/FruitException.cpp.o CMakeFiles/L4_noDirectories.dir/FruitRepository.cpp.o CMakeFiles/L4_noDirectories.dir/TestAll.cpp.o CMakeFiles/L4_noDirectories.dir/TestController.cpp.o CMakeFiles/L4_noDirectories.dir/TestDate.cpp.o CMakeFiles/L4_noDirectories.dir/TestDomain.cpp.o CMakeFiles/L4_noDirectories.dir/TestRepository.cpp.o CMakeFiles/L4_noDirectories.dir/TestTime.cpp.o CMakeFiles/L4_noDirectories.dir/UserInterface.cpp.o
+build L4_noDirectories: CXX_EXECUTABLE_LINKER__L4_noDirectories_Debug CMakeFiles/L4_noDirectories.dir/Shop.cpp.o CMakeFiles/L4_noDirectories.dir/Date.cpp.o CMakeFiles/L4_noDirectories.dir/Fruit.cpp.o CMakeFiles/L4_noDirectories.dir/FruitController.cpp.o CMakeFiles/L4_noDirectories.dir/FruitException.cpp.o CMakeFiles/L4_noDirectories.dir/FruitRepository.cpp.o CMakeFiles/L4_noDirectories.dir/TestAll.cpp.o CMakeFiles/L4_noDirectories.dir/TestController.cpp.o CMakeFiles/L4_noDirectories.dir/TestDate.cpp.o CMakeFiles/L4_noDirectories.dir/TestDomain.cpp.o CMakeFiles/L4_noDirectories.dir/TestRepository.cpp.o CMakeFiles/L4_noDirectories.dir/UserInterface.cpp.o CMakeFiles/L4_noDirectories.dir/TestTime.cpp.o
   FLAGS = -g -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.3.sdk
   OBJECT_DIR = CMakeFiles/L4_noDirectories.dir
   POST_BUILD = :
