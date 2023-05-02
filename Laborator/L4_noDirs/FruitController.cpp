@@ -1,11 +1,26 @@
 #include "FruitController.h"
 
-///Constructor
+using Exception::FruitException;
+
+/**
+ * Constructor for the FruitController class
+ * @param fruitRepository  The repository that will be used
+ * @param fileName  The name of the file that will be used
+ */
 Controller::FruitController::FruitController(const string &fileName) : fruitRepository(fileName) {
     fruits = fruitRepository.getAll();
 }
 
-///Add a fruit to the Data Base
+/**
+ * Add a fruit to the Data Base
+ * @details Add a fruit to the Data Base. If the fruit already exists, update it. If the fruit does not exist, add it.
+ * @param name name of the fruit
+ * @param origin origin of the fruit
+ * @param producer producer of the fruit
+ * @param expiryDate expiry date of the fruit
+ * @param quantity quantity of the fruit
+ * @param price price of the fruit
+ */
 void Controller::FruitController::addFruit(const string &name, const string &origin, const string &producer,
                                            const Time::Date &expiryDate, int quantity, float price) {
     Fruit newFruit(name, origin, producer, expiryDate, quantity, price);
@@ -38,8 +53,13 @@ void Controller::FruitController::addFruit(const string &name, const string &ori
     }
 }
 
-///Delete a fruit from the Data Base
-///@throws runtime_error if the fruit is not found
+
+/**
+ * @brief Delete a fruit from the Data Base
+ * @details Delete a fruit from the Data Base. If the fruit does not exist, throw an exception.
+ * @param name
+ * @param origin
+ */
 void Controller::FruitController::deleteFruit(const string& name, const string& origin) {
     Fruit tempFruit(name, origin);
     bool found = false;
@@ -51,7 +71,7 @@ void Controller::FruitController::deleteFruit(const string& name, const string& 
         }
     }
     if (!found) {
-        throw std::runtime_error("Fruit not found");
+        throw FruitException("Fruit not found");
     }
 }
 
@@ -78,7 +98,7 @@ unique_ptr<vector<Fruit>> Controller::FruitController::getFruitsByExpirationDate
 ///@throws runtime_error if the threshold is invalid
 unique_ptr<vector<Fruit>> Controller::FruitController::getLowQuantityFruits(int quantityThreshold) {
     if(quantityThreshold <= 0){
-        throw std::runtime_error("Threshold must be positive");
+        throw FruitException("Threshold must be positive");
     }
 
     auto lowQuantityFruits = std::make_unique<vector<Fruit>>();

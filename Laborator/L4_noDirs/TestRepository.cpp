@@ -3,6 +3,10 @@
 #include <string>
 #include <iostream>
 
+/**
+ * @details Test the FruitRepository::convertFromString() and FruitRepository::convertToString() methods.
+ * @return None
+ */
 void testFruitParsing() {
     // Test convertFromString()
     std::string fruitString = "Apple,USA,Red Del,2023-05-01,10,1.50";
@@ -21,12 +25,16 @@ void testFruitParsing() {
     assert(actualFruitString == expectedFruitString);
 }
 
+/**
+ * @details Test the FruitRepository constructor. Also tests the getAll() method.
+ * @return None
+ */
 void testConstructor() {
     //Try creating an invalid fruit Repository
     try {
         Repository::FruitRepository fruitRepository("invalid");
         assert(false);
-    } catch (const std::runtime_error &exception) {
+    } catch (Exception::FruitException &e) {
         assert(true);
     }
 
@@ -51,6 +59,10 @@ void testConstructor() {
     }
 }
 
+/**
+ * @details Test the FruitRepository::addFruit() and FruitRepository::deleteFruit() methods. Also tests the getAll()
+ * @return None
+ */
 void testAddAndDeleteFruits() {
     // Create a new repository
     Repository::FruitRepository fruitRepo("../testDataBase1");
@@ -106,12 +118,20 @@ void testAddAndDeleteFruits() {
     assert(allFruits->empty());
 }
 
+/**
+ * @details Test the FruitRepository::deleteData() method.
+ * @return None
+ */
 void testDeleteData() {
     Repository::FruitRepository fruitRepository("../testDataBase2");
     fruitRepository.deleteData();
     assert(fruitRepository.getAll()->empty());
 }
 
+/**
+ * @details Test the FruitRepository::writeToDataBase() method.
+ * @return None
+ */
 void testWriteToDataBase() {
     Repository::FruitRepository repo("../testDataBase3");
     repo.deleteData();
@@ -132,6 +152,10 @@ void testWriteToDataBase() {
     assert(fileContents == expectedOutput);
 }
 
+/**
+ * @details Run all the tests in this file.
+ * @return None
+ */
 void testRepository() {
     testFruitParsing();
     testConstructor();

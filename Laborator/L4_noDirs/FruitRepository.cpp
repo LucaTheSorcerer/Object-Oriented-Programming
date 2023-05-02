@@ -2,13 +2,19 @@
 #include "FruitRepository.h"
 
 using Exception::FruitException;
-///Constructor
-///@throws runtime_error if the file is not found
+
+/**
+ * @brief Constructor for the FruitRepository class
+ * @details Create a FruitRepository object. If the file does not exist, it will be created. If the file cannot be
+ * created, an exception will be thrown. If the file is empty, the data will be initialized with an empty vector. If
+ * the file is not empty, the data will be initialized with the data from the file.
+ * @param _fileName
+ */
 Repository::FruitRepository::FruitRepository(string _fileName) : fileName(std::move(_fileName)) {
     std::ifstream file(fileName);
 
     if (!file.is_open()) {
-        throw std::runtime_error("Failed to create database file: " + fileName);
+        throw Exception::FruitException("Failed to create database file: " + fileName);
     }
 
     data = std::make_shared<vector<Fruit>>();
@@ -22,7 +28,12 @@ Repository::FruitRepository::FruitRepository(string _fileName) : fileName(std::m
     file.close();
 }
 
-///write to the database the modified data
+
+/**
+ * @brief Add a fruit to the data
+ * @details Add a fruit to the data.
+ * @param fruit
+ */
 void Repository::FruitRepository::writeToDataBase() {
     std::ofstream file(fileName, std::ios::trunc);
 
@@ -39,12 +50,18 @@ void Repository::FruitRepository::writeToDataBase() {
     file.close();
 }
 
-///Add a fruit
+/**
+ * @brief add a fruit to the data base
+ * @param fruit
+ */
 void Repository::FruitRepository::addFruit(const Fruit &fruit) {
     data->push_back(fruit);
 }
 
-///Delete a fruit
+/**
+ * @brief delete a fruit from the data base
+ * @param fruit
+ */
 void Repository::FruitRepository::deleteFruit(const Fruit &fruit) {
     auto it = std::find_if(data->begin(), data->end(), [&](const Fruit& f){
         return f.getName() == fruit.getName();
@@ -54,17 +71,26 @@ void Repository::FruitRepository::deleteFruit(const Fruit &fruit) {
     }
 }
 
-///Get all fruits from DataBase
+/**
+ * @brief get all the data from the data base
+ * @return
+ */
 shared_ptr<vector<Fruit>> Repository::FruitRepository::getAll() {
     return data;
 }
 
-///Delete all the data from the DataBase
+/**
+ * @brief delete all the data from the data base
+ */
 void Repository::FruitRepository::deleteData() {
     data = std::make_unique<vector<Fruit>>();
 }
 
-///Convert a string into a fruit
+/**
+ * @brief convert a string to a fruit
+ * @param fruit
+ * @return a fruit object
+ */
 Entity::Fruit Repository::FruitRepository::convertFromString(const string &fruit) {
     std::stringstream ss(fruit);
     string name, origin, producer, expDateStr;
@@ -87,7 +113,11 @@ Entity::Fruit Repository::FruitRepository::convertFromString(const string &fruit
     return Entity::Fruit(name, origin, producer, expirationDate, quantity, price);
 }
 
-///Convert a fruit into a string
+/**
+ * @brief convert a fruit to a string
+ * @param fruit
+ * @return a string object
+ */
 string Repository::FruitRepository::convertToString(Fruit &fruit) {
     return fruit.getFruitAsFormattedString();
 }

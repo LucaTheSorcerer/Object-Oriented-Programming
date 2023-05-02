@@ -48,7 +48,7 @@ void testDeleteFruit() {
     // Test deleting non-existing fruit
     try {
         fc.deleteFruit("orange", "Spain");
-    } catch (std::exception &e) {
+    } catch (Exception::FruitException &e) {
         assert(std::string(e.what()) == "Fruit not found");
     }
 

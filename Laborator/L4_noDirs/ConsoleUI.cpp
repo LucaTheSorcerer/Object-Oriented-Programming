@@ -170,12 +170,14 @@ void UI::ConsoleUI::displayLowQuantityProducts() {
                       << fruit.getPrice() << std::endl;
         }
     }
-    catch (std::exception &e) {
+    catch (Exception::FruitException &e) {
         std::cout << "Error: " << e.what() << std::endl;
     }
 }
 
-///Display all products sorted by their expiry Date
+/**
+ * @details Display all products sorted by their expiration date.
+ */
 void UI::ConsoleUI::displayProductsByExpirationDate() {
     auto fruits = controller.getFruitsByExpirationDate();
     cout << "The fruits sorted by their expiration date are: " << endl;
