@@ -87,7 +87,7 @@ unique_ptr<vector<Fruit>> Controller::FruitController::getAllFruits() {
 }
 
 ///Get all the fruits sorted by their expiry date
-unique_ptr<vector<Fruit>> Controller::FruitController::getFruitsByExpirationDate() {
+unique_ptr<vector<Fruit>> Controller::FruitController::getFruitsSortedByExpirationDate() {
     auto sortedFruits = std::make_unique<vector<Fruit>>(*fruits);
     std::sort(sortedFruits->begin(), sortedFruits->end(), [](const Fruit &a, const Fruit &b) {
         return a.getExpirationDate() < b.getExpirationDate();
@@ -96,7 +96,7 @@ unique_ptr<vector<Fruit>> Controller::FruitController::getFruitsByExpirationDate
 }
 ///Get all the fruits that are in low quantity
 ///@throws runtime_error if the threshold is invalid
-unique_ptr<vector<Fruit>> Controller::FruitController::getLowQuantityFruits(int quantityThreshold) {
+unique_ptr<vector<Fruit>> Controller::FruitController::findFruitsWithLowStock(int quantityThreshold) {
     if(quantityThreshold <= 0){
         throw FruitException("Threshold must be positive");
     }
@@ -111,7 +111,7 @@ unique_ptr<vector<Fruit>> Controller::FruitController::getLowQuantityFruits(int 
 }
 
 ///Find all the fruits that match a given string
-unique_ptr<vector<Fruit>> Controller::FruitController::findFruits(const string &searchString) {
+unique_ptr<vector<Fruit>> Controller::FruitController::findFruitsContainingString(const string &searchString) {
     auto result = std::make_unique<vector<Fruit>>();
 
     if (searchString.empty())

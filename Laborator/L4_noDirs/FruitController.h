@@ -35,8 +35,8 @@ namespace Controller {
         void deleteFruit(const string &name, const string &origin);
         void saveData();
         unique_ptr<vector<Fruit>> getAllFruits();
-        unique_ptr<vector<Fruit>> getFruitsByExpirationDate();
-        unique_ptr<vector<Fruit>> getLowQuantityFruits(int quantityThreshold);
-        unique_ptr<vector<Fruit>> findFruits(const string &searchString);
+        unique_ptr<vector<Fruit>> findFruitsContainingString(const string &searchString);
+        unique_ptr<vector<Fruit>> getFruitsSortedByExpirationDate();
+        unique_ptr<vector<Fruit>> findFruitsWithLowStock(int quantityThreshold);
     };
 }

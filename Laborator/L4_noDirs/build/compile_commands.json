@@ -1,0 +1,80 @@
+[
+{
+  "directory": "/Users/lulu/UBB/Semestrul_II/Object-Oriented-Programming/Laborator/L4_noDirs/build",
+  "command": "/usr/bin/clang++   -g -std=gnu++2b -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.3.sdk -o CMakeFiles/L4_noDirs.dir/Shop.cpp.o -c /Users/lulu/UBB/Semestrul_II/Object-Oriented-Programming/Laborator/L4_noDirs/Shop.cpp",
+  "file": "/Users/lulu/UBB/Semestrul_II/Object-Oriented-Programming/Laborator/L4_noDirs/Shop.cpp",
+  "output": "CMakeFiles/L4_noDirs.dir/Shop.cpp.o"
+},
+{
+  "directory": "/Users/lulu/UBB/Semestrul_II/Object-Oriented-Programming/Laborator/L4_noDirs/build",
+  "command": "/usr/bin/clang++   -g -std=gnu++2b -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.3.sdk -o CMakeFiles/L4_noDirs.dir/Date.cpp.o -c /Users/lulu/UBB/Semestrul_II/Object-Oriented-Programming/Laborator/L4_noDirs/Date.cpp",
+  "file": "/Users/lulu/UBB/Semestrul_II/Object-Oriented-Programming/Laborator/L4_noDirs/Date.cpp",
+  "output": "CMakeFiles/L4_noDirs.dir/Date.cpp.o"
+},
+{
+  "directory": "/Users/lulu/UBB/Semestrul_II/Object-Oriented-Programming/Laborator/L4_noDirs/build",
+  "command": "/usr/bin/clang++   -g -std=gnu++2b -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.3.sdk -o CMakeFiles/L4_noDirs.dir/Fruit.cpp.o -c /Users/lulu/UBB/Semestrul_II/Object-Oriented-Programming/Laborator/L4_noDirs/Fruit.cpp",
+  "file": "/Users/lulu/UBB/Semestrul_II/Object-Oriented-Programming/Laborator/L4_noDirs/Fruit.cpp",
+  "output": "CMakeFiles/L4_noDirs.dir/Fruit.cpp.o"
+},
+{
+  "directory": "/Users/lulu/UBB/Semestrul_II/Object-Oriented-Programming/Laborator/L4_noDirs/build",
+  "command": "/usr/bin/clang++   -g -std=gnu++2b -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.3.sdk -o CMakeFiles/L4_noDirs.dir/FruitController.cpp.o -c /Users/lulu/UBB/Semestrul_II/Object-Oriented-Programming/Laborator/L4_noDirs/FruitController.cpp",
+  "file": "/Users/lulu/UBB/Semestrul_II/Object-Oriented-Programming/Laborator/L4_noDirs/FruitController.cpp",
+  "output": "CMakeFiles/L4_noDirs.dir/FruitController.cpp.o"
+},
+{
+  "directory": "/Users/lulu/UBB/Semestrul_II/Object-Oriented-Programming/Laborator/L4_noDirs/build",
+  "command": "/usr/bin/clang++   -g -std=gnu++2b -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.3.sdk -o CMakeFiles/L4_noDirs.dir/FruitException.cpp.o -c /Users/lulu/UBB/Semestrul_II/Object-Oriented-Programming/Laborator/L4_noDirs/FruitException.cpp",
+  "file": "/Users/lulu/UBB/Semestrul_II/Object-Oriented-Programming/Laborator/L4_noDirs/FruitException.cpp",
+  "output": "CMakeFiles/L4_noDirs.dir/FruitException.cpp.o"
+},
+{
+  "directory": "/Users/lulu/UBB/Semestrul_II/Object-Oriented-Programming/Laborator/L4_noDirs/build",
+  "command": "/usr/bin/clang++   -g -std=gnu++2b -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.3.sdk -o CMakeFiles/L4_noDirs.dir/FruitRepository.cpp.o -c /Users/lulu/UBB/Semestrul_II/Object-Oriented-Programming/Laborator/L4_noDirs/FruitRepository.cpp",
+  "file": "/Users/lulu/UBB/Semestrul_II/Object-Oriented-Programming/Laborator/L4_noDirs/FruitRepository.cpp",
+  "output": "CMakeFiles/L4_noDirs.dir/FruitRepository.cpp.o"
+},
+{
+  "directory": "/Users/lulu/UBB/Semestrul_II/Object-Oriented-Programming/Laborator/L4_noDirs/build",
+  "command": "/usr/bin/clang++   -g -std=gnu++2b -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.3.sdk -o CMakeFiles/L4_noDirs.dir/TestAll.cpp.o -c /Users/lulu/UBB/Semestrul_II/Object-Oriented-Programming/Laborator/L4_noDirs/TestAll.cpp",
+  "file": "/Users/lulu/UBB/Semestrul_II/Object-Oriented-Programming/Laborator/L4_noDirs/TestAll.cpp",
+  "output": "CMakeFiles/L4_noDirs.dir/TestAll.cpp.o"
+},
+{
+  "directory": "/Users/lulu/UBB/Semestrul_II/Object-Oriented-Programming/Laborator/L4_noDirs/build",
+  "command": "/usr/bin/clang++   -g -std=gnu++2b -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.3.sdk -o CMakeFiles/L4_noDirs.dir/TestController.cpp.o -c /Users/lulu/UBB/Semestrul_II/Object-Oriented-Programming/Laborator/L4_noDirs/TestController.cpp",
+  "file": "/Users/lulu/UBB/Semestrul_II/Object-Oriented-Programming/Laborator/L4_noDirs/TestController.cpp",
+  "output": "CMakeFiles/L4_noDirs.dir/TestController.cpp.o"
+},
+{
+  "directory": "/Users/lulu/UBB/Semestrul_II/Object-Oriented-Programming/Laborator/L4_noDirs/build",
+  "command": "/usr/bin/clang++   -g -std=gnu++2b -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.3.sdk -o CMakeFiles/L4_noDirs.dir/TestDate.cpp.o -c /Users/lulu/UBB/Semestrul_II/Object-Oriented-Programming/Laborator/L4_noDirs/TestDate.cpp",
+  "file": "/Users/lulu/UBB/Semestrul_II/Object-Oriented-Programming/Laborator/L4_noDirs/TestDate.cpp",
+  "output": "CMakeFiles/L4_noDirs.dir/TestDate.cpp.o"
+},
+{
+  "directory": "/Users/lulu/UBB/Semestrul_II/Object-Oriented-Programming/Laborator/L4_noDirs/build",
+  "command": "/usr/bin/clang++   -g -std=gnu++2b -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.3.sdk -o CMakeFiles/L4_noDirs.dir/TestDomain.cpp.o -c /Users/lulu/UBB/Semestrul_II/Object-Oriented-Programming/Laborator/L4_noDirs/TestDomain.cpp",
+  "file": "/Users/lulu/UBB/Semestrul_II/Object-Oriented-Programming/Laborator/L4_noDirs/TestDomain.cpp",
+  "output": "CMakeFiles/L4_noDirs.dir/TestDomain.cpp.o"
+},
+{
+  "directory": "/Users/lulu/UBB/Semestrul_II/Object-Oriented-Programming/Laborator/L4_noDirs/build",
+  "command": "/usr/bin/clang++   -g -std=gnu++2b -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.3.sdk -o CMakeFiles/L4_noDirs.dir/TestRepository.cpp.o -c /Users/lulu/UBB/Semestrul_II/Object-Oriented-Programming/Laborator/L4_noDirs/TestRepository.cpp",
+  "file": "/Users/lulu/UBB/Semestrul_II/Object-Oriented-Programming/Laborator/L4_noDirs/TestRepository.cpp",
+  "output": "CMakeFiles/L4_noDirs.dir/TestRepository.cpp.o"
+},
+{
+  "directory": "/Users/lulu/UBB/Semestrul_II/Object-Oriented-Programming/Laborator/L4_noDirs/build",
+  "command": "/usr/bin/clang++   -g -std=gnu++2b -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.3.sdk -o CMakeFiles/L4_noDirs.dir/TestTime.cpp.o -c /Users/lulu/UBB/Semestrul_II/Object-Oriented-Programming/Laborator/L4_noDirs/TestTime.cpp",
+  "file": "/Users/lulu/UBB/Semestrul_II/Object-Oriented-Programming/Laborator/L4_noDirs/TestTime.cpp",
+  "output": "CMakeFiles/L4_noDirs.dir/TestTime.cpp.o"
+},
+{
+  "directory": "/Users/lulu/UBB/Semestrul_II/Object-Oriented-Programming/Laborator/L4_noDirs/build",
+  "command": "/usr/bin/clang++   -g -std=gnu++2b -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.3.sdk -o CMakeFiles/L4_noDirs.dir/ConsoleUI.cpp.o -c /Users/lulu/UBB/Semestrul_II/Object-Oriented-Programming/Laborator/L4_noDirs/ConsoleUI.cpp",
+  "file": "/Users/lulu/UBB/Semestrul_II/Object-Oriented-Programming/Laborator/L4_noDirs/ConsoleUI.cpp",
+  "output": "CMakeFiles/L4_noDirs.dir/ConsoleUI.cpp.o"
+}
+]

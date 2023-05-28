@@ -10,7 +10,7 @@ using std::cin, std::cout;
 void UI::ConsoleUI::run() {
     int choice;
     do {
-        displayMenu();
+        printMenu();
         cin >> choice;
         cin.ignore();
         switch (choice) {
@@ -25,13 +25,13 @@ void UI::ConsoleUI::run() {
                 removeProduct();
                 break;
             case 3:
-                displayProductsByString();
+                searchFruitByString();
                 break;
             case 4:
-                displayLowQuantityProducts();
+                findFruitsShortInQuantity();
                 break;
             case 5:
-                displayProductsByExpirationDate();
+                findAllFruitsSortedByExpirationDate();
                 break;
             default:
                 cout << "Invalid choice. Please try again.\n";
@@ -44,7 +44,7 @@ void UI::ConsoleUI::run() {
 /**
  * @details Display the menu of the fruit store management system.
  */
-void UI::ConsoleUI::displayMenu() {
+void UI::ConsoleUI::printMenu() {
     cout << "\n\n";
     cout << "\nFruit Store Management System\n\n"
          << "What would you like to do?\n\n"
@@ -131,14 +131,14 @@ void UI::ConsoleUI::removeProduct() {
  * @details Display all products that contain a given string in their name. The user gives the string. If no products
  * are found, an error message is displayed. If products are found, they are displayed.
  */
-void UI::ConsoleUI::displayProductsByString() {
+void UI::ConsoleUI::searchFruitByString() {
     std::string name;
 
     std::cout << "Enter search name: ";
     std::getline(std::cin, name);
 
     try {
-        auto fruits = controller.findFruits(name);
+        auto fruits = controller.findFruitsContainingString(name);
         cout << "The fruits that contain the string " << name << " are: " << endl;
         for (const auto &fruit: *fruits) {
             std::cout << fruit.getName() << ", " << fruit.getOrigin() << ", " << fruit.getProducer() << ", "
@@ -155,14 +155,14 @@ void UI::ConsoleUI::displayProductsByString() {
  * @details Display all products that have a quantity less than a given number. The user gives the number. If no
  * products are found, an error message is displayed. If products are found, they are displayed.
  */
-void UI::ConsoleUI::displayLowQuantityProducts() {
+void UI::ConsoleUI::findFruitsShortInQuantity() {
     int quantity;
 
     std::cout << "Enter quantity threshold: ";
     std::cin >> quantity;
 
     try {
-        auto fruits = controller.getLowQuantityFruits(quantity);
+        auto fruits = controller.findFruitsWithLowStock(quantity);
         cout << "The fruits with a quantity less than " << quantity << " are: " << endl;
         for (const auto &fruit: *fruits) {
             std::cout << fruit.getName() << ", " << fruit.getOrigin() << ", " << fruit.getProducer() << ", "
@@ -178,8 +178,8 @@ void UI::ConsoleUI::displayLowQuantityProducts() {
 /**
  * @details Display all products sorted by their expiration date.
  */
-void UI::ConsoleUI::displayProductsByExpirationDate() {
-    auto fruits = controller.getFruitsByExpirationDate();
+void UI::ConsoleUI::findAllFruitsSortedByExpirationDate() {
+    auto fruits = controller.getFruitsSortedByExpirationDate();
     cout << "The fruits sorted by their expiration date are: " << endl;
     for (const auto &fruit: *fruits) {
         std::cout << fruit.getName() << ", " << fruit.getOrigin() << ", " << fruit.getProducer() << ", "

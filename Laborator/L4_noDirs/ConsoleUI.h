@@ -14,28 +14,38 @@ namespace UI{
         FruitController controller{};
 
     public:
-        ///Run the programme
+        //Runs the program
         void run();
 
-        ///Constructor
+        //Constructor
         ConsoleUI() = default;
 
-        ///Copy constructor
+        //Copy constructor
         ConsoleUI(const ConsoleUI &userInterface) = default;
 
-        ///Destructor
+        //Destructor
         ~ConsoleUI() = default;
 
     private:
-        ///Display the UI menu
-        static void displayMenu();
+        //Display the user interface menu
+        static void printMenu();
 
-        ///Manipulate data and display it if needed
+        //Manipulate data and display it if needed
+
+        //Add a product to the database
         void addProduct();
+
+        //Remove a product from the database
         void removeProduct();
-        void displayProductsByString();
-        void displayLowQuantityProducts();
-        void displayProductsByExpirationDate();
+
+        //Search for a fruit by name and origin
+        void searchFruitByString();
+
+        //Find fruits that are short in quantity
+        void findFruitsShortInQuantity();
+
+        //Find all fruits sorted by their expiration date
+        void findAllFruitsSortedByExpirationDate();
     };
 }
 

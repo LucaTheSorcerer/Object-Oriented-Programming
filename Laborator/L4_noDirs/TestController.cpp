@@ -74,7 +74,7 @@ void testSortByExpirationDate() {
                         orange.getQuantity(), orange.getPrice());
 
     // Get the fruits sorted by expiration date
-    auto fruitsByExpiration = controller.getFruitsByExpirationDate();
+    auto fruitsByExpiration = controller.getFruitsSortedByExpirationDate();
 
     // Test that the first fruit has the earliest expiration date
     assert(fruitsByExpiration->at(0).getName() == "Banana");
@@ -97,7 +97,7 @@ void testGetLowQuantityFruits() {
     controller.addFruit("Grape", "Italy", "Vineyards Ltd",
                         Time::Date(2023, 6, 1), 12, 0.75);
 
-    auto lowQuantityFruits = controller.getLowQuantityFruits(6);
+    auto lowQuantityFruits = controller.findFruitsWithLowStock(6);
 
     assert(lowQuantityFruits->size() == 2);
     assert(lowQuantityFruits->front() == Fruit("Banana", "Ecuador") &&
@@ -118,7 +118,7 @@ void testFindFruits() {
                         Date(2023, 5, 2), 12, 2.50);
 
     // Search for fruits with name "an"
-    auto result = controller.findFruits("an");
+    auto result = controller.findFruitsContainingString("an");
 
     // Check that the search returned the correct fruits
     assert(result->size() == 3);
@@ -126,7 +126,7 @@ void testFindFruits() {
     assert((*result)[1].getName() == "Mango");
     assert((*result)[2].getName() == "Orange");
 
-    assert(*controller.findFruits("") == *controller.getAllFruits());
+    assert(*controller.findFruitsContainingString("") == *controller.getAllFruits());
 }
 
 void testController() {
