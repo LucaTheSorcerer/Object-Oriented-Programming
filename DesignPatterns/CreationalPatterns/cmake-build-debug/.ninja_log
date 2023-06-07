@@ -1,0 +1,9 @@
+# ninja log v5
+2	212	1686075106601860281	CMakeFiles/CreationalPatterns.dir/Singleton/Singleton.cpp.o	a5b5298fd346b431
+2	293	1686075162753865403	CMakeFiles/CreationalPatterns.dir/main.cpp.o	754e67e0dc54d056
+293	332	1686075162794402164	CreationalPatterns	795e1e4f0041f363
+2	343	1686076537161357546	CMakeFiles/CreationalPatterns.dir/FactoryMethod/FactoryMethod.cpp.o	ee143c5f4afb89f8
+1	354	1686076537172126880	CMakeFiles/CreationalPatterns.dir/main.cpp.o	754e67e0dc54d056
+354	406	1686076537225270300	CreationalPatterns	72f05e7d4e41fa66
+2	273	1686076575174692681	CMakeFiles/CreationalPatterns.dir/main.cpp.o	754e67e0dc54d056
+273	303	1686076575206166727	CreationalPatterns	72f05e7d4e41fa66
