@@ -1,0 +1,9 @@
+# ninja log v5
+1	288	1686752859844505504	CMakeFiles/PracticeProblems.dir/main.cpp.o	387d253808921493
+4	284	1686749951730111752	CMakeFiles/PracticeProblems.dir/CreationalPattern/Singleton/Logger.cpp.o	b96bfd7df885c296
+288	316	1686752859874560654	PracticeProblems	821ebabbc847b7cb
+3	284	1686749951729778500	CMakeFiles/PracticeProblems.dir/CreationalPattern/FactoryMethod/Game.cpp.o	8e56f3af00ba9165
+3	155	1686752846875077371	CMakeFiles/PracticeProblems.dir/BehaviouralPatterns/Strategy/ShoppingCart.cpp.o	a49bfc98919b9576
+2	441	1686757401158213934	CMakeFiles/PracticeProblems.dir/BehaviouralPatterns/Observer/WeatherStation.cpp.o	51d0c3c8ff4c20ef
+1	442	1686757401159654672	CMakeFiles/PracticeProblems.dir/main.cpp.o	387d253808921493
+442	597	1686757401316258217	PracticeProblems	500c8af990a6189b

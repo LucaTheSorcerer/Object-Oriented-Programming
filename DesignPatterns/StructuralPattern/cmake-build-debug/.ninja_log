@@ -2,3 +2,5 @@
 2	263	1686731962066254815	CMakeFiles/StructuralPattern.dir/Adapter/Adapter.cpp.o	1b0ea49c1992fe72
 2	267	1686731962071256989	CMakeFiles/StructuralPattern.dir/main.cpp.o	9b59829c05dbfaf2
 267	305	1686731962109957545	StructuralPattern	55d0f88b1aabd909
+1	1970	1686739783100977686	CMakeFiles/StructuralPattern.dir/Composite/Composite.cpp.o	9021f82422a7b95b
+1971	2189	1686739783321422997	StructuralPattern	40b9c8dc8b92af43
