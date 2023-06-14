@@ -2,3 +2,8 @@
 0	288	1686690035995411527	CMakeFiles/BehaviouralPatterns.dir/Strategy/Strategy.cpp.o	5f0670ec580dce14
 0	289	1686690035996082147	CMakeFiles/BehaviouralPatterns.dir/main.cpp.o	97f1c67b580ea4f
 289	327	1686690036036442489	BehaviouralPatterns	8985f09b7865bbe2
+2	308	1686729906684552847	CMakeFiles/BehaviouralPatterns.dir/main.cpp.o	97f1c67b580ea4f
+2	310	1686729906686235685	CMakeFiles/BehaviouralPatterns.dir/Observer/Observer.cpp.o	360998c7b07cc3ea
+310	525	1686729906903326758	BehaviouralPatterns	ca9b364a6d7124ae
+2	295	1686729973659690125	CMakeFiles/BehaviouralPatterns.dir/main.cpp.o	97f1c67b580ea4f
+295	329	1686729973695360017	BehaviouralPatterns	ca9b364a6d7124ae

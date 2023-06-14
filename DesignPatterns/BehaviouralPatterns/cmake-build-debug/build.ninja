@@ -61,6 +61,12 @@ build CMakeFiles/BehaviouralPatterns.dir/Strategy/Strategy.cpp.o: CXX_COMPILER__
   OBJECT_DIR = CMakeFiles/BehaviouralPatterns.dir
   OBJECT_FILE_DIR = CMakeFiles/BehaviouralPatterns.dir/Strategy
 
+build CMakeFiles/BehaviouralPatterns.dir/Observer/Observer.cpp.o: CXX_COMPILER__BehaviouralPatterns_Debug /Users/lulu/UBB/Semestrul_II/Object-Oriented-Programming/DesignPatterns/BehaviouralPatterns/Observer/Observer.cpp || cmake_object_order_depends_target_BehaviouralPatterns
+  DEP_FILE = CMakeFiles/BehaviouralPatterns.dir/Observer/Observer.cpp.o.d
+  FLAGS = -g -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.3.sdk -fcolor-diagnostics -std=gnu++2b
+  OBJECT_DIR = CMakeFiles/BehaviouralPatterns.dir
+  OBJECT_FILE_DIR = CMakeFiles/BehaviouralPatterns.dir/Observer
+
 
 # =============================================================================
 # Link build statements for EXECUTABLE target BehaviouralPatterns
@@ -69,7 +75,7 @@ build CMakeFiles/BehaviouralPatterns.dir/Strategy/Strategy.cpp.o: CXX_COMPILER__
 #############################################
 # Link the executable BehaviouralPatterns
 
-build BehaviouralPatterns: CXX_EXECUTABLE_LINKER__BehaviouralPatterns_Debug CMakeFiles/BehaviouralPatterns.dir/main.cpp.o CMakeFiles/BehaviouralPatterns.dir/Strategy/Strategy.cpp.o
+build BehaviouralPatterns: CXX_EXECUTABLE_LINKER__BehaviouralPatterns_Debug CMakeFiles/BehaviouralPatterns.dir/main.cpp.o CMakeFiles/BehaviouralPatterns.dir/Strategy/Strategy.cpp.o CMakeFiles/BehaviouralPatterns.dir/Observer/Observer.cpp.o
   FLAGS = -g -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.3.sdk
   OBJECT_DIR = CMakeFiles/BehaviouralPatterns.dir
   POST_BUILD = :
