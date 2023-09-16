@@ -33,8 +33,8 @@ protected:
 
 public:
     virtual ~Component() = default;
-    void setParent(std::shared_ptr<Component> &parent);
-    std::shared_ptr<Component> getParent() const;
+    void setParent(std::shared_ptr<Component> parent);
+    [[nodiscard]] std::shared_ptr<Component> getParent() const;
 
     /**
      * In some cases, it would be beneficial to define the child-management operations
@@ -43,21 +43,21 @@ public:
      * downside is that these methods will be empty for the leaf-level components.
      */
 
-    virtual void Add(std::shared_ptr<Component> &component);
-    virtual void Remove(std::shared_ptr<Component> &component);
+    virtual void Add(std::shared_ptr<Component> &component) {};
+    virtual void Remove(std::shared_ptr<Component> &component) {};
 
     /**
      * You can provide a method that lets the client code figure out whether a component
      * can bear children.
      */
-    virtual bool isComposite() const;
+    [[nodiscard]] virtual bool isComposite() const;
 
     /**
      * The base Component may implement some default behavior or leave it to concrete
      * classes (by declaring the method containing the behavior as "abstract").
      * @return
      */
-    virtual std::string Operation() const = 0;
+    [[nodiscard]] virtual std::string Operation() const = 0;
 };
 
 /**
@@ -70,7 +70,7 @@ public:
 
 class Leaf : public Component {
 public:
-    std::string Operation() const override;
+    [[nodiscard]] std::string Operation() const override;
 };
 
 /**
@@ -93,7 +93,7 @@ public:
 
     void Add(std::shared_ptr<Component> &component) override;
     void Remove(std::shared_ptr<Component> &component) override;
-    bool isComposite() const override;
+    [[nodiscard]] bool isComposite() const override;
 
     /**
      * The Composite executes its primary logic in a particular way. It traverses
@@ -102,7 +102,7 @@ public:
      * the whole object tree is traversed as a result.
      */
 
-    std::string Operation() const override;
+    [[nodiscard]] std::string Operation() const override;
 
 
 };

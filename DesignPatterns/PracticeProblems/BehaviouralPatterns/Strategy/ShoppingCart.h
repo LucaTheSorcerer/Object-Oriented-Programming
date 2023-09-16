@@ -57,6 +57,13 @@ public:
     [[nodiscard]] double calculateDiscount(double total) const override;
 };
 
+class A {
+
+private:
+    class B {
+
+    };
+};
 
 
 
